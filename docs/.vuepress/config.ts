@@ -2,10 +2,10 @@ import { defaultTheme, defineUserConfig } from 'vuepress'
 import { navbar } from './configs/navbar'
 import { sidebar } from './configs/sidebar'
 
-// const base = process.argv[2] === 'dev' ? '/' : '/vuepress-interview/';
+const base = process.argv[2] === 'dev' ? '/' : '/vuepress-interview/';
 // console.log(base);
 
-const base = '/'
+// const base = '/'
 
 
 export default defineUserConfig({
