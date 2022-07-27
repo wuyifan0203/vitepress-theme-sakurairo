@@ -1,8 +1,8 @@
 node_modules
 .temp
 .cache
-# .DS_Store
+.DS_Store
 # dist
 # dist-ssr
 # *.local
-# !docs/.vitepress/dist
+docs/.vitepress/dist

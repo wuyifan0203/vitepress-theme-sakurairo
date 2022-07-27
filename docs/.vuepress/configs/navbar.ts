@@ -6,6 +6,10 @@ const navbar = [
     {
         text: 'CSS',
         link: '/css-docs/introduce',
+    },
+    {
+        text: '组件',
+        link: '/component/button',
     }
 ]
 
