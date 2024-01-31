@@ -6,11 +6,12 @@
   "author": "wuyifan <1208097313@qq.com>",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "deploy": "bash deploy.sh",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.49"
+    "vitepress": "1.0.0-rc.40"
   }
 }

@@ -1,18 +1,25 @@
 ---
-home: true
-actions:
-  - text: 快速开始
-    link: /html-docs/introduce/
-    type: primary
-  # - text: 项目简介
-  #   link: /guide/
-  #   type: secondary
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
+
+hero:
+  name: "My Awesome Project"
+  text: "A VitePress Site"
+  tagline: My great project tagline
+  actions:
+    - theme: brand
+      text: Markdown Examples
+      link: /markdown-examples
+    - theme: alt
+      text: API Examples
+      link: /api-examples
+
 features:
-- title: 简洁明了
-  details: 从最基础的入手，以最少的时间帮助你复习面试知识。
-- title: 代码驱动
-  details: 享受 code + example 的学习体验。
-- title: 生态完善
-  details: 从面试到学习，一条龙全覆盖。
-footer: Copyright © 2022-present naraku
+  - title: Feature A
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Feature B
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Feature C
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+
