@@ -1,34 +1,28 @@
-import { defineConfig } from 'vitepress'
+/*
+ * @Date: 2024-01-31 16:02:19
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-01 15:30:43
+ * @FilePath: /vuepress-interview/docs/.vitepress/config.mts
+ */
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "My Awesome Project",
   description: "A VitePress Site",
+  lang: 'zh-CN',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'HTML', link: '/html-docs/iframe-test' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      },
-      {
         text: 'HTML',
         items: [
-          { text: 'html-introduce', link: 'html-docs/introduce' },
-        ]
-      },
-      {
-        text: 'CSS',
-        items: [
-          { text: 'css-introduce', link: 'css-docs/introduce' },
+          { text: 'iframe', link: '/html-docs/iframe-test' }
         ]
       }
     ],
