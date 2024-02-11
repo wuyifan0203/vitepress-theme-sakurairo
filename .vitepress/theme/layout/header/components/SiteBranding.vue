@@ -30,7 +30,18 @@ const { theme } = useData();
     font-weight: 800;
     transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
 
+    ruby {
+        ruby-position: under;
+        -webkit-ruby-position: after;
+
+        rt {
+            font-size: 10px;
+            transform: translateY(-13px);
+        }
+    }
+
     .logolink {
+        display: inline-block;
         img {
             width: 35px;
             height: 35px;
@@ -38,13 +49,12 @@ const { theme } = useData();
     }
 
     .pre {
-
         border-radius: 9px;
         padding-bottom: 2px;
         padding-top: 5px;
         line-height: 25px;
-        background-color: rgba(255, 255, 255, 0.5);
-
+        background-color: rgba(0, 255, 255, 1);
+        text-size-adjust: 100%;
     }
 
     .center {
@@ -66,11 +76,6 @@ const { theme } = useData();
     .center {
         -webkit-animation: spin 1.5s linear infinite;
         animation: spin 1.5s linear infinite;
-    }
-    ruby{
-        rt{
-            font-size: 10px;
-        }
     }
 
     @keyframes spin {
