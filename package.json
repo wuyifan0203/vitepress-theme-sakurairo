@@ -6,12 +6,14 @@
   "author": "wuyifan <1208097313@qq.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "vitepress dev",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "deploy": "bash deploy.sh",
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "sass": "^1.70.0",
     "vitepress": "1.0.0-rc.40"
   }
 }

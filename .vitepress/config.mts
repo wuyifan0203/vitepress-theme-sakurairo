@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-01-31 16:02:19
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-01 15:30:43
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-11 16:44:11
  * @FilePath: /vuepress-interview/docs/.vitepress/config.mts
  */
 import { defineConfig } from 'vitepress';
@@ -12,17 +12,18 @@ export default defineConfig({
   description: "A VitePress Site",
   lang: 'zh-CN',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    // https://vitepress.dev/reference/default-theme-config\
+    siteTitle: 'VuePress InterView',
+    logo: '/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'HTML', link: '/html-docs/iframe-test' },
+      { text: 'HTML', link: '/' },
     ],
 
     sidebar: [
       {
         text: 'HTML',
         items: [
-          { text: 'iframe', link: '/html-docs/iframe-test' }
         ]
       }
     ],
