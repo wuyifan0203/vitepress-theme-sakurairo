@@ -1,0 +1,21 @@
+@keyframes cover-h1-title-red {
+  0% {
+    clip: rect(36px, 9999px, 9px, 0);
+  }
+
+  25% {
+    clip: rect(25px, 9999px, 99px, 0);
+  }
+
+  50% {
+    clip: rect(50px, 9999px, 102px, 0);
+  }
+
+  75% {
+    clip: rect(30px, 9999px, 92px, 0);
+  }
+
+  100% {
+    clip: rect(91px, 9999px, 98px, 0);
+  }
+}

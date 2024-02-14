@@ -30,6 +30,8 @@ const { theme } = useData();
 </script>
     
 <style lang="scss" scoped>
+@import '../../../style/variable.scss';
+
 .site-branding {
     display: inline-block;
     color: #464646;
@@ -74,10 +76,10 @@ const { theme } = useData();
 }
 
 .site-branding:hover {
-    color: orange;
+    color: $--theme-skin-active;
 
     .pre {
-        background-color: orange;
+        background-color: $--theme-skin-active;
         color: white;
     }
 
@@ -101,4 +103,5 @@ const { theme } = useData();
     100% {
         transform: rotate(360deg)
     }
-}</style>
+}
+</style>

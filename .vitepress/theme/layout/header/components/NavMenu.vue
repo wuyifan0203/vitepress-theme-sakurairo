@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-13 21:39:51
+ * @LastEditTime: 2024-02-14 15:05:16
  * @FilePath: /vuepress-interview/.vitepress/theme/layout/header/components/NavMenu.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -30,6 +30,7 @@ console.log(nav);
 </script>
     
 <style lang="scss" scoped>
+@import '../../../style/variable.scss';
 nav {
     display: block;
 
@@ -60,7 +61,7 @@ nav {
                     position: absolute;
                     bottom: -5px;
                     height: 4px;
-                    background-color: orange;
+                    background-color: $--theme-skin-active;
                     width: 100%;
                     border-radius: 30px;
                     max-width: 0;
@@ -68,7 +69,7 @@ nav {
                 }
 
                 &:hover {
-                    color: orange;
+                    color: $--theme-skin-active;
                     &::after {
                         max-width: 100%;
                     }

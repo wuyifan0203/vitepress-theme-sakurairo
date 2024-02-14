@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-01-31 16:02:19
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-13 22:14:33
+ * @LastEditTime: 2024-02-14 19:13:42
  * @FilePath: /vuepress-interview/docs/.vitepress/config.mts
  */
 import { defineConfig } from 'vitepress';
@@ -35,6 +35,16 @@ export default defineConfig({
     ],
     cover:{
       src: '/.vitepress/theme/public/bg.jpeg',
+      // src:'https://www.loliapi.com/acg/pc/',
+      title: '',//'奈落的家',
+      avatar:'/.vitepress/theme/public/avatar.jpg',
+      typed:{
+        strings:[
+          "给时光以生命，给岁月以文明", 
+          "寒蝉黎明之时,便是重生之日",
+          "当你在凝视着网页的时候,网页也正在凝视着你"
+        ]
+      }
     },
 
     sidebar: [
