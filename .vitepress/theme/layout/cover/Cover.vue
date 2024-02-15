@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-14 19:15:53
+ * @LastEditTime: 2024-02-15 20:32:13
  * @FilePath: /vuepress-interview/docs/.vitepress/theme/components/MianBody.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -26,20 +26,73 @@
                         <i class="fa fa-quote-left"></i>
                         <span class="element"></span>
                         <i class="fa fa-quote-right"></i>
-                        <p></p>
+                        <p>{{ theme.cover.discription }}</p>
                     </div>
                 </div>
+                <ul class="cover-social-links" v-if="theme.socialLinks.length">
+                    <li>
+                        <img :src="matchIcon('pre')" alt="">
+                    </li>
+                    <li v-for="({ icon, link }, index) in theme.socialLinks" :key="index">
+                        <a :href="link">
+                            <img :src="matchIcon(icon)" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <img :src="matchIcon('next')" alt="">
+                    </li>
+                </ul>
             </div>
         </figure>
+        <div class="cover-wave1" style="background: url(/.vitepress/theme/image/wave1.png) repeat-x;"></div>
+        <div class="cover-wave2" style="background: url(/.vitepress/theme/image/wave2.png) repeat-x;"></div>
     </section>
 </template>
     
 <script setup lang='ts'>
 import { useData } from 'vitepress';
 import { onMounted } from 'vue';
-import Typed from 'typed.js'
+import Typed from 'typed.js';
 
 const { theme } = useData();
+
+const basePath = '/.vitepress/theme/icon/';
+const iconMap = {
+    'next': basePath + 'next.png',
+    'pre': basePath + 'pre.png',
+    'bilibili': basePath + 'bilibili.png',
+    'csdn': basePath + 'csdn.png',
+    'douban': basePath + 'douban.png',
+    'dingding': basePath + 'dingding.png',
+    'discord': basePath + 'discord.png',
+    'douyin': basePath + 'douyin.png',
+    'email': basePath + 'email.png',
+    'facebook': basePath + 'facebook.png',
+    'gitee': basePath + 'gitee.png',
+    'github': basePath + 'github.png',
+    'instagram': basePath + 'instagram.png',
+    'jianshu': basePath + 'jianshu.png',
+    'juejin': basePath + 'juejin.png',
+    'kuaishou': basePath + 'kuaishou.png',
+    'line': basePath + 'line.png',
+    'linkedin': basePath + 'linkedin.png',
+    'lofter': basePath + 'lofter.png',
+    'neteasecloud': basePath + 'neteasecloud.png',
+    'qq': basePath + 'qq.png',
+    'skype': basePath + 'skype.png',
+    'steam': basePath + 'steam.png',
+    'telegram': basePath + 'telegram.png',
+    'twitter': basePath + 'twitter.png',
+    'vk': basePath + 'vk.png',
+    'weibo': basePath + 'weibo.png',
+    'wechat': basePath + 'wechat.png',
+    'youtube': basePath + 'youtube.png',
+    'zhihu': basePath + 'zhihu.png',
+}
+
+const matchIcon = (icon: string) => {
+    return iconMap[icon] || icon
+}
 
 onMounted(() => {
     new Typed('.element', {
@@ -50,15 +103,11 @@ onMounted(() => {
         showCursor: true
     });
 })
-
-
-console.log(theme.value);
-
-
 </script>
 
 <style lang="scss" scoped>
 @import '../../style/variable.scss';
+@import '../../style/animate.scss';
 
 section {
     figure {
@@ -80,7 +129,6 @@ section {
             transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
             text-align: center;
-            z-index: 5;
             -webkit-transition: .4s ease all;
             -moz-transition: .4s ease all;
             -o-transition: .4s ease all;
@@ -178,7 +226,7 @@ section {
                     margin: auto;
                     font-size: 16px;
                     color: $--theme-skin;
-                    background: rgba(255, 255, 255, .8);
+                    background: $--cover-info-background;
                     padding: 15px;
                     margin-top: 22px;
                     letter-spacing: 0;
@@ -204,88 +252,63 @@ section {
                 }
 
             }
+
+            .cover-social-links {
+                height: 32px;
+                margin-top: 30px;
+                margin-left: 10px;
+                list-style: none;
+                display: inline-block;
+
+                li {
+                    float: left;
+                    margin-right: 10px;
+
+                    img {
+                        height: 22px;
+                        width: 22px;
+                        padding: 9px;
+                        background: $--cover-info-background;
+                        transition: all 0.8s ease;
+                        backdrop-filter: blur(10px);
+                        -moz-animation: fadeInDown 2s;
+                        -webkit-animation: fadeInDown 2s;
+                        animation: fadeInDown 2s;
+                        border-radius: 10px;
+                    }
+                }
+            }
         }
 
     }
-}
 
-@keyframes cover-h1-title-red {
-    0% {
-        clip: rect(36px, 9999px, 9px, 0);
+    .cover-wave1,
+    .cover-wave2 {
+        position: absolute;
+        bottom: 0;
+        width: 400%;
+        opacity: 1;
+        transition-duration: .4s, .4s;
+        animation-name: move2;
+        animation-fill-mode: backwards;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
     }
 
-    25% {
-        clip: rect(25px, 9999px, 99px, 0);
+    .cover-wave1 {
+        height: 65px;
+        left: -236px;
+        z-index: 4;
+        animation-duration: 200s;
     }
 
-    50% {
-        clip: rect(50px, 9999px, 102px, 0);
-    }
-
-    75% {
-        clip: rect(30px, 9999px, 92px, 0);
-    }
-
-    100% {
-        clip: rect(91px, 9999px, 98px, 0);
-    }
-}
-
-@keyframes cover-h1-title-blue {
-    0% {
-        top: -1px;
-        left: 1px;
-        clip: rect(65px, 9999px, 119px, 0);
-    }
-
-    25% {
-        top: -6px;
-        left: 4px;
-        clip: rect(79px, 9999px, 19px, 0);
-    }
-
-    50% {
-        top: -3px;
-        left: 2px;
-        clip: rect(68px, 9999px, 11px, 0);
-    }
-
-    75% {
-        top: 0;
-        left: -4px;
-        clip: rect(95px, 9999px, 53px, 0);
-    }
-
-    100% {
-        top: -1px;
-        left: -1px;
-        clip: rect(31px, 9999px, 149px, 0);
+    .cover-wave2 {
+        height: 80px;
+        left: 0;
+        z-index: 3;
+        animation-duration: 120s;
     }
 }
 
-@keyframes fadeInDown {
-    0% {
-        -moz-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-        opacity: 0
-    }
 
-    50% {
-        -moz-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-        opacity: 0
-    }
-
-    100% {
-        -moz-transform: translateY(0%);
-        -ms-transform: translateY(0%);
-        -webkit-transform: translateY(0%);
-        transform: translateY(0%);
-        opacity: 1
-    }
-}
 </style>

@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-14 15:05:16
+ * @LastEditTime: 2024-02-15 20:45:12
  * @FilePath: /vuepress-interview/.vitepress/theme/layout/header/components/NavMenu.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -31,6 +31,7 @@ console.log(nav);
     
 <style lang="scss" scoped>
 @import '../../../style/variable.scss';
+@import '../../../style/animate.scss';
 nav {
     display: block;
 
@@ -54,6 +55,7 @@ nav {
             a {
                 display: inline-block;
                 padding: 10px 0;
+                color: $--theme-skin;
 
                 &::after {
                     content: "";
@@ -81,30 +83,4 @@ nav {
 
 }
 
-@keyframes fadeInLeft {
-    0% {
-        -moz-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    50% {
-        -moz-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    100% {
-        -moz-transform: translateX(0%);
-        -ms-transform: translateX(0%);
-        -webkit-transform: translateX(0%);
-        transform: translateX(0%);
-        opacity: 1;
-    }
-
-}
 </style>

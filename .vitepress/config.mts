@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-01-31 16:02:19
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-14 19:13:42
+ * @LastEditTime: 2024-02-15 20:45:59
  * @FilePath: /vuepress-interview/docs/.vitepress/config.mts
  */
 import { defineConfig } from 'vitepress';
@@ -33,11 +33,13 @@ export default defineConfig({
         ]
       }
     ],
+    navStyle: 'sakura',//'sakurairo',// 
     cover:{
-      src: '/.vitepress/theme/public/bg.jpeg',
-      // src:'https://www.loliapi.com/acg/pc/',
+      // src: '/.vitepress/theme/public/bg.jpeg',
+      src:'https://www.loliapi.com/acg/pc/',
       title: '',//'奈落的家',
       avatar:'/.vitepress/theme/public/avatar.jpg',
+      // discription:'欢迎来到祖安',
       typed:{
         strings:[
           "给时光以生命，给岁月以文明", 
@@ -54,9 +56,20 @@ export default defineConfig({
         ]
       }
     ],
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'discord', link: 'https://discord.com/invite/vite' },
+      { icon: 'twitter', link: 'https://twitter.com/vite_js' },
+      { icon: 'facebook', link: 'https://facebook.com/vite' },
+      { icon: 'instagram', link: 'https://instagram.com/vite_js' },
+      { icon: 'linkedin', link: 'https://linkedin.com/company/vite' },
+      { icon: 'youtube', link: 'https://www.youtube.com'},
+      { icon: 'douyin', link: 'https://www.douyin.com'},
+      { icon: 'bilibili', link: 'https://space.bilibili.com/193672843' },
+      { icon: 'weibo', link: 'https://weibo.com/u/7731200875' },
+      { icon: 'zhihu', link: 'https://www.zhihu.com/people/vite_js' },
+      { icon: 'qq', link: 'https://twitter.com/vite_js' },
+      { icon: 'wechat', link: 'https://twitter.com/vite_js' },
     ]
   }
 })

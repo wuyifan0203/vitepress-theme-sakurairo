@@ -31,6 +31,7 @@ const { theme } = useData();
     
 <style lang="scss" scoped>
 @import '../../../style/variable.scss';
+@import '../../../style/animate.scss';
 
 .site-branding {
     display: inline-block;
@@ -95,13 +96,5 @@ const { theme } = useData();
 }
 
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg)
-    }
 
-    100% {
-        transform: rotate(360deg)
-    }
-}
 </style>
