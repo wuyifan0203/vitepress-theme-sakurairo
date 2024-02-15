@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-15 20:32:13
+ * @LastEditTime: 2024-02-15 21:24:51
  * @FilePath: /vuepress-interview/docs/.vitepress/theme/components/MianBody.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -46,6 +46,9 @@
         </figure>
         <div class="cover-wave1" style="background: url(/.vitepress/theme/image/wave1.png) repeat-x;"></div>
         <div class="cover-wave2" style="background: url(/.vitepress/theme/image/wave2.png) repeat-x;"></div>
+        <div class="cover-head-down">
+            <HeadDown class="cover-head-down-icon"></HeadDown>
+        </div>
     </section>
 </template>
     
@@ -53,6 +56,7 @@
 import { useData } from 'vitepress';
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
+import HeadDown from '../../icon/head_down.vue';
 
 const { theme } = useData();
 
@@ -308,7 +312,20 @@ section {
         z-index: 3;
         animation-duration: 120s;
     }
+
+    .cover-head-down {
+        position: absolute;
+        bottom: 50px;
+        left: calc(50% - 42px);
+        z-index: 5;
+        animation-name: float-down;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+
+        .cover-head-down-icon {
+            width: 80px;
+            height: 80px;
+        }
+    }
 }
-
-
 </style>
