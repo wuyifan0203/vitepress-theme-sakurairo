@@ -64,7 +64,7 @@ header {
 
     .header-search {
         float: right;
-        margin: 25px 30px 0 30px;
+        margin: 20px 30px 0 30px;
 
         transition: all .3s ease-in-out;
         font-weight: var(--global-font-weight);
