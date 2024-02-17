@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-01-31 16:02:19
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-16 21:02:24
+ * @LastEditTime: 2024-02-17 18:38:39
  * @FilePath: /vuepress-interview/docs/.vitepress/config.mts
  */
 import { defineConfig } from 'vitepress';
@@ -12,8 +12,6 @@ export default defineConfig({
   description: "A VitePress Site",
   lang: 'zh-CN',
   head: [
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/regular.min.css' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css' }],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config\
@@ -43,16 +41,17 @@ export default defineConfig({
         size: '',
         weight: '',
       },
-      board:{
-        showIcon:true,
-      }
+      board: {
+        showIcon: true,
+      },
+      avatar: '/.vitepress/theme/public/avatar.jpg',
+      author:'naraku'
     },
     navStyle: 'sakura',//'sakurairo',// 
     cover: {
       src: '/.vitepress/theme/public/bg.jpeg',
       // src:'https://www.loliapi.com/acg/pc/',
       title: '',//'奈落的家',
-      avatar: '/.vitepress/theme/public/avatar.jpg',
       discription: '欢迎来到祖安',
       typed: {
         strings: [
@@ -68,17 +67,17 @@ export default defineConfig({
         src: '/.vitepress/theme/public/bg.jpeg',
         color: '#ffffff',
       },
-      text:{
+      text: {
         content: '欢迎来到我的博客，这里记录了我的学习、生活、思考、感悟。',
-        align:'center',
-        color:'#ffff00'
+        align: 'center',
+        color: '#ffff00'
       }
     },
     displayBoard: {
       enable: true,
       icon: 'fa-laptop',//'fa-tags',
       showIcon: true,
-      title:'Display Board',
+      title: 'Display Board',
       items: [
         {
           title: '展示1',
@@ -108,8 +107,41 @@ export default defineConfig({
     },
     articleBorad: {
       title: '文章 展示',
-      icon:'fa-bookmark',
+      icon: 'fa-bookmark',
       showIcon: true,
+      layout: 'left', // 'left','right','interlaced'
+      articleList: [
+        {
+          cover: 'https://www.loliapi.com/acg/',
+          pubdate: 10000000,// 时间戳
+          pageViews: 99,
+          title: '文章1',
+          synopsis: '文章1描述',
+          comment: 0,
+          type: '原创',
+          link: '/',
+        },
+        {
+          cover: 'https://www.loliapi.com/acg/',
+          pubdate: 10000000,// 时间戳
+          pageViews: 99,
+          title: '文章2',
+          synopsis: '文章1描述',
+          comment: 0,
+          type: '转载',
+          link: '/',
+        },
+        {
+          cover: 'https://www.loliapi.com/acg/',
+          pubdate: 10000000,// 时间戳
+          pageViews: 99,
+          title: '文章3',
+          synopsis: '文章1描述',
+          comment: 0,
+          type: '奥利给',
+          link: '/',
+        }
+      ]
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },

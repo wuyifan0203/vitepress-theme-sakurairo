@@ -2,12 +2,12 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-16 19:03:30
+ * @LastEditTime: 2024-02-17 18:25:44
  * @FilePath: /vuepress-interview/docs/.vitepress/theme/components/MianBody.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-    <section>
+    <section ref="coverRef">
         <figure class="cover-image" :style="{
             backgroundImage: `url(${theme.cover.src})`,
             height: '100vh',
@@ -18,7 +18,7 @@
                 </h1>
                 <div class="cover-avatar" v-else>
                     <a href="./">
-                        <img :src="theme.cover.avatar" alt="">
+                        <img :src="theme.global.avatar" alt="">
                     </a>
                 </div>
                 <div class="cover-container">
@@ -46,7 +46,7 @@
         </figure>
         <div class="cover-wave1" style="background: url(/.vitepress/theme/image/wave1.png) repeat-x;"></div>
         <div class="cover-wave2" style="background: url(/.vitepress/theme/image/wave2.png) repeat-x;"></div>
-        <div class="cover-head-down">
+        <div class="cover-head-down" @click="spaceHandle">
             <HeadDown class="cover-head-down-icon"></HeadDown>
         </div>
     </section>
@@ -54,6 +54,7 @@
     
 <script setup lang='ts'>
 import { useData } from 'vitepress';
+import { ref } from 'vue'
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
 import HeadDown from '../../icon/head_down.vue';
@@ -94,8 +95,17 @@ const iconMap = {
     'zhihu': basePath + 'zhihu.png',
 }
 
+const coverRef = ref<HTMLElement|null>();
+
 const matchIcon = (icon: string) => {
     return iconMap[icon] || icon
+}
+
+const spaceHandle = () => {
+    if(coverRef.value){        
+        document.documentElement.scrollTop = coverRef.value.clientHeight
+    }
+
 }
 
 onMounted(() => {
@@ -266,14 +276,15 @@ section {
                 margin-left: 10px;
                 list-style: none;
                 display: inline-block;
+                padding: 0;
 
                 li {
                     float: left;
                     margin-right: 10px;
 
                     img {
-                        height: 22px;
-                        width: 22px;
+                        height: 40px;
+                        width: 40px;
                         padding: 9px;
                         background: $--cover-info-background;
                         transition: all 0.8s ease;

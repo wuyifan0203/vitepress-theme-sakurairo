@@ -2,20 +2,24 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-16 18:51:22
- * @FilePath: /vuepress-interview/docs/theme/layout/Layout.vue
+ * @LastEditTime: 2024-02-17 19:21:41
+ * @FilePath: /vuepress-interview/.vitepress/theme/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <Header></Header>
     <Cover></Cover>
     <MainBody></MainBody>
+    <BackTop></BackTop>
+    <Skin></Skin>
 </template>
     
 <script setup lang='ts'>
 import Header from './layout/header/Header.vue';
 import Cover from './layout/cover/Cover.vue';
 import MainBody from './layout/main/MainBody.vue';
+import BackTop from './layout/common/BackTop.vue';
+import Skin from './layout/common/Skin.vue';
 
 import { useData } from "vitepress";
 
@@ -26,6 +30,27 @@ document.body.style.backgroundImage = `url(${theme.value.global.background.src})
 <style lang="scss">
 @import './style/variable.scss';
 
+* {
+    box-sizing: border-box;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: $--theme-skin;
+    outline: 0;
+    -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+    -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+    word-break: break-word;
+
+    &:hover {
+        outline: 0;
+    }
+}
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -52,11 +77,6 @@ body {
 
     font-family: 'Moe-Mashiro';
 
-    main {}
-
-    a {
-        text-decoration-line: none;
-    }
 
     ol,
     ul {
@@ -76,4 +96,5 @@ body {
         clear: both;
     }
 
-}</style>
+}
+</style>

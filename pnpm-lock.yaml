@@ -4,10 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@fortawesome/fontawesome-free':
+    specifier: ^6.5.1
+    version: 6.5.1
+
 devDependencies:
-  nprogress:
-    specifier: ^0.2.0
-    version: 0.2.0
   sass:
     specifier: ^1.70.0
     version: 1.70.0
@@ -16,10 +18,7 @@ devDependencies:
     version: 2.1.0
   vitepress:
     specifier: 1.0.0-rc.42
-    version: 1.0.0-rc.42(@algolia/client-search@4.22.1)(nprogress@0.2.0)(sass@1.70.0)(search-insights@2.13.0)
-  vitepress-plugin-nprogress:
-    specifier: ^0.0.4
-    version: 0.0.4
+    version: 1.0.0-rc.42(@algolia/client-search@4.22.1)(sass@1.70.0)(search-insights@2.13.0)
   vue:
     specifier: ^3.4.19
     version: 3.4.19
@@ -437,6 +436,12 @@ packages:
     dev: true
     optional: true
 
+  /@fortawesome/fontawesome-free@6.5.1:
+    resolution: {integrity: sha512-CNy5vSwN3fsUStPRLX7fUYojyuzoEMSXPl7zSLJ8TgtRfjv24LOnOWKT2zYwaHZCJGkdyRnTmstR0P+Ah503Gw==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
@@ -706,7 +711,7 @@ packages:
       - vue
     dev: true
 
-  /@vueuse/integrations@10.7.2(focus-trap@7.5.4)(nprogress@0.2.0)(vue@3.4.19):
+  /@vueuse/integrations@10.7.2(focus-trap@7.5.4)(vue@3.4.19):
     resolution: {integrity: sha512-+u3RLPFedjASs5EKPc69Ge49WNgqeMfSxFn+qrQTzblPXZg6+EFzhjarS5edj2qAf6xQ93f95TUxRwKStXj/sQ==}
     peerDependencies:
       async-validator: '*'
@@ -750,7 +755,6 @@ packages:
       '@vueuse/core': 10.7.2(vue@3.4.19)
       '@vueuse/shared': 10.7.2(vue@3.4.19)
       focus-trap: 7.5.4
-      nprogress: 0.2.0
       vue-demi: 0.14.6(vue@3.4.19)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -958,10 +962,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /nprogress@0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-    dev: true
-
   /perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
     dev: true
@@ -1108,13 +1108,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress-plugin-nprogress@0.0.4:
-    resolution: {integrity: sha512-YzW36kBnjuFH91DOFIA5snyBf4WpF/cYfhAiyNefhqif8QQIKGsbpzvI8VN0M8RHLGr9iQyHhF7dQsm//Xf5Hw==}
-    dependencies:
-      nprogress: 0.2.0
-    dev: true
-
-  /vitepress@1.0.0-rc.42(@algolia/client-search@4.22.1)(nprogress@0.2.0)(sass@1.70.0)(search-insights@2.13.0):
+  /vitepress@1.0.0-rc.42(@algolia/client-search@4.22.1)(sass@1.70.0)(search-insights@2.13.0):
     resolution: {integrity: sha512-VeiVVXFblt/sjruFSJBNChMWwlztMrRMe8UXdNpf4e05mKtTYEY38MF5qoP90KxPTCfMQiKqwEGwXAGuOTK8HQ==}
     hasBin: true
     peerDependencies:
@@ -1134,7 +1128,7 @@ packages:
       '@vitejs/plugin-vue': 5.0.3(vite@5.0.12)(vue@3.4.19)
       '@vue/devtools-api': 7.0.14
       '@vueuse/core': 10.7.2(vue@3.4.19)
-      '@vueuse/integrations': 10.7.2(focus-trap@7.5.4)(nprogress@0.2.0)(vue@3.4.19)
+      '@vueuse/integrations': 10.7.2(focus-trap@7.5.4)(vue@3.4.19)
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
