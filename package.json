@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "wuyifan <1208097313@qq.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",

@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-17 19:21:41
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-18 10:47:11
  * @FilePath: /vuepress-interview/.vitepress/theme/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -22,9 +22,14 @@ import BackTop from './layout/common/BackTop.vue';
 import Skin from './layout/common/Skin.vue';
 
 import { useData } from "vitepress";
+import { onMounted } from 'vue';
 
 const { theme } = useData();
-document.body.style.backgroundImage = `url(${theme.value.global.background.src})`;
+
+onMounted(()=>{
+    document.body.style.backgroundImage = `url(${theme.value.global.background.src})`;
+})
+
 </script>
     
 <style lang="scss">
@@ -65,12 +70,7 @@ body {
 
     @font-face {
         font-family: 'Moe-Mashiro';
-        src: url('Moe-Mashiro.eot');
-        src: url('Moe-Mashiro.eot?#iefix') format('embedded-opentype'),
-            url('./public/Moe-Mashiro.woff2') format('woff2'),
-            url('Moe-Mashiro.woff') format('woff'),
-            url('Moe-Mashiro.ttf') format('truetype'),
-            url('Moe-Mashiro.svg#Moe-Mashiro') format('svg');
+        src:  url('./public/Moe-Mashiro.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }

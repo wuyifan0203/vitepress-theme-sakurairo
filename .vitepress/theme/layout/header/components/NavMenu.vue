@@ -26,7 +26,6 @@
 import { useData } from 'vitepress'
 const { theme } = useData();
 const nav = theme.value.nav;
-console.log(nav);
 </script>
     
 <style lang="scss" scoped>
