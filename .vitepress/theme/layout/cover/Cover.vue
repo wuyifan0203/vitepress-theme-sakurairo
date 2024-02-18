@@ -1,15 +1,15 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-17 18:25:44
- * @FilePath: /vuepress-interview/docs/.vitepress/theme/components/MianBody.vue
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-18 14:52:14
+ * @FilePath: /vuepress-interview/.vitepress/theme/layout/cover/Cover.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <section ref="coverRef">
         <figure class="cover-image" :style="{
-            backgroundImage: `url(${theme.cover.src})`,
+            backgroundImage: `url(${theme.cover.background?.src()})`,
             height: '100vh',
         }">
             <div class="cover-focus-info">
@@ -26,14 +26,14 @@
                         <i class="fa fa-quote-left"></i>
                         <span class="element"></span>
                         <i class="fa fa-quote-right"></i>
-                        <p>{{ theme.cover.discription }}</p>
+                        <p>{{ theme.cover.description }}</p>
                     </div>
                 </div>
-                <ul class="cover-social-links" v-if="theme.socialLinks.length">
+                <ul class="cover-social-links" v-if="theme.cover.socialLinks.length">
                     <li>
                         <img :src="matchIcon('pre')" alt="">
                     </li>
-                    <li v-for="({ icon, link }, index) in theme.socialLinks" :key="index">
+                    <li v-for="({ icon, link }, index) in theme.cover.socialLinks" :key="index">
                         <a :href="link">
                             <img :src="matchIcon(icon)" alt="">
                         </a>
@@ -44,8 +44,8 @@
                 </ul>
             </div>
         </figure>
-        <div class="cover-wave1" style="background: url(/.vitepress/theme/image/wave1.png) repeat-x;"></div>
-        <div class="cover-wave2" style="background: url(/.vitepress/theme/image/wave2.png) repeat-x;"></div>
+        <div class="cover-wave1" style="background: url(/vuepress-interview/.vitepress/theme/image/wave1.png) repeat-x;"></div>
+        <div class="cover-wave2" style="background: url(/vuepress-interview/.vitepress/theme/image/wave2.png) repeat-x;"></div>
         <div class="cover-head-down" @click="spaceHandle">
             <HeadDown class="cover-head-down-icon"></HeadDown>
         </div>
@@ -54,14 +54,15 @@
     
 <script setup lang='ts'>
 import { useData } from 'vitepress';
-import { ref } from 'vue'
+import { Ref, ref } from 'vue'
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
 import HeadDown from '../../icon/head_down.vue';
+import { Theme } from '../../types/theme';
 
-const { theme } = useData();
+const theme: Ref<Theme> = useData().theme;
 
-const basePath = '/.vitepress/theme/icon/';
+const basePath = '/vuepress-interview/.vitepress/theme/icon/';
 const iconMap = {
     'next': basePath + 'next.png',
     'pre': basePath + 'pre.png',
@@ -95,27 +96,29 @@ const iconMap = {
     'zhihu': basePath + 'zhihu.png',
 }
 
-const coverRef = ref<HTMLElement|null>();
+const coverRef = ref<HTMLElement | null>();
 
 const matchIcon = (icon: string) => {
     return iconMap[icon] || icon
 }
 
 const spaceHandle = () => {
-    if(coverRef.value){        
+    if (coverRef.value) {
         document.documentElement.scrollTop = coverRef.value.clientHeight
     }
 
 }
 
 onMounted(() => {
-    new Typed('.element', {
-        strings: theme.value.cover.typed.strings || ["First sentence.", "Second sentence."],
-        typeSpeed: 140,
-        backSpeed: 50,
-        loop: false,
-        showCursor: true
-    });
+    if (theme.value.cover.typed) {
+        new Typed('.element', {
+            strings: theme.value.cover.typed.strings || ["First sentence.", "Second sentence."],
+            typeSpeed: 140,
+            backSpeed: 50,
+            loop: false,
+            showCursor: true
+        });
+    }
 })
 </script>
 

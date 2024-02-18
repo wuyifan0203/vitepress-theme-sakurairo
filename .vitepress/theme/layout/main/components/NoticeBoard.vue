@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 02:11:35
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-16 20:02:47
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-18 14:50:56
  * @FilePath: /vuepress-interview/.vitepress/theme/layout/main/components/NoticeBoard.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -15,13 +15,14 @@
     
 <script setup lang='ts'>
 import { useData } from "vitepress";
-import { reactive } from "vue";
+import { Ref, reactive } from "vue";
+import { Theme } from "../../../types/theme";
 
-const { theme } = useData();
+const theme: Ref<Theme> = useData().theme;
 
 
 const noticeBoardStyle = reactive({
-    backgroundImage: `url(${theme.value.noticeBoard.background.src})`,
+    backgroundImage: `url(${theme.value.noticeBoard.background.src()})`,
     backgroundColor: theme.value.noticeBoard.background.color,
     textAlign: theme.value.noticeBoard.text.align,
     color: theme.value.noticeBoard.text.color,

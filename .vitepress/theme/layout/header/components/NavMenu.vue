@@ -9,7 +9,7 @@
 <template>
     <nav>
         <ul>
-            <li v-for="(item, index) in nav" :key="index">
+            <li v-for="(item, index) in nav.items" :key="index">
                 <a :href="item.link">
                     <span>
                         <i class="fa" :class="item.icon"></i>
@@ -24,13 +24,16 @@
 <script setup lang='ts'>
 // TODO 二级菜单
 import { useData } from 'vitepress'
-const { theme } = useData();
+import { Theme } from '../../../types/theme';
+import { Ref } from 'vue';
+const theme: Ref<Theme> = useData().theme;
 const nav = theme.value.nav;
 </script>
     
 <style lang="scss" scoped>
 @import '../../../style/variable.scss';
 @import '../../../style/animate.scss';
+
 nav {
     display: block;
 
@@ -71,6 +74,7 @@ nav {
 
                 &:hover {
                     color: $--theme-skin-active;
+
                     &::after {
                         max-width: 100%;
                     }
@@ -81,5 +85,4 @@ nav {
 
 
 }
-
 </style>

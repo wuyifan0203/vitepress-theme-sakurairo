@@ -13,10 +13,10 @@
                 visibility: showIcon
             }"></i>
             <br>
-            {{ theme.displayBoard.title }}
+            {{ theme.displayBoard?.title }}
         </h1>
-        <a v-for="(item, index) in theme.displayBoard.items" :key="index" class="display-item" :href="item.link">
-            <img :src="item.background.src" alt="">
+        <a v-for="(item, index) in theme.displayBoard?.items" :key="index" class="display-item" :href="item.link">
+            <img :src="item.background.src()" alt="">
             <div class="display-info">
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
@@ -27,10 +27,12 @@
     
 <script setup lang='ts'>
 import { useData } from 'vitepress';
+import { Ref } from 'vue';
+import { Theme } from '../../../types/theme';
 
-const { theme } = useData();
+const theme: Ref<Theme> = useData().theme;
 
-const showIcon = theme.value.global.board.showIcon ? 'visible' : 'hidden';
+const showIcon = (theme.value.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
 const iconFont: string = theme.value.displayBoard?.icon ?? 'fa-laptop';
 
 </script>

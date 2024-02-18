@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-18 10:47:11
+ * @LastEditTime: 2024-02-18 14:51:17
  * @FilePath: /vuepress-interview/.vitepress/theme/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -27,7 +27,7 @@ import { onMounted } from 'vue';
 const { theme } = useData();
 
 onMounted(()=>{
-    document.body.style.backgroundImage = `url(${theme.value.global.background.src})`;
+    document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
 
 </script>
