@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-01-31 16:02:19
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-18 14:53:37
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 01:34:45
  * @FilePath: /vuepress-interview/.vitepress/config.mts
  */
 import { defineConfigWithTheme } from 'vitepress';
@@ -126,7 +126,7 @@ export default defineConfigWithTheme<Theme>({
     articleBoard: {
       title: '文章 展示',
       icon: 'fa-bookmark',
-      layout: 'left', // 'left','right','interlaced'
+      layout: 'interlaced', // 'left','right','interlaced'
       items: [
         {
           cover: 'https://www.loliapi.com/acg/',
@@ -157,9 +157,43 @@ export default defineConfigWithTheme<Theme>({
           comment: 0,
           type: '奥利给',
           link: '/',
+        },
+        {
+          cover: 'https://www.loliapi.com/acg/',
+          pubdate: 10000000,// 时间戳
+          pageViews: 99,
+          title: '文章4',
+          synopsis: '文章1描述',
+          comment: 99,
+          type: '奥利给',
+          link: '/',
+        },
+        {
+          cover: 'https://www.loliapi.com/acg/',
+          pubdate: 10000000,// 时间戳
+          pageViews: 99,
+          title: '文章5',
+          synopsis: '文章1描述',
+          comment: 70,
+          type: '奥利给',
+          link: '/',
+        },
+        {
+          cover: 'https://www.loliapi.com/acg/',
+          pubdate: 10000000,// 时间戳
+          pageViews: 0,
+          title: '文章6',
+          synopsis: '文章6描述',
+          comment: 10,
+          type: '奥利给666',
+          link: '/',
         }
       ]
     },
+    footer:{
+      copyright: '2024-present wuyifan',
+      record: '沪ICP备20241234567号-66666',
+    }
 
   },
   vite: {

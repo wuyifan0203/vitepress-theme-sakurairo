@@ -1,7 +1,7 @@
 /*
  * @Date: 2024-02-18 13:33:28
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-18 14:55:05
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 01:15:42
  * @FilePath: /vuepress-interview/.vitepress/theme/types/theme.ts
  */
 export interface Theme {
@@ -17,7 +17,8 @@ export interface Theme {
             weight?: string;
         },
         board?: {
-            showIcon: boolean
+            showIcon: boolean,
+            titleAlign: 'left' | 'center' | 'right',
         },
         logo?: string,
         avatar: string,
@@ -66,6 +67,10 @@ export interface Theme {
         icon?: string,
         layout?: 'left' | 'right' | 'interlaced',
         items: Article[]
+    },
+    footer: {
+        copyright?: string,
+        record?: string
     }
 
 

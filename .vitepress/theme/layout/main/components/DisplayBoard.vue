@@ -8,7 +8,9 @@
 -->
 <template>
     <div class="display">
-        <h1>
+        <h1 :style="{
+            textAlign:theme.global.board?.titleAlign
+        }">
             <i class="fa" :class="iconFont" :style="{
                 visibility: showIcon
             }"></i>
@@ -61,6 +63,7 @@ const iconFont: string = theme.value.displayBoard?.icon ?? 'fa-laptop';
         text-underline-offset: 10px;
         text-decoration: underline wavy $--theme-skin-active;
         transition: all .8s ease !important;
+        text-align: left; // default
 
         &::before {
             display: block;

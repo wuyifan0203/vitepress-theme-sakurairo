@@ -1,28 +1,30 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-18 14:44:14
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 01:32:18
  * @FilePath: /vuepress-interview/.vitepress/theme/layout/main/components/ArticleBoard.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <div class="article-area">
         <div class="content-article">
-            <h1>
+            <h1 :style="{
+                textAlign: theme.global.board?.titleAlign
+            }">
                 <i class="far" :class="iconFont" :style="{
                     visibility: showIcon
                 }"></i>
                 <br>
                 {{ theme.articleBoard.title }}
             </h1>
-            <article v-for="(item, index) in articleList" :key="index">
-                <div class="article-cover">
+            <article v-for="(item, index) in articleList" :key="index" class="article-list">
+                <div class="article-cover" :class="`article-list-${theme.articleBoard.layout}`">
                     <a href="">
                         <img :src="item.cover" alt="">
                     </a>
                 </div>
-                <div class="article-content-wrap">
+                <div class="article-content-wrap" :class="`article-content-wrap-${theme.articleBoard.layout}`">
                     <div class="article-content">
                         <div class="article-pubdate">
                             <i class="fa-regular fa-clock"></i>
@@ -62,7 +64,10 @@
             </article>
         </div>
         <div class="pagination">
-
+            <a href="" v-if="true">更早文章</a>
+            <span v-else>
+                很高兴你翻到这里，但是真的没有了...
+            </span>
         </div>
     </div>
 </template>
@@ -114,7 +119,7 @@ const iconFont: string = theme.value.articleBoard?.icon ?? 'fa-laptop';
             }
         }
 
-        article {
+        .article-list {
             -webkit-animation: post-list-show .5s;
             animation: post-list-show .5s;
             opacity: 1;
@@ -276,6 +281,69 @@ const iconFont: string = theme.value.articleBoard?.icon ?? 'fa-laptop';
             &:hover {
                 box-shadow: 0 1px 20px 10px #e8e8e8;
             }
+
+            .article-list-left {
+                float: left;
+            }
+
+
+            .article-list-right {
+                float: right;
+            }
+
+            &:nth-child(2n) .article-list-interlaced {
+                float: left;
+            }
+
+            .article-content-wrap-left {
+                float: left;
+                padding-left: 30px;
+                padding-right: 0;
+                text-align: right;
+                margin: 20px 10px 10px 0;
+            }
+
+            :nth-child(2n) .article-content-wrap-interlaced {
+                float: left;
+                padding-left: 30px;
+                padding-right: 0;
+                text-align: right;
+                margin: 20px 10px 10px 0;
+            }
+
+        }
+
+
+    }
+
+    .pagination {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        margin: 40px 0 80px;
+        display: inline-block;
+
+        a {
+            padding: 13px 35px;
+            background: rgb(255 255 255/50%);
+            box-shadow: 0 1px 30px -4px #e8e8e8;
+            border: 1.5px solid #fff;
+            border-radius: 50px;
+            color: $--theme-skin;
+            transition: all .8s ease;
+            font-size: 13px;
+
+            &:hover {
+                color: var(--post_list_matching_color, #505050);
+                box-shadow: 0 1px 20px 10px #e8e8e8;
+                transition: all 0.8s ease !important;
+            }
+        }
+
+        span {
+            color: $--theme-skin;
+            font-size: 15px;
+            font-weight: $--global-font-weight;
         }
     }
 }
