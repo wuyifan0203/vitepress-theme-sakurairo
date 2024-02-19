@@ -1,10 +1,9 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-19 00:37:31
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-19 01:09:37
- * @FilePath: /vuepress-interview/.vitepress/theme/layout/footer/footer.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 13:11:20
+ * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/layout/footer/Footer.vue
 -->
 <template>
     <footer id="footer">
@@ -19,8 +18,8 @@
                 <a :href="theme.footer.record" class="record" v-if="theme.footer.record"> {{ theme.footer.record }}</a>
             </div>
             <div class="theme-info">
-                Theme <a href="">vitepreet-theme-sakurario</a> by
-                <a href="https://github.com/wuyifan123" target="_blank"> wuyifan</a>
+                Theme <a href="">vitepress-theme-sakurairo</a> by
+                <a href="https://github.com/wuyifan0203/vitepress-theme-sakurairo.git" target="_blank"> VF </a>
             </div>
         </div>
     </footer>

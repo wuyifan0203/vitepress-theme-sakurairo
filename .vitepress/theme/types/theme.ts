@@ -1,9 +1,3 @@
-/*
- * @Date: 2024-02-18 13:33:28
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-19 01:15:42
- * @FilePath: /vuepress-interview/.vitepress/theme/types/theme.ts
- */
 export interface Theme {
     global: {
         background?: {

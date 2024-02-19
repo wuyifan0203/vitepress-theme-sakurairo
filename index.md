@@ -1,5 +1,2 @@
----
-home:true
----
 
 index

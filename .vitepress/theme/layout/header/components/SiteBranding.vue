@@ -1,10 +1,9 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-18 14:27:05
- * @FilePath: /vuepress-interview/.vitepress/theme/layout/header/components/SiteBranding.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 13:33:01
+ * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/layout/header/components/SiteBranding.vue
 -->
 <template>
     <a href="" class="site-branding">

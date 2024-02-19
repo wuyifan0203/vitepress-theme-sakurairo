@@ -1,18 +1,12 @@
-/*
- * @Date: 2024-01-31 16:02:19
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-19 01:34:45
- * @FilePath: /vuepress-interview/.vitepress/config.mts
- */
 import { defineConfigWithTheme } from 'vitepress';
 import { Theme } from './theme/types/theme'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<Theme>({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "vitepress-theme-sakurairo",
+  description: "A VitePress Theme",
   lang: 'zh-CN',
-  base: '/vuepress-interview/',
+  base: '/vitepress-theme-sakurairo/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config\
     // logo: '/logo.svg',
@@ -45,13 +39,14 @@ export default defineConfigWithTheme<Theme>({
       },
       board: {
         showIcon: true,
+        titleAlign: 'center'
       },
-      avatar: '/vuepress-interview/avatar.jpg',
+      avatar: '/vitepress-theme-sakurairo/avatar.jpg',
       author: 'naraku'
     },
     cover: {
       background: {
-        src: () => '/vuepress-interview/bg.jpeg',
+        src: () => '/vitepress-theme-sakurairo/bg.jpeg',
       },
 
       // src:'https://www.loliapi.com/acg/pc/',
@@ -61,7 +56,8 @@ export default defineConfigWithTheme<Theme>({
         strings: [
           "给时光以生命，给岁月以文明",
           "寒蝉黎明之时,便是重生之日",
-          "当你在凝视着网页的时候,网页也正在凝视着你"
+          "当你在凝视着网页的时候,网页也正在凝视着你",
+          "写些什么好呢？.....对了，谢谢光临我的世界"
         ]
       },
       socialLinks: [
@@ -83,7 +79,7 @@ export default defineConfigWithTheme<Theme>({
     noticeBoard: {
       enable: true,
       background: {
-        src: () => '/vuepress-interview/bg.jpeg',
+        src: () => '/vitepress-theme-sakurairo/bg.jpeg',
         color: '#ffffff',
       },
       text: {
@@ -190,7 +186,7 @@ export default defineConfigWithTheme<Theme>({
         }
       ]
     },
-    footer:{
+    footer: {
       copyright: '2024-present wuyifan',
       record: '沪ICP备20241234567号-66666',
     }

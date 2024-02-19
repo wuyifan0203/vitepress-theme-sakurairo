@@ -1,17 +1,16 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 02:07:12
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-19 00:22:55
- * @FilePath: /vuepress-interview/.vitepress/theme/layout/main/MainBody.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 13:50:55
+ * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/layout/main/MainBody.vue
 -->
 <template>
     <main class="main-wrapper">
         <div class="main-content">
             <NoticeBoard v-if="theme.noticeBoard.enable" class="main-notice" />
             <DisplayBoard v-if="theme.displayBoard.enable" />
-            <ArticleBoard />
+            <ArticleBoard></ArticleBoard>
         </div>
     </main>
 </template>

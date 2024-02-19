@@ -1,10 +1,9 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-19 01:07:08
- * @FilePath: /vuepress-interview/.vitepress/theme/index.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-02-19 13:59:12
+ * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/index.vue
 -->
 <template>
     <Header></Header>
@@ -28,7 +27,7 @@ import { onMounted } from 'vue';
 
 const { theme } = useData();
 
-onMounted(()=>{
+onMounted(() => {
     document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
 
@@ -55,7 +54,8 @@ a {
         outline: 0;
     }
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -72,7 +72,7 @@ body {
 
     @font-face {
         font-family: 'Moe-Mashiro';
-        src:  url('./public/Moe-Mashiro.woff2') format('woff2');
+        src: url('./public/Moe-Mashiro.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
