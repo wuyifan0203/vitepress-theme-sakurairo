@@ -1,33 +1,52 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 02:07:12
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 13:11:34
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-21 02:09:41
  * @FilePath: /vitepress-theme-sakurairo/src/components/MainBody.vue
 -->
 <template>
     <main class="main-wrapper">
         <div class="main-content">
-            <NoticeBoard v-if="theme.noticeBoard.enable" class="main-notice" />
-            <DisplayBoard v-if="theme.displayBoard.enable" />
-            <ArticleBoard></ArticleBoard>
+            <template>
+                <NoticeBoard v-if="theme.noticeBoard.enable" class="main-notice" />
+                <DisplayBoard v-if="theme.displayBoard.enable" />
+                <ArticleBoard></ArticleBoard>
+            </template>
+
         </div>
     </main>
 </template>
     
 <script setup lang='ts'>
-import { useData } from 'vitepress'
+import { useData, useRouter } from 'vitepress'
 import NoticeBoard from "./NoticeBoard.vue";
 import DisplayBoard from './DisplayBoard.vue';
 import ArticleBoard from './ArticleBoard.vue';
+import { onMounted } from 'vue';
 
-const { theme } = useData();
+const { theme, page, params, frontmatter } = useData();
+console.log(page.value, params.value, frontmatter.value);
+console.log(useData());
+
+
+onMounted(()=>{
+    const router = useRouter();
+
+router.onBeforePageLoad((to)=>{
+    console.log(to);
+    
+})
+})
+
+
 
 </script>
     
 <style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
+
 .main-wrapper {
     background-color: rgba(255, 255, 255, 0.7);
     animation: blur .8s;

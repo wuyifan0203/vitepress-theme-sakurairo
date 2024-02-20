@@ -15,7 +15,7 @@ export default defineConfigWithTheme<Theme>({
       style: 'sakura',
       items: [
         { text: '主页', link: '/', icon: 'fa-home' },
-        { text: '分类', link: '/', icon: 'fa-leaf' },
+        { text: '分类', link: '/posts/introduce', icon: 'fa-leaf' },
         {
           text: 'Options Test',
           icon: 'fa-tags',

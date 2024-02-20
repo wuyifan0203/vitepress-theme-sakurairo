@@ -20,7 +20,7 @@ export interface Theme {
     },
     nav: {
         style: 'sakura' | 'sakurairo',
-        items: Array<NavItem>,
+        items: Array<NavItem | NavItems>,
 
     },
     cover: {

@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 16:35:11
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-21 01:58:07
  * @FilePath: /vitepress-theme-sakurairo/src/components/Cover.vue
 -->
 <template>
@@ -44,10 +44,10 @@
             </div>
         </figure>
         <div class="cover-wave1" :style="{
-            background: `url(${wave1}) repeat-x;`
+            background: `url(${wave1}) repeat-x`
         }"></div>
         <div class="cover-wave2" :style="{
-            background: `url(${wave2}) repeat-x;`
+            background: `url(${wave2}) repeat-x`
         }"></div>
         <div class="cover-head-down" @click="spaceHandle">
             <HeadDown class="cover-head-down-icon"></HeadDown>

@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 13:09:42
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-21 01:55:48
  * @FilePath: /vitepress-theme-sakurairo/src/components/NavMenu.vue
 -->
 <template>
@@ -15,6 +15,16 @@
                         {{ item.text }}
                     </span>
                 </a>
+                <ul v-if="item.items">
+                    <li v-for="(citem, cindex) in item.items" :key="cindex">
+                        <a href="">
+                            <span>
+                                <i class="fa" :class="item.icon"></i>
+                                {{ item.text }}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>
