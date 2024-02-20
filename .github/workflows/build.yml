@@ -24,6 +24,7 @@ jobs:
         cd docs
         ls
         cd .vitepress
+        ls
         # touch .nojekyll
         # git config --global user.email "1208097313@qq.com"
         # git config --global user.name "github-actions[bot]"
