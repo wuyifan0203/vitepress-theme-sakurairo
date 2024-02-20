@@ -48,7 +48,7 @@ jobs:
       run: pnpm install # 使用 pnpm 安装依赖
 
     - name: Build VitePress
-      run: pnpm run docs:build # 这里是打包 vitepress 命令
+      run: pnpm run build:docs # 这里是打包 vitepress 命令
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
