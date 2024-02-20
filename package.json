@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
- 
     "typed.js": "^2.1.0",
     "vitepress": "1.0.0-rc.44",
     "vue": "^3.4.19"
