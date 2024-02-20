@@ -6,3 +6,4 @@ dist
 *.local
 .vitepress/dist
 .vitepress/cache
+.vitepress

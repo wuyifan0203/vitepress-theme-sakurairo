@@ -19,8 +19,8 @@ jobs:
       shell: bash
       run: |
         npm install
-        npm run build
-        cd .vitepress/dist
+        npm run build:docs
+        cd dist
         touch .nojekyll
         git config --global user.email "1208097313@qq.com"
         git config --global user.name "github-actions[bot]"
