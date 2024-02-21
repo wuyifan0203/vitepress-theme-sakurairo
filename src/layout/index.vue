@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-21 17:00:45
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-22 01:41:49
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -105,6 +105,14 @@ body {
     ul,
     li {
         text-align: center;
+    }
+
+    h1:before {
+        display: block;
+        content: " ";
+        height: 80px;
+        margin-top: -80px;
+        visibility: hidden;
     }
 
     h2,

@@ -227,3 +227,39 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes fadeInUp {
+  0% {
+    -moz-transform: translateY(200%);
+    -ms-transform: translateY(200%);
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+    opacity: 0;
+  }
+
+  50% {
+    -moz-transform: translateY(200%);
+    -ms-transform: translateY(200%);
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+    opacity: 0;
+  }
+
+  100% {
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes lineWidth {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
