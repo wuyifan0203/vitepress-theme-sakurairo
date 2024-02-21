@@ -1,14 +1,13 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 15:43:24
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-21 17:00:45
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
     <Header></Header>
-    <Cover></Cover>
-    <MainBody></MainBody>
+    <Layout></Layout>
     <Footer></Footer>
     <BackTop></BackTop>
     <Skin></Skin>
@@ -18,13 +17,12 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
 import Header from '../components/Header.vue';
-import Cover from '../components//Cover.vue';
-import MainBody from '../components//MainBody.vue';
+import Layout from './Layout.vue';
 import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
 
-import { useData } from "vitepress";
+import { useData, useRouter } from "vitepress";
 import { onMounted } from 'vue';
 
 const { theme } = useData();
@@ -32,6 +30,23 @@ const { theme } = useData();
 onMounted(() => {
     document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
+
+const router = useRouter();
+
+const cacheBeforeRouteChange = router.onBeforeRouteChange;
+
+console.log(cacheBeforeRouteChange);
+
+
+router.onBeforeRouteChange = (to) => {
+    console.log('main router', to);
+    cacheBeforeRouteChange && cacheBeforeRouteChange(to)
+
+}
+
+console.log(router.onBeforeRouteChange);
+
+
 
 </script>
     

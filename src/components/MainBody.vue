@@ -1,46 +1,27 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 02:07:12
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-21 02:09:41
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-21 17:33:54
  * @FilePath: /vitepress-theme-sakurairo/src/components/MainBody.vue
 -->
 <template>
     <main class="main-wrapper">
         <div class="main-content">
-            <template>
-                <NoticeBoard v-if="theme.noticeBoard.enable" class="main-notice" />
-                <DisplayBoard v-if="theme.displayBoard.enable" />
-                <ArticleBoard></ArticleBoard>
-            </template>
-
+            <NoticeBoard v-if="theme.noticeBoard.enable" class="main-notice" />
+            <DisplayBoard v-if="theme.displayBoard.enable" />
+            <ArticleBoard></ArticleBoard>
         </div>
     </main>
 </template>
     
 <script setup lang='ts'>
-import { useData, useRouter } from 'vitepress'
+import { useData } from 'vitepress'
 import NoticeBoard from "./NoticeBoard.vue";
 import DisplayBoard from './DisplayBoard.vue';
 import ArticleBoard from './ArticleBoard.vue';
-import { onMounted } from 'vue';
 
-const { theme, page, params, frontmatter } = useData();
-console.log(page.value, params.value, frontmatter.value);
-console.log(useData());
-
-
-onMounted(()=>{
-    const router = useRouter();
-
-router.onBeforePageLoad((to)=>{
-    console.log(to);
-    
-})
-})
-
-
-
+const { theme } = useData();
 </script>
     
 <style lang="scss">

@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-21 01:55:48
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-21 18:03:58
  * @FilePath: /vitepress-theme-sakurairo/src/components/NavMenu.vue
 -->
 <template>
@@ -15,12 +15,12 @@
                         {{ item.text }}
                     </span>
                 </a>
-                <ul v-if="item.items">
-                    <li v-for="(citem, cindex) in item.items" :key="cindex">
+                <ul v-if="item.items" class="sub-menu">
+                    <li v-for="(cItem, cIndex) in item.items" :key="cIndex">
                         <a href="">
                             <span>
-                                <i class="fa" :class="item.icon"></i>
-                                {{ item.text }}
+                                <i class="fa" :class="cItem.icon"></i>
+                                {{ cItem.text }}
                             </span>
                         </a>
                     </li>
@@ -31,7 +31,6 @@
 </template>
     
 <script setup lang='ts'>
-// TODO 二级菜单
 import { useData } from 'vitepress'
 import { Theme } from "../types/theme";
 import { Ref } from 'vue';
@@ -46,7 +45,7 @@ const nav = theme.value.nav;
 nav {
     display: block;
 
-    ul {
+    &>ul {
         display: inline-block;
         margin: 0;
         padding: 0;
@@ -89,9 +88,49 @@ nav {
                     }
                 }
             }
+
+            .sub-menu {
+                display: none;
+                opacity: 1;
+                position: absolute;
+                background: #fff;
+                padding: 10px;
+                top: 46px;
+                right: -13px;
+                text-align: center;
+                z-index: 9999;
+                border-radius: 5px;
+                box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+                -webkit-animation: fadeInUp .3s .1s ease both;
+                animation: fadeInUp .3s .1s ease both;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -20px;
+                    left: 50%;
+                    margin-left: -10px;
+                    border-width: 10px;
+                    border-style: solid;
+                    border-color: transparent transparent #fff;
+                }
+
+                li {
+                    width: 100%;
+                    margin: 0;
+                    white-space: nowrap;
+                }
+            }
+
+            &:hover {
+                .sub-menu {
+                    display: inline-block;
+                    -webkit-transition: all .4s;
+                    transition: all .4s;
+                }
+
+            }
         }
     }
-
-
 }
 </style>

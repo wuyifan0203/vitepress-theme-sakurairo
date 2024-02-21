@@ -15,12 +15,13 @@ export default defineConfigWithTheme<Theme>({
       style: 'sakura',
       items: [
         { text: '主页', link: '/', icon: 'fa-home' },
-        { text: '分类', link: '/posts/introduce', icon: 'fa-leaf' },
+        { text: '分类', link: '/posts', icon: 'fa-leaf' },
         {
           text: 'Options Test',
           icon: 'fa-tags',
+          link:'/posts',
           items: [
-            { text: 'Options Test 1', link: '/', icon: '' },
+            { text: 'Options Test 1', link: '/introduce', icon: '' },
             { text: 'Options Test 2', link: '/' },
             { text: 'Options Test 3', link: '/' },
             { text: 'Options Test 4', link: '/' }
@@ -31,7 +32,7 @@ export default defineConfigWithTheme<Theme>({
     global: {
       background: {
         src: () => 'https://www.loliapi.com/acg',
-        // src: '/.vitepress/theme/public/bg.jpeg',
+        // src: ()=>'/.vitepress/theme/public/bg.jpeg',
       },
       font: {
         src: () => '',

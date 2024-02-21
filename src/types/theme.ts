@@ -78,6 +78,7 @@ interface NavItem {
 
 interface NavItems {
     items: NavItem[]
+    link: string,
     text: string,
     icon?: string
 }
