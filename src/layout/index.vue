@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-22 01:41:49
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-22 15:36:19
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -22,7 +22,7 @@ import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
 
-import { useData, useRouter } from "vitepress";
+import { useData } from "vitepress";
 import { onMounted } from 'vue';
 
 const { theme } = useData();
@@ -30,23 +30,6 @@ const { theme } = useData();
 onMounted(() => {
     document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
-
-const router = useRouter();
-
-const cacheBeforeRouteChange = router.onBeforeRouteChange;
-
-console.log(cacheBeforeRouteChange);
-
-
-router.onBeforeRouteChange = (to) => {
-    console.log('main router', to);
-    cacheBeforeRouteChange && cacheBeforeRouteChange(to)
-
-}
-
-console.log(router.onBeforeRouteChange);
-
-
 
 </script>
     

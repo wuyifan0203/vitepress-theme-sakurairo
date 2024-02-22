@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:30:35
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-19 13:33:05
- * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/layout/header/Header.vue
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-22 15:46:16
+ * @FilePath: /vitepress-theme-sakurairo/src/components/Header.vue
 -->
 <template>
     <header ref="headerRef" :class="navClass">
@@ -16,26 +16,24 @@
 </template>
     
 <script setup lang='ts'>
-import { ref, computed, onMounted, onUnmounted, Ref } from 'vue';
+import { ref, computed, Ref } from 'vue';
 import { useData } from 'vitepress';
 import SiteBranding from './SiteBranding.vue';
 import NavMenu from './NavMenu.vue';
-const { theme } = useData();
-const headerRef:Ref<null|HTMLElement> = ref(null);
+import { useScroll } from "../composables";
+import { Theme } from '../types';
+
+const theme = useData().theme.value as Theme;
+const headerRef: Ref<null | HTMLElement> = ref(null);
 const navClass = computed(() => {
-    return (theme.value?.navStyle ?? 'sakura') === 'sakura' ? 'sakura' : 'sakurairo';
+    return (theme.nav.style ?? 'sakura') === 'sakura' ? 'sakura' : 'sakurairo';
 })
-const scrollHandle = (e: Event) => {    
+
+const scrollHandle = () => {
     document.documentElement.scrollTop > 0 ? headerRef.value!.classList.add('showNav') : headerRef.value!.classList.remove('showNav');
 }
 
-onMounted(() => {
-    window.addEventListener('scroll', scrollHandle)
-});
-onUnmounted(()=>{
-    window.removeEventListener('scroll', scrollHandle)
-})
-
+useScroll(scrollHandle);
 
 </script>
     

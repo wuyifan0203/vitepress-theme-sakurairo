@@ -31,7 +31,8 @@ export default defineConfigWithTheme<Theme>({
     },
     global: {
       background: {
-        src: () => 'https://www.loliapi.com/acg',
+        src: () => '',
+        // src: () => 'https://www.loliapi.com/acg',
         // src: ()=>'/.vitepress/theme/public/bg.jpeg',
       },
       font: {
@@ -128,7 +129,7 @@ export default defineConfigWithTheme<Theme>({
       items: [
         {
           cover: 'https://www.loliapi.com/acg/',
-          pubdate: 10000000,// 时间戳
+          dateline: 10000000,// 时间戳
           pageViews: 99,
           title: '文章1',
           synopsis: '文章1描述',
@@ -138,7 +139,7 @@ export default defineConfigWithTheme<Theme>({
         },
         {
           cover: 'https://www.loliapi.com/acg/',
-          pubdate: 10000000,// 时间戳
+          dateline: 10000000,// 时间戳
           pageViews: 99,
           title: '文章2',
           synopsis: '文章1描述',
@@ -148,7 +149,7 @@ export default defineConfigWithTheme<Theme>({
         },
         {
           cover: 'https://www.loliapi.com/acg/',
-          pubdate: 10000000,// 时间戳
+          dateline: 10000000,// 时间戳
           pageViews: 99,
           title: '文章3',
           synopsis: '文章1描述',
@@ -158,7 +159,7 @@ export default defineConfigWithTheme<Theme>({
         },
         {
           cover: 'https://www.loliapi.com/acg/',
-          pubdate: 10000000,// 时间戳
+          dateline: 10000000,// 时间戳
           pageViews: 99,
           title: '文章4',
           synopsis: '文章1描述',
@@ -168,7 +169,7 @@ export default defineConfigWithTheme<Theme>({
         },
         {
           cover: 'https://www.loliapi.com/acg/',
-          pubdate: 10000000,// 时间戳
+          dateline: 10000000,// 时间戳
           pageViews: 99,
           title: '文章5',
           synopsis: '文章1描述',
@@ -178,7 +179,7 @@ export default defineConfigWithTheme<Theme>({
         },
         {
           cover: 'https://www.loliapi.com/acg/',
-          pubdate: 10000000,// 时间戳
+          dateline: 10000000,// 时间戳
           pageViews: 0,
           title: '文章6',
           synopsis: '文章6描述',

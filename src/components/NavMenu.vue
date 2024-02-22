@@ -15,8 +15,8 @@
                         {{ item.text }}
                     </span>
                 </a>
-                <ul v-if="item.items" class="sub-menu">
-                    <li v-for="(cItem, cIndex) in item.items" :key="cIndex">
+                <ul v-if="(item as NavItems).items" class="sub-menu">
+                    <li v-for="(cItem, cIndex) in (item as NavItems).items" :key="cIndex">
                         <a href="">
                             <span>
                                 <i class="fa" :class="cItem.icon"></i>
@@ -32,7 +32,7 @@
     
 <script setup lang='ts'>
 import { useData } from 'vitepress'
-import { Theme } from "../types/theme";
+import { NavItems, Theme } from "../types/theme";
 import { Ref } from 'vue';
 const theme: Ref<Theme> = useData().theme;
 const nav = theme.value.nav;

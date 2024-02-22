@@ -76,7 +76,7 @@ interface NavItem {
     icon?: string
 }
 
-interface NavItems {
+export interface NavItems {
     items: NavItem[]
     link: string,
     text: string,
@@ -100,6 +100,7 @@ interface DisplayBlock {
     }
 }
 
-interface Article {
+// TODO：零时写法
+export interface Article {
     [key: string]: any
 }

@@ -1,3 +1,11 @@
+<!--
+ * @Author: wuyifan wuyifan@max-optics.com
+ * @Date: 2024-02-20 18:00:21
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-22 15:43:44
+ * @FilePath: /vitepress-theme-sakurairo/src/components/BackTop.vue
+ * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
+-->
 <template>
     <button id="back-to-top" @click="backToTop" :style="{
         transform: `scale(${scale})`
@@ -7,7 +15,8 @@
 </template>
     
 <script setup lang='ts'>
-import { onMounted, onUnmounted, ref } from 'vue';
+import { ref } from 'vue';
+import { useScroll } from "../composables";
 
 const backToTop = () => {
     document.documentElement.scrollTop = 0;
@@ -19,17 +28,13 @@ const scrollHandle = () => {
     scale.value = document.documentElement.scrollTop > 0 ? 1 : 0;
 }
 
-onMounted(() => {
-    window.addEventListener('scroll', scrollHandle)
-});
-onUnmounted(() => {
-    window.removeEventListener('scroll', scrollHandle)
-})
+useScroll(scrollHandle)
 
 </script>
     
 <style lang="scss">
 @import "../styles/variable.scss";
+
 #back-to-top {
     position: fixed;
     bottom: 65px;
