@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as s}from"./chunks/framework.y9b_P4KW.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"posts/webgl/index.md","filePath":"posts/webgl/index.md"}'),a={name:"posts/webgl/index.md"};function o(n,r,c,d,i,p){return s(),t("div")}const m=e(a,[["render",o]]);export{l as __pageData,m as default};
