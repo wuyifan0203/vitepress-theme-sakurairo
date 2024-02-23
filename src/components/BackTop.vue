@@ -2,7 +2,7 @@
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-20 18:00:21
  * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-22 15:43:44
+ * @LastEditTime: 2024-02-23 14:12:50
  * @FilePath: /vitepress-theme-sakurairo/src/components/BackTop.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -16,7 +16,7 @@
     
 <script setup lang='ts'>
 import { ref } from 'vue';
-import { useScroll } from "../composables";
+import { useEventListener } from "../composables";
 
 const backToTop = () => {
     document.documentElement.scrollTop = 0;
@@ -28,7 +28,7 @@ const scrollHandle = () => {
     scale.value = document.documentElement.scrollTop > 0 ? 1 : 0;
 }
 
-useScroll(scrollHandle)
+useEventListener('scroll',scrollHandle);
 
 </script>
     

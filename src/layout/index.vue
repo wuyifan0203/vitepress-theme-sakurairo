@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-22 15:36:19
+ * @LastEditTime: 2024-02-23 14:18:46
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -14,20 +14,22 @@
 </template>
     
 <script setup lang='ts'>
+import { useData } from "vitepress";
+import { onMounted } from 'vue';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
+
 import Header from '../components/Header.vue';
 import Layout from './Layout.vue';
 import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
-
-import { useData } from "vitepress";
-import { onMounted } from 'vue';
+import { installThemePlugin } from '../plugin';
 
 const { theme } = useData();
 
 onMounted(() => {
+    installThemePlugin()
     document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
 

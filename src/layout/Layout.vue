@@ -25,7 +25,6 @@ console.log("site", site.value);
 const router = useRouter();
 const { path } = useRoute();
 
-console.log(path,7777);
 
 
 </script>

@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:30:35
  * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-22 15:46:16
+ * @LastEditTime: 2024-02-23 14:37:33
  * @FilePath: /vitepress-theme-sakurairo/src/components/Header.vue
 -->
 <template>
@@ -20,8 +20,9 @@ import { ref, computed, Ref } from 'vue';
 import { useData } from 'vitepress';
 import SiteBranding from './SiteBranding.vue';
 import NavMenu from './NavMenu.vue';
-import { useScroll } from "../composables";
+import { useEventListener } from "../composables";
 import { Theme } from '../types';
+import nProgress from 'nprogress';
 
 const theme = useData().theme.value as Theme;
 const headerRef: Ref<null | HTMLElement> = ref(null);
@@ -30,10 +31,18 @@ const navClass = computed(() => {
 })
 
 const scrollHandle = () => {
-    document.documentElement.scrollTop > 0 ? headerRef.value!.classList.add('showNav') : headerRef.value!.classList.remove('showNav');
+    if(document.documentElement.scrollTop > 0 ){
+        headerRef.value!.classList.add('showNav')
+    }else{
+        headerRef.value!.classList.remove('showNav');
+        nProgress.done();
+    }
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const width = document.documentElement.scrollTop/(document.body.clientHeight - viewportHeight)
+    nProgress.set(width-0.00001);
 }
 
-useScroll(scrollHandle);
+useEventListener('scroll',scrollHandle);
 
 </script>
     

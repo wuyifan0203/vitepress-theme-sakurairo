@@ -1,6 +1,6 @@
 # Vitepress-Theme-Sakurairo
 
-基于 wordpress <a href="https://github.com/mirai-mamori/Sakurairo">Sakurairo主题</a> 样式的Vitepress版本。
+基于 WorldPress 的 <a href="https://github.com/mirai-mamori/Sakurairo">Sakurairo主题</a> 样式的Vitepress版本。
 
 ## 特性
 
@@ -10,7 +10,7 @@
 
 - 对于前端宝宝来说更加方便上手，将低学习成本
   
-- 组件化的开发模式，代码更加清晰，更加易于维护。
+- 组件化的开发模式，高度复用，代码结构清晰，更加易于维护。
   
 ## 快速开始
 
@@ -26,14 +26,18 @@ pnpm run dev
 
 ## 开发中
 
-- 文章栏
+- nprogress ✅
+- 文章栏页面 (working)
+- 标签栏 (working)
+- 根据目录生成路由跳转 (可以使用的最低标准)
+- 完善 README.md
+- npm 发布
+- 图片懒加载
 - 站内搜索
 - 文章评论
 - 不同颜色主题
 - 移动端适配
-- nprogress
 - 文章阅读量统计
-- npm 发布
 - 文章置顶
 - Scss 样式抽离提取
 - 支持外部文字

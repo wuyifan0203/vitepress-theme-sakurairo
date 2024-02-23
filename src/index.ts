@@ -7,7 +7,6 @@
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
  */
 import Layout from "./layout/index.vue";
-import { installThemePlugin } from "./plugin"
 
 export * from "./types/index";
-export { Layout, installThemePlugin };
+export { Layout };
