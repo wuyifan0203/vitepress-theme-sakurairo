@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-23 14:18:46
+ * @LastEditTime: 2024-02-23 18:00:16
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -25,11 +25,13 @@ import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
 import { installThemePlugin } from '../plugin';
+import { data } from '../posts.data';
 
 const { theme } = useData();
 
 onMounted(() => {
     installThemePlugin()
+    console.log(data);
     document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
 
@@ -109,4 +111,4 @@ body {
     }
 
 }
-</style>
+</style>../posts.data
