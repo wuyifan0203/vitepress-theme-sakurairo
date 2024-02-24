@@ -15,7 +15,7 @@
 </template>
     
 <script setup lang='ts'>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useEventListener } from "../composables";
 
 const backToTop = () => {
@@ -28,7 +28,9 @@ const scrollHandle = () => {
     scale.value = document.documentElement.scrollTop > 0 ? 1 : 0;
 }
 
-useEventListener('scroll',scrollHandle);
+onMounted(() => {
+    useEventListener('scroll', scrollHandle);
+})
 
 </script>
     

@@ -2,16 +2,18 @@
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-22 02:06:48
+ * @LastEditTime: 2024-02-25 03:32:40
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
     <div class="article-wraper">
         <div class="article-head">
-            <div class="article-cover"></div>
+            <div class="article-cover" :style="{
+                backgroundImage: `url(${$frontmatter.cover})`
+            }"></div>
             <header>
-                <h1 class="entry-title"> 母猪产后护理</h1>
+                <h1 class="entry-title">{{ $frontmatter.title }}</h1>
                 <span class="topic-line"></span>
                 <p class="entry-census">
                     <span>
@@ -28,7 +30,7 @@
             </header>
         </div>
         <div class="article-content">
-
+            <Content />
         </div>
         <div class="article-footer">
 
@@ -37,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { useData } from 'vitepress';
+import { Content, useData, } from 'vitepress';
 import { Theme } from '../types';
 
 const theme = useData().theme.value as Theme;
@@ -137,6 +139,14 @@ const theme = useData().theme.value as Theme;
                 }
             }
         }
+    }
+
+    .article-content {
+        max-width: 800px;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(255, 255, 255, .8);
     }
 
 

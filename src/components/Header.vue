@@ -16,7 +16,7 @@
 </template>
     
 <script setup lang='ts'>
-import { ref, computed, Ref } from 'vue';
+import { ref, computed, Ref, onMounted } from 'vue';
 import { useData } from 'vitepress';
 import SiteBranding from './SiteBranding.vue';
 import NavMenu from './NavMenu.vue';
@@ -31,18 +31,21 @@ const navClass = computed(() => {
 })
 
 const scrollHandle = () => {
-    if(document.documentElement.scrollTop > 0 ){
+    if (document.documentElement.scrollTop > 0) {
         headerRef.value!.classList.add('showNav')
-    }else{
+    } else {
         headerRef.value!.classList.remove('showNav');
         nProgress.done();
     }
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    const width = document.documentElement.scrollTop/(document.body.clientHeight - viewportHeight)
-    nProgress.set(width-0.00001);
+    const width = document.documentElement.scrollTop / (document.body.clientHeight - viewportHeight)
+    nProgress.set(width - 0.00001);
 }
 
-useEventListener('scroll',scrollHandle);
+onMounted(() => {
+    useEventListener('scroll', scrollHandle);
+})
+
 
 </script>
     
