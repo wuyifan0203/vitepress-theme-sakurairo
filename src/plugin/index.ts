@@ -7,10 +7,8 @@
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
  */
 import { useNProgress } from './nprogress';
-import { proxyRouter } from './proxyRouter'
 
 function installThemePlugin() {
-    proxyRouter();
     useNProgress();
 }
 

@@ -195,6 +195,10 @@ export default defineConfigWithTheme<Theme>({
     }
 
   },
+  markdown:{
+    theme:'monokai'
+
+  },
   vite: {
     server: {
       port: 5300,

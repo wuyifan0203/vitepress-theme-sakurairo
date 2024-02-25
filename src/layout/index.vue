@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-25 03:56:06
+ * @LastEditTime: 2024-02-26 01:52:57
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -42,6 +42,7 @@ onMounted(() => {
 </script>
     
 <style lang="scss">
+@import '../styles/theme.scss';
 @import '../styles/variable.scss';
 
 * {

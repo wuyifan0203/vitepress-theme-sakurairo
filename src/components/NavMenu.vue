@@ -1,15 +1,15 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-21 18:03:58
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-26 01:04:06
  * @FilePath: /vitepress-theme-sakurairo/src/components/NavMenu.vue
 -->
 <template>
     <nav>
         <ul>
             <li v-for="(item, index) in nav.items" :key="index">
-                <a :href="item.link">
+                <a :href="withBase(item.link)">
                     <span>
                         <i class="fa" :class="item.icon"></i>
                         {{ item.text }}
@@ -17,7 +17,7 @@
                 </a>
                 <ul v-if="(item as NavItems).items" class="sub-menu">
                     <li v-for="(cItem, cIndex) in (item as NavItems).items" :key="cIndex">
-                        <a href="">
+                        <a :href="withBase(item.link + cItem.link)">
                             <span>
                                 <i class="fa" :class="cItem.icon"></i>
                                 {{ cItem.text }}
@@ -31,7 +31,7 @@
 </template>
     
 <script setup lang='ts'>
-import { useData } from 'vitepress'
+import { useData,withBase } from 'vitepress'
 import { NavItems, Theme } from "../types/theme";
 import { Ref } from 'vue';
 const theme: Ref<Theme> = useData().theme;
