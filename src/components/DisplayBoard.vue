@@ -38,7 +38,7 @@ const iconFont: string = theme.value.displayBoard?.icon ?? 'fa-laptop';
 
 </script>
     
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
 

@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 14:42:13
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-26 17:16:42
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
 -->
 <template>
@@ -41,7 +41,7 @@ const iconFont: string = theme.value.articleBoard?.icon ?? 'fa-laptop';
 
 </script>
     
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
 

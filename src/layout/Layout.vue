@@ -35,4 +35,3 @@ const layout = computed(()=>page.value.frontmatter.layout);
 
 </script>
     
-<style></style>

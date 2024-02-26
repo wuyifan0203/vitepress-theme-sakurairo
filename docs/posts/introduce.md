@@ -1,13 +1,15 @@
 ---
-title: Hellow vitepress-theme-sakurairo
+title: Hello vitepress-theme-sakurairo
 cover: https://www.loliapi.com/acg
 layout: page
-date: 2022-08-22 11:29:00
+date posted: 2022-08-22 11:29:00
+date updated: 2022-08-24 11:29:00
+tags: ['test', 'vitepress']
 ---
 
 # title test
 
-# Hellow vitepress-theme-sakurairo
+# Hello vitepress-theme-sakurairo
 
 ## Hello vitepress-theme-sakurairo
 

@@ -5,34 +5,43 @@ import type { Theme } from '../../src/'
 export default defineConfigWithTheme<Theme>({
   title: "vitepress-theme-sakurairo",
   description: "A VitePress Theme",
-  outDir:'..//dist',
+  outDir: '..//dist',
   lang: 'zh-CN',
   base: '/vitepress-theme-sakurairo/',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config\
     // logo: '/logo.svg',
     nav: {
       style: 'sakura',
       items: [
         { text: '主页', link: '/', icon: 'fa-home' },
-        { text: '分类', link: '/posts', icon: 'fa-leaf' },
+        {
+          text: '分类', link: '/posts', icon: 'fa-leaf', items: [
+            { text: 'webGL', link: '/webgl', icon: '' },
+            { text: 'date', link: '/date' },
+            { text: 'glsl', link: '/glsl' },
+          ]
+        },
         {
           text: 'Options Test',
           icon: 'fa-tags',
-          link:'/posts',
+          link: '/posts/date',
           items: [
-            { text: 'Options Test 1', link: '/introduce', icon: '' },
-            { text: 'Options Test 2', link: '/' },
-            { text: 'Options Test 3', link: '/' },
-            { text: 'Options Test 4', link: '/' }
+            { text: 'Options Test 1', link: '/date1', icon: '' },
+            { text: 'Options Test 2', link: '/date2' },
+            { text: 'Options Test 3', link: '/date3' },
           ]
+        },
+        {
+          text: '使用方法',
+          icon: 'fa-tags',
+          link: '/posts/introduce',
         }
       ]
     },
     global: {
       background: {
-        src: () => '',
-        // src: () => 'https://www.loliapi.com/acg',
+        // src: () => '',
+        src: () => 'https://www.loliapi.com/acg',
         // src: ()=>'/.vitepress/theme/public/bg.jpeg',
       },
       font: {
@@ -82,7 +91,7 @@ export default defineConfigWithTheme<Theme>({
     noticeBoard: {
       enable: true,
       background: {
-        src: () => '/vitepress-theme-sakurairo/bg.jpeg',
+        src: () => 'https://www.loliapi.com/acg',
         color: '#ffffff',
       },
       text: {
@@ -193,11 +202,9 @@ export default defineConfigWithTheme<Theme>({
       copyright: '2024-present wuyifan',
       record: '沪ICP备20241234567号-66666',
     }
-
   },
-  markdown:{
-    theme:'monokai'
-
+  markdown: {
+    theme: 'monokai'
   },
   vite: {
     server: {

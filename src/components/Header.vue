@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:30:35
  * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-23 14:37:33
+ * @LastEditTime: 2024-02-26 17:19:44
  * @FilePath: /vitepress-theme-sakurairo/src/components/Header.vue
 -->
 <template>
@@ -16,7 +16,7 @@
 </template>
     
 <script setup lang='ts'>
-import { ref, computed, Ref, onMounted } from 'vue';
+import { ref, computed, Ref } from 'vue';
 import { useData } from 'vitepress';
 import SiteBranding from './SiteBranding.vue';
 import NavMenu from './NavMenu.vue';
@@ -42,9 +42,7 @@ const scrollHandle = () => {
     nProgress.set(width - 0.00001);
 }
 
-onMounted(() => {
-    useEventListener('scroll', scrollHandle);
-})
+useEventListener('scroll', scrollHandle);
 
 
 </script>
@@ -120,5 +118,6 @@ header {
     top: 0;
     border-radius: 0;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    z-index: 2;
 }
 </style>

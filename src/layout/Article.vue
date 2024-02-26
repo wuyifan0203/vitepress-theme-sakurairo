@@ -1,13 +1,13 @@
 <!--
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-26 01:53:44
+ * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditTime: 2024-02-26 17:53:00
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
-    <div class="article-wraper">
+    <div class="article-wrapper">
         <div class="article-head">
             <div class="article-cover" :style="{
                 backgroundImage: `url(${$frontmatter.cover})`
@@ -49,7 +49,7 @@ const theme = useData().theme.value as Theme;
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
 
-.article-wraper {
+.article-wrapper {
     -webkit-animation: blur .8s;
     animation: blur .8s;
     animation-duration: .8s;
@@ -147,83 +147,87 @@ const theme = useData().theme.value as Theme;
         margin-left: auto;
         margin-right: auto;
         background-color: rgba(255, 255, 255, .8);
-    }
 
+        img {
+            height: auto;
+            max-width: 100%;
+        }
 
-    div[class*="language-"] {
-        position: relative;
-        line-height: var(--code-line-height);
-        font-size: var(--code-font-size);
-        font-family: var(--code-font-family);
-        display: flex;
-        flex-direction: row-reverse;
-        border-radius: 8px;
-        border: 1px solid var(--color-border);
-        padding-top: 32px;
-        overflow: hidden;
-        background: var( --shiki-background);
-
-        button.copy {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            background-image: var(--vp-icon-copy);
-            background-repeat: no-repeat;
-            background-position: 50%;
-            border-radius: 4px;
-            opacity: 0;
+        div[class*="language-"] {
+            position: relative;
+            line-height: var(--code-line-height);
+            font-size: var(--code-font-size);
+            font-family: var(--code-font-family);
+            display: flex;
+            flex-direction: row-reverse;
+            border-radius: 8px;
             border: 1px solid var(--color-border);
-        }
+            padding-top: 32px;
+            overflow: hidden;
+            background: var(--shiki-background);
 
-        &:hover button.copy {
-            opacity: 1;
-        }
+            button.copy {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                background-image: var(--vp-icon-copy);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                border-radius: 4px;
+                opacity: 0;
+                border: 1px solid var(--color-border);
+            }
 
-        .lang {
-            position: absolute;
-            transform: translate(-50%, -28px);
-            left: 50%;
-            user-select: none;
-        }
+            &:hover button.copy {
+                opacity: 1;
+            }
 
-        pre {
-            margin: 0;
-            padding-left: 16px;
-            flex-grow: 1;
-            overflow: scroll;
-        }
+            .lang {
+                position: absolute;
+                transform: translate(-50%, -28px);
+                left: 50%;
+                user-select: none;
+            }
 
-        code {
-            background-color: transparent;
-            padding: 0;
-        }
+            pre {
+                margin: 0;
+                padding-left: 16px;
+                flex-grow: 1;
+                overflow: auto;
+            }
 
-        &:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            height: 32px;
-            background: #f6f8fa;
-            border-bottom: 1px solid var(--color-border);
-        }
+            code {
+                background-color: transparent;
+                padding: 0;
+            }
 
-        &:after {
-            content: "";
-            position: absolute;
-            top: 10px;
-            left: 12px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #fc625d;
-            box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                height: 32px;
+                background: #f6f8fa;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: 12px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #fc625d;
+                box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+            }
         }
     }
 

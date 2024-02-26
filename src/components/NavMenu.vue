@@ -38,7 +38,7 @@ const theme: Ref<Theme> = useData().theme;
 const nav = theme.value.nav;
 </script>
     
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
 

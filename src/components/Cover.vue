@@ -159,7 +159,7 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
 
