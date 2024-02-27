@@ -15,7 +15,7 @@
     
 <script setup lang='ts'>
 import { useData } from "vitepress";
-import { onMounted } from 'vue';
+import { onMounted, provide } from 'vue';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
 
@@ -25,6 +25,11 @@ import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
 import { installThemePlugin } from '../plugin';
+
+import { data } from '../posts.data';
+
+
+provide('data', data);
 
 
 const { theme } = useData();

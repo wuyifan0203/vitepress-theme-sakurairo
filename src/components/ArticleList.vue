@@ -2,9 +2,9 @@
     <div class="article-list">
         <ul class="clearfix">
             <li v-for="(item, index) in props.list" :key="index" class="article-block">
-                <article >
+                <article>
                     <div class="article-cover" :class="`article-list-${theme.articleBoard.layout}`">
-                        <a href="">
+                        <a :href="withBase(item.url)">
                             <img :src="item.cover" alt="">
                         </a>
                     </div>
@@ -14,7 +14,7 @@
                                 <i class="fa-regular fa-clock"></i>
                                 发布于 {{ item.publish }}
                             </div>
-                            <a href="" class="article-title">
+                            <a :href="withBase(item.url)" class="article-title">
                                 <h3>{{ item.title }}</h3>
                             </a>
                             <div class="article-meta">
@@ -54,7 +54,7 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
 import { Article, Theme } from '../types';
-import { useData } from 'vitepress';
+import { useData, withBase } from 'vitepress';
 
 const theme = useData().theme.value as Theme;
 

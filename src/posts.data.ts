@@ -1,8 +1,8 @@
 /*
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-23 17:24:09
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-27 18:09:17
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-28 00:54:44
  * @FilePath: /vitepress-theme-sakurairo/src/posts.data.ts
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -15,6 +15,7 @@ import { MarkdownRenderer, createMarkdownRenderer } from 'vitepress';
 import type { SiteConfig } from 'vitepress';
 import { normalizePath } from 'vite'
 import { FrontmatterType } from './types';
+import { formatTimestamp } from './utils';
 
 
 declare const data: any[];
@@ -107,19 +108,7 @@ export default ((pattern: string | string[]): {
     }
 })('posts/**/**.md')
 
-function formatTimestamp(time: number | string | Date) {
-    const date = new Date(time)
 
-    const year = date.getFullYear()
-    const month = String(date.getMonth() + 1).padStart(2, '0')
-    const day = String(date.getDate()).padStart(2, '0')
-    const hours = String(date.getHours()).padStart(2, '0')
-    const minutes = String(date.getMinutes()).padStart(2, '0')
-    const seconds = String(date.getSeconds()).padStart(2, '0')
-
-    const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
-    return formattedTime;
-}
 
 function generateURL(config: SiteConfig, file: string) {
     return '/' +

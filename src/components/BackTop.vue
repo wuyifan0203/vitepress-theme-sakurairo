@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-20 18:00:21
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-23 14:12:50
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-28 00:35:14
  * @FilePath: /vitepress-theme-sakurairo/src/components/BackTop.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -15,7 +15,7 @@
 </template>
     
 <script setup lang='ts'>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import { useEventListener } from "../composables";
 
 const backToTop = () => {
@@ -28,9 +28,7 @@ const scrollHandle = () => {
     scale.value = document.documentElement.scrollTop > 0 ? 1 : 0;
 }
 
-onMounted(() => {
-    useEventListener('scroll', scrollHandle);
-})
+useEventListener('scroll', scrollHandle);
 
 </script>
     

@@ -1,12 +1,12 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 13:09:24
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-28 00:31:51
  * @FilePath: /vitepress-theme-sakurairo/src/components/SiteBranding.vue
 -->
 <template>
-    <a href="" class="site-branding">
+    <a :href="withBase('/')" class="site-branding">
         <div class="logolink" v-if="theme.global.logo">
             <img :src="theme.global.logo" alt="">
         </div>
@@ -22,7 +22,7 @@
 </template>
     
 <script setup lang='ts'>
-import { useData } from 'vitepress';
+import { useData, withBase } from 'vitepress';
 import type { Theme } from '../types/theme'
 import { Ref } from 'vue';
 const theme: Ref<Theme> = useData().theme;

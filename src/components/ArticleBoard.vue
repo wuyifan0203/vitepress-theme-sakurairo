@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-27 17:59:45
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-28 00:52:48
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
 -->
 <template>
@@ -17,7 +17,7 @@
                 <br>
                 {{ theme.articleBoard.title }}
             </h1>
-            <ArticleList :list="data"></ArticleList>
+            <ArticleList :list="pages"></ArticleList>
         </div>
         <div class="pagination">
             <a href="" v-if="true">更早文章</a>
@@ -40,7 +40,7 @@ const showIcon = (theme.value.global?.board?.showIcon ?? true) ? 'visible' : 'hi
 const iconFont: string = theme.value.articleBoard?.icon ?? 'fa-laptop';
 
 const pages = data.filter(d => d.layout === 'page').sort((a, b) => {
-    return +new Date(a.publish) - +new Date(b.publish)
+    return +new Date(b.publish) - +new Date(a.publish)
 })
 
 console.log(pages);

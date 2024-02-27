@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-26 17:53:00
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-28 02:12:34
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -10,10 +10,10 @@
     <div class="article-wrapper">
         <div class="article-head">
             <div class="article-cover" :style="{
-                backgroundImage: `url(${$frontmatter.cover})`
+                backgroundImage: `url(${page.cover})`
             }"></div>
             <header>
-                <h1 class="entry-title">{{ $frontmatter.title }}</h1>
+                <h1 class="entry-title">{{ page.title }}</h1>
                 <span class="topic-line"></span>
                 <p class="entry-census">
                     <span>
@@ -26,6 +26,10 @@
                             {{ theme.global.author }}
                         </a>
                     </span>
+                    <span class="bull">·</span>
+                    {{ page.publish }}
+                    <span class="bull">·</span>
+                    {{ 0 }} 次阅读
                 </p>
             </header>
         </div>
@@ -40,9 +44,30 @@
 
 <script setup lang="ts">
 import { Content, useData, } from 'vitepress';
+import { computed, inject } from 'vue';
 import { Theme } from '../types';
+import { formatTimestamp } from './../utils';
+
+
+const data = inject('data');
+
+console.log('page ', data);
+
+// console.log(useData().page.value);
+
+
 
 const theme = useData().theme.value as Theme;
+
+const page = computed(() => {
+    let filePath = useData().page.value.filePath;
+    filePath = filePath.replace(/\.md$/, '.html');
+    filePath = '/' + filePath;
+    return (data as any).find((page: any) => page.url === filePath)
+})
+
+console.log('pageppp ', page.value);
+
 
 </script>
 <style lang="scss">
@@ -137,6 +162,10 @@ const theme = useData().theme.value as Theme;
                         margin-right: 12px;
                     }
                 }
+
+                .bull {
+                    margin: 0 5px;
+                }
             }
         }
     }
@@ -148,9 +177,11 @@ const theme = useData().theme.value as Theme;
         margin-right: auto;
         background-color: rgba(255, 255, 255, .8);
 
-        img {
+        img,
+        video {
             height: auto;
             max-width: 100%;
+            width: 100%;
         }
 
         div[class*="language-"] {
