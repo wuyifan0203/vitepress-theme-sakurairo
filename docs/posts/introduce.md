@@ -1,9 +1,9 @@
 ---
 title: Hello vitepress-theme-sakurairo
-cover: https://www.loliapi.com/acg
+cover: https://www.loliapi.com/acg/
 layout: page
-date posted: 2022-08-22 11:29:00
-date updated: 2022-08-24 11:29:00
+publish: 2024-02-25 11:29:00
+update: 2024-02-27 15:22:00
 tags: ['test', 'vitepress']
 ---
 

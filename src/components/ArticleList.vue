@@ -12,7 +12,7 @@
                         <div class="article-content">
                             <div class="article-dateline">
                                 <i class="fa-regular fa-clock"></i>
-                                发布于 {{ item.dateline }}
+                                发布于 {{ item.publish }}
                             </div>
                             <a href="" class="article-title">
                                 <h3>{{ item.title }}</h3>

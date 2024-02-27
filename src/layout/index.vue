@@ -14,7 +14,7 @@
 </template>
     
 <script setup lang='ts'>
-import { useData, useRouter } from "vitepress";
+import { useData } from "vitepress";
 import { onMounted } from 'vue';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
@@ -25,17 +25,12 @@ import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
 import { installThemePlugin } from '../plugin';
-import { data } from '../posts.data';
+
 
 const { theme } = useData();
 
 onMounted(() => {
     installThemePlugin()
-    console.log(data);
-    const router = useRouter();
-   
-    console.log(router.go);
-    
     document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
 })
 

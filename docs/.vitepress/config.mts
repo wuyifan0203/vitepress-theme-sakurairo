@@ -1,7 +1,6 @@
 import { defineConfigWithTheme } from 'vitepress';
 import type { Theme } from '../../src/'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<Theme>({
   title: "vitepress-theme-sakurairo",
   description: "A VitePress Theme",
@@ -44,6 +43,7 @@ export default defineConfigWithTheme<Theme>({
         src: () => 'https://www.loliapi.com/acg',
         // src: ()=>'/.vitepress/theme/public/bg.jpeg',
       },
+      // TODO
       font: {
         src: () => '',
         size: '',
@@ -60,8 +60,6 @@ export default defineConfigWithTheme<Theme>({
       background: {
         src: () => '/vitepress-theme-sakurairo/bg.jpeg',
       },
-
-      // src:'https://www.loliapi.com/acg/pc/',
       title: '',//'奈落的家',
       description: '欢迎来到祖安',
       typed: {
@@ -135,68 +133,18 @@ export default defineConfigWithTheme<Theme>({
       title: '文章 展示',
       icon: 'fa-bookmark',
       layout: 'interlaced', // 'left','right','interlaced'
-      items: [
-        {
-          cover: 'https://www.loliapi.com/acg/',
-          dateline: 10000000,// 时间戳
-          pageViews: 99,
-          title: '文章1',
-          synopsis: '文章1描述',
-          comment: 0,
-          type: '原创',
-          link: '/',
-        },
-        {
-          cover: 'https://www.loliapi.com/acg/',
-          dateline: 10000000,// 时间戳
-          pageViews: 99,
-          title: '文章2',
-          synopsis: '文章1描述',
-          comment: 0,
-          type: '转载',
-          link: '/',
-        },
-        {
-          cover: 'https://www.loliapi.com/acg/',
-          dateline: 10000000,// 时间戳
-          pageViews: 99,
-          title: '文章3',
-          synopsis: '文章1描述',
-          comment: 0,
-          type: '奥利给',
-          link: '/',
-        },
-        {
-          cover: 'https://www.loliapi.com/acg/',
-          dateline: 10000000,// 时间戳
-          pageViews: 99,
-          title: '文章4',
-          synopsis: '文章1描述',
-          comment: 99,
-          type: '奥利给',
-          link: '/',
-        },
-        {
-          cover: 'https://www.loliapi.com/acg/',
-          dateline: 10000000,// 时间戳
-          pageViews: 99,
-          title: '文章5',
-          synopsis: '文章1描述',
-          comment: 70,
-          type: '奥利给',
-          link: '/',
-        },
-        {
-          cover: 'https://www.loliapi.com/acg/',
-          dateline: 10000000,// 时间戳
-          pageViews: 0,
-          title: '文章6',
-          synopsis: '文章6描述',
-          comment: 10,
-          type: '奥利给666',
-          link: '/',
-        }
-      ]
+      // items: [
+      //   {
+      //     cover: 'https://www.loliapi.com/acg/',
+      //     dateline: 10000000,// 时间戳
+      //     pageViews: 99,
+      //     title: '文章1',
+      //     synopsis: '文章1描述',
+      //     comment: 0,
+      //     type: '原创',
+      //     link: '/',
+      //   }
+      // ]
     },
     footer: {
       copyright: '2024-present wuyifan',

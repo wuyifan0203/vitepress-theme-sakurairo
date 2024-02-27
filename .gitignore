@@ -5,4 +5,4 @@ node_modules
 dist
 *.local
 docs/.vitepress/cache
-.vitepress
+.vitepress/cache

@@ -1,9 +1,9 @@
 ---
 title: date2
-cover: https://www.loliapi.com/acg
+cover: https://www.loliapi.com/acg/
 layout: page
-date posted: 1988-01-01 00:00:00
-date updated: 2024-08-24 11:29:00
+publish: 1988-01-01 00:00:00
+update: 2024-08-24 11:29:00
 tags: ['date']
 ---
 

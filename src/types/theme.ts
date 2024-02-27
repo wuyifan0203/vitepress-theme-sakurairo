@@ -60,7 +60,6 @@ export interface Theme {
         title?: string,
         icon?: string,
         layout?: 'left' | 'right' | 'interlaced',
-        items: Article[]
     },
     footer: {
         copyright?: string,
