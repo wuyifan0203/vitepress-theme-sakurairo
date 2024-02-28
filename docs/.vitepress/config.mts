@@ -10,7 +10,7 @@ export default defineConfigWithTheme<Theme>({
   themeConfig: {
     // logo: '/logo.svg',
     nav: {
-      style: 'sakura',
+      style: 'sakurairo',
       items: [
         { text: '主页', link: '/', icon: 'fa-home' },
         {

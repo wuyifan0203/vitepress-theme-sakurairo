@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-26 01:52:57
+ * @LastEditTime: 2024-02-29 00:53:59
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -78,6 +78,7 @@ body {
     background: #0000;
     background-attachment: fixed;
     background-position: center;
+    font-size: 15px;
 
     @font-face {
         font-family: 'Moe-Mashiro';

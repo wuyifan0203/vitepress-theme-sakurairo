@@ -16,7 +16,7 @@
 
 TODO
 
-pnpm 
+pnpm
 
 ```bash
 pnpm install
@@ -27,11 +27,13 @@ pnpm run dev
 ## 开发中
 
 - nprogress ✅
+- 文章内容测试（working）
 - 文章栏页面 (working)
-- 标签栏 (working)
+- 标签栏
 - 根据目录生成路由跳转 (可以使用的最低标准)
 - 完善 README.md
 - npm 发布
+- 文章摘要标题
 - 图片懒加载
 - 站内搜索
 - 文章评论

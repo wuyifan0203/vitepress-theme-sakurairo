@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-28 18:27:06
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-02-29 01:41:27
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -34,7 +34,11 @@
             </header>
         </div>
         <div class="article-content">
-            <Content />
+            <main>
+                <article>
+                    <Content />
+                </article>
+            </main>
         </div>
         <div class="article-footer">
 
@@ -160,6 +164,12 @@ const page = computed(() => {
             }
         }
     }
+
+    .article-content {
+        main {
+            padding: 7.5% 0 0;
+        }
+    }
 }
 
 .article-content {
@@ -167,8 +177,15 @@ const page = computed(() => {
     padding: 0 10px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
     background-color: rgba(255, 255, 255, .8);
+
+    &>a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
     img,
     video {
@@ -179,7 +196,8 @@ const page = computed(() => {
 
     ol li,
     ul li {
-        padding: 8px 0;
+        padding: 15px 0 0 0;
+        text-align: left;
     }
 
     h3,
@@ -189,23 +207,19 @@ const page = computed(() => {
     }
 
     h3 {
-        padding-bottom: 8px;
-        border-bottom: 1px dashed #ddd;
-        color: #737373;
+        padding-bottom: 10px;
     }
 
-    h2:after,
     h3:after,
     h4:after,
     h5:after {
         left: 0;
         position: absolute;
-        color: #ff6d6d
     }
 
     h2:after {
         content: "\00B6";
-        font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+        position: absolute;
         padding-left: 6px;
         font-size: 1.03em;
     }
@@ -214,19 +228,27 @@ const page = computed(() => {
         content: "#";
     }
 
+    h3::before {
+        display: block;
+        content: " ";
+        height: 80px;
+        margin-top: -80px;
+        visibility: hidden;
+    }
+
     h4:after {
-        content: "▌";
+        content: ">";
     }
 
     h5:after {
-        content: "♯";
+        content: "~";
     }
-    
+
 
     ul,
-    li {
-        border: 1px dashed #e4e4e4;
-        padding: 15px 10px 15px 50px;
+    ol {
+        border: 1px solid #e4e4e4;
+        padding: 15px 10px 30px 50px;
         color: #616161;
         margin-left: 0;
         border-radius: 10px;
@@ -263,6 +285,32 @@ const page = computed(() => {
         top: -30px;
         font-size: 28px;
         letter-spacing: .6em;
+    }
+
+    blockquote {
+        margin: 0;
+        padding: 30px 60px;
+        position: relative;
+    }
+
+    blockquote:before {
+        content: "\f10d" !important;
+        font-size: 3rem;
+        position: absolute;
+        top: -25px;
+        left: 12px;
+        color: orange;
+        font-family: FontAwesome;
+    }
+
+    blockquote:after {
+        content: '\f10e' !important;
+        font-size: 3rem;
+        position: absolute;
+        bottom: -25px;
+        right: -5px;
+        color: orange;
+        font-family: FontAwesome;
     }
 
 

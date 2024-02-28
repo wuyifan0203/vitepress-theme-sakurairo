@@ -52,18 +52,20 @@ hello();
 - 测试2
 - 测试3
 - 测试4
+
 ## '*'
 
-* 测试1
-* 测试2
-* 测试3
-* 测试4
+- 测试1
+- 测试2
+- 测试3
+- 测试4
+
 ## '+'
 
-+ 测试1
-+ 测试2
-+ 测试3
-+ 测试4
+- 测试1
+- 测试2
+- 测试3
+- 测试4
 
 # table
 
@@ -75,20 +77,26 @@ hello();
 # ol li
 
 ## '1.'
+
 1. 测试1
-2. 测试2   
+2. 测试2
 3. 测试3
 4. 测试4
+
 ## 'a.'
+
 a. 测试1
 b. 测试2
 c. 测试3
 d. 测试4
+
 ## 'i.'
+
 i. 测试1
 ii. 测试2
 iii. 测试3
 iv. 测试4
 
-  
- 
+# blockquote
+
+> One dollar and eighty-seven cents. That was all. And sixty cents of it was in pennies. Pennies saved one and two at a time by bulldozing the grocer and the vegetable man and the butcher until one's cheeks burned with the silent imputation of parsimony that such close dealing implied. Three times Della counted it. One dollar and eighty-seven cents. And the next day would be Christmas
