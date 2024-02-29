@@ -9,7 +9,7 @@
                         </a>
                     </div>
                     <div class="article-content-wrap" :class="`article-content-wrap-${theme.articleBoard.layout}`">
-                        <div class="article-content">
+                        <div class="article-list-content">
                             <div class="article-dateline">
                                 <i class="fa-regular fa-clock"></i>
                                 发布于 {{ item.publish }}
@@ -92,6 +92,7 @@ const props = defineProps({
         position: relative;
         margin: 20px 0 20px;
         border-radius: 10px;
+        text-align: left;
 
         .article-cover {
             float: right;
@@ -130,7 +131,7 @@ const props = defineProps({
 
 
 
-            .article-content {
+            .article-list-content {
                 i {
                     margin-right: 5px;
                     color: $--theme-skin-active;

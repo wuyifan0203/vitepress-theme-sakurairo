@@ -2,7 +2,7 @@
  * @Author: wuyifan wuyifan@max-optics.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-02-29 01:41:27
+ * @LastEditTime: 2024-03-01 01:09:20
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -55,10 +55,11 @@ import { Theme } from '../types';
 const data = inject('data');
 
 const theme = useData().theme.value as Theme;
+const pageData = useData().page.value;
 
 // 以url为key获取文章信息
 const page = computed(() => {
-    let filePath = useData().page.value.filePath;
+    let filePath = pageData.filePath;
     filePath = filePath.replace(/\.md$/, '.html');
     filePath = '/' + filePath;
     return (data as any).find((page: any) => page.url === filePath)

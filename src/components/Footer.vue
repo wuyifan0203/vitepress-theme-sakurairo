@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-02-19 00:37:31
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 13:11:18
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-03-01 01:39:16
  * @FilePath: /vitepress-theme-sakurairo/src/components/Footer.vue
 -->
 <template>
@@ -16,6 +16,9 @@
                     Copyright © {{ theme.footer.copyright }}
                 </p>
                 <a :href="theme.footer.record" class="record" v-if="theme.footer.record"> {{ theme.footer.record }}</a>
+            </div>
+            <div class="yiyan">
+                <p id="yiyan"></p>
             </div>
             <div class="theme-info">
                 Theme <a href="">vitepress-theme-sakurairo</a> by
