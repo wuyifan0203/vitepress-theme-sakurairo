@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-17 19:04:35
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-20 14:43:06
+ * @LastEditTime: 2024-03-01 15:18:12
  * @FilePath: /vitepress-theme-sakurairo/src/components/Skin.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -19,6 +19,7 @@
     
 <script setup lang='ts'>
 import { onMounted, onUnmounted, ref } from 'vue';
+import { useEventListener } from '../composables';
 
 const changeSkin = () => {
     
@@ -30,12 +31,7 @@ const scrollHandle = () => {
     scale.value = document.documentElement.scrollTop > 0 ? 1 : 0;
 }
 
-onMounted(() => {
-    window.addEventListener('scroll', scrollHandle)
-});
-onUnmounted(() => {
-    window.removeEventListener('scroll', scrollHandle)
-})
+useEventListener('scroll', scrollHandle);
 </script>
     
 <style lang="scss">

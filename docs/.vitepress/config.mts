@@ -152,7 +152,8 @@ export default defineConfigWithTheme<Theme>({
     }
   },
   markdown: {
-    theme: 'monokai'
+    theme: 'monokai',
+    lineNumbers: true,
   },
   vite: {
     server: {
