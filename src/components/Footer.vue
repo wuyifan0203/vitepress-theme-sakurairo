@@ -1,7 +1,7 @@
 <!--
- * @Author: wuyifan 1208097313@qq.com
+ * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-19 00:37:31
- * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditors: wuyifan0203 1208097313@qq.com
  * @LastEditTime: 2024-03-01 01:39:16
  * @FilePath: /vitepress-theme-sakurairo/src/components/Footer.vue
 -->

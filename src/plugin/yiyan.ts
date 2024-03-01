@@ -1,3 +1,11 @@
+/*
+ * @Author: wuyifan0203 1208097313@qq.com
+ * @Date: 2024-03-01 09:36:28
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-01 10:03:17
+ * @FilePath: /vitepress-theme-sakurairo/src/plugin/yiyan.ts
+ * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
+ */
 import { useRouter } from 'vitepress';
 
 function useYiYan() {
@@ -13,14 +21,14 @@ function useYiYan() {
         if(dom){
             updateYiYan(dom);
         }else{
-            console.log('cannot find #yiyan domElemnt when init!');
+            console.log('cannot find #yiyan domElement when init!');
         }
 
         router.onAfterRouteChanged = async (to) => {
             if (dom) {
                 updateYiYan(dom);
             } else {
-                console.log('cannot find #yiyan domElemnt');
+                console.log('cannot find #yiyan domElement');
             }
 
             cacheAfterRouteChange && cacheAfterRouteChange(to);

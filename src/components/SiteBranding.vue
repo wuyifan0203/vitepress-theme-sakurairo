@@ -1,7 +1,7 @@
 <!--
- * @Author: wuyifan 1208097313@qq.com
+ * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
- * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditors: wuyifan0203 1208097313@qq.com
  * @LastEditTime: 2024-02-28 00:31:51
  * @FilePath: /vitepress-theme-sakurairo/src/components/SiteBranding.vue
 -->

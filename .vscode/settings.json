@@ -1,26 +1,58 @@
 {
-    "cSpell.words": [
-        "bilibili",
-        "composables",
-        "csdn",
-        "dingding",
-        "douban",
-        "douyin",
-        "fontawesome",
-        "fortawesome",
-        "gitee",
-        "jianshu",
-        "juejin",
-        "kuaishou",
-        "neteasecloud",
-        "neteastcloud",
-        "nprogress",
-        "sakura",
-        "sakurairo",
-        "shiki",
-        "vitepress",
-        "wechat",
-        "weibo",
-        "zhihu"
-    ]
+  // 特殊名词
+  "cSpell.words": [
+    "bilibili",
+    "composables",
+    "csdn",
+    "dingding",
+    "douban",
+    "douyin",
+    "fontawesome",
+    "fortawesome",
+    "gitee",
+    "hitokoto",
+    "jianshu",
+    "juejin",
+    "kuaishou",
+    "neteasecloud",
+    "neteastcloud",
+    "nprogress",
+    "sakura",
+    "sakurairo",
+    "shiki",
+    "vitepress",
+    "wechat",
+    "weibo",
+    "yiyan",
+    "zhihu"
+],
+  // 无关文件折叠
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
+    "*.env": "$(capture).env.*",
+    "CHANGELOG.md": "CHANGELOG*",
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,README*,.npmrc,.browserslistrc",
+    ".eslintrc.js": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.js,.prettierrc.js,.stylelintrc.js"
+  },
+  // 文件头部注释禁止添加
+  "fileheader.configObj": {
+    "prohibitAutoAdd": ["json", "md"],
+    "folderBlacklist": [
+        "node_modules",
+        "dist",
+        "build"
+      ]
+  },
+  // 文件头部注释
+  "fileheader.customMade": {
+    "Author": "git config user.name && git config user.email",
+    "Date": "Do not edit", // 文件创建时间(不变)
+    "LastEditors": "git config user.name && git config user.email", // 文件最后编辑者
+    "LastEditTime": "Do not edit", // 文件最后编辑时间
+    "FilePath": "Do not edit", // 文件在项目中的相对路径 自动更新
+    "custom_string_obkoro1_copyright": "Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved."
+  }
 }

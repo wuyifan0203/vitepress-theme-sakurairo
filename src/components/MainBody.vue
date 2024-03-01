@@ -1,7 +1,7 @@
 <!--
- * @Author: wuyifan 1208097313@qq.com
+ * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 02:07:12
- * @LastEditors: wuyifan wuyifan@max-optics.com
+ * @LastEditors: wuyifan0203 1208097313@qq.com
  * @LastEditTime: 2024-02-21 17:33:54
  * @FilePath: /vitepress-theme-sakurairo/src/components/MainBody.vue
 -->

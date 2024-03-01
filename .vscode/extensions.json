@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "OBKoro1.korofileheader",
+    "antfu.iconify",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

@@ -1,10 +1,10 @@
 /*
  * @Author: wuyifan0203 1208097313@qq.com
- * @Date: 2024-02-20 13:52:02
- * @LastEditors: wuyifan wuyifan@max-optics.com
- * @LastEditTime: 2024-02-27 17:47:22
+ * @Date: 2024-02-20 18:00:21
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-01 09:59:47
  * @FilePath: /vitepress-theme-sakurairo/src/types/index.ts
- * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
+ * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 export * from "./theme";
 export * from './frontmatter';

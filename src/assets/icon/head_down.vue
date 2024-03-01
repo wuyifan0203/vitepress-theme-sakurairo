@@ -4,7 +4,7 @@
  * @LastEditors: wuyifan0203 1208097313@qq.com
  * @LastEditTime: 2024-02-20 16:06:49
  * @FilePath: /vitepress-theme-sakurairo/src/assets/icon/head_down.vue
- * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
+ * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 
 <template>

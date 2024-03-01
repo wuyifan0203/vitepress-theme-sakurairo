@@ -1,10 +1,10 @@
 <!--
- * @Author: wuyifan wuyifan@max-optics.com
+ * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-20 18:00:21
- * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditors: wuyifan0203 1208097313@qq.com
  * @LastEditTime: 2024-02-28 00:35:14
  * @FilePath: /vitepress-theme-sakurairo/src/components/BackTop.vue
- * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
+ * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
     <button id="back-to-top" @click="backToTop" :style="{

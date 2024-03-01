@@ -1,10 +1,10 @@
 <!--
- * @Author: wuyifan wuyifan@max-optics.com
+ * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:33
- * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditors: wuyifan0203 1208097313@qq.com
  * @LastEditTime: 2024-03-01 02:03:14
  * @FilePath: /vitepress-theme-sakurairo/src/layout/NotFound.vue
- * Copyright (c) 2024 by wuyifan email: 1208097313@qq.com, All Rights Reserved.
+ * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
     <div class="anim-icon" id="404" style="height: calc(100vh - 260px); background: rgba(239, 239, 239, 0.959);">
