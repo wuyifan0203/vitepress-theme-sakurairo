@@ -18,6 +18,7 @@ export default defineConfigWithTheme<Theme>({
             { text: 'webGL', link: '/webgl', icon: '' },
             { text: 'date', link: '/date' },
             { text: 'glsl', link: '/glsl' },
+            { text: 'film', link: '/film',icon:'fa-film'}
           ]
         },
         {
