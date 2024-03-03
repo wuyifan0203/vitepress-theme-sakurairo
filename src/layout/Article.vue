@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-01 01:09:20
- * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-03-04 01:24:51
+ * @FilePath: /vuepress-interview/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
@@ -33,14 +33,14 @@
                 </p>
             </header>
         </div>
-        <div class="article-content">
+        <div class="article-content clearfix">
             <main>
-                <article>
+                <article class="article-body">
                     <Content />
                 </article>
+                <ArticleFooter :page="page"></ArticleFooter>
+                <Pagination class="footer-pagination"></Pagination>
             </main>
-        </div>
-        <div class="article-footer">
 
         </div>
     </div>
@@ -50,6 +50,8 @@
 import { Content, useData, } from 'vitepress';
 import { computed, inject } from 'vue';
 import { Theme } from '../types';
+import Pagination from '../components/Pagination.vue';
+import ArticleFooter from '../components/ArticleFooter.vue';
 
 
 const data = inject('data');
@@ -69,6 +71,7 @@ const page = computed(() => {
 <style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";
+@import "../styles/common.scss";
 
 .article-wrapper {
     -webkit-animation: blur .8s;
@@ -167,18 +170,20 @@ const page = computed(() => {
     }
 
     .article-content {
+        max-width: 800px;
+        padding: 0 10px;
+        margin-left: auto;
+        margin-right: auto;
+
         main {
             padding: 7.5% 0 0;
         }
     }
+
 }
 
-.article-content {
-    max-width: 800px;
-    padding: 0 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(255, 255, 255, .8);
+.article-body {
+
 
     &>a {
         text-decoration: none;
@@ -248,7 +253,7 @@ const page = computed(() => {
 
     ul,
     ol {
-        border: 1px solid #e4e4e4;
+        border: 1px solid #FFFFFF;
         padding: 15px 10px 30px 50px;
         color: #616161;
         margin-left: 0;

@@ -54,7 +54,15 @@ export default defineConfigWithTheme<Theme>({
         titleAlign: 'center'
       },
       avatar: '/vitepress-theme-sakurairo/avatar.jpg',
-      author: 'naraku'
+      author: 'naraku',
+      description: '欢迎来到祖安',
+      reward:[
+        {
+          src:()=>{
+            return '/vitepress-theme-sakurairo/avatar.jpg'
+          }
+        },
+      ]
     },
     cover: {
       background: {

@@ -17,6 +17,10 @@ export interface Theme {
         logo?: string,
         avatar: string,
         author: string,
+        description: string,
+        reward?:Array<{
+            src: ()=>string
+        }>
     },
     nav: {
         style: 'sakura' | 'sakurairo',
