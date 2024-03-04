@@ -99,7 +99,6 @@ import { wave2 } from '../assets/image/wave2';
 
 const theme: Ref<Theme> = useData().theme;
 
-const basePath = '../assets/icon/';
 const iconMap = {
     next,
     pre,
@@ -143,7 +142,6 @@ const spaceHandle = () => {
     if (coverRef.value) {
         document.documentElement.scrollTop = coverRef.value.clientHeight
     }
-
 }
 
 onMounted(() => {

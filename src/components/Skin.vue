@@ -2,9 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-17 19:04:35
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-01 15:18:12
+ * @LastEditTime: 2024-03-04 15:07:01
  * @FilePath: /vitepress-theme-sakurairo/src/components/Skin.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <button id="change-skin" @click="changeSkin" :style="{

@@ -7,6 +7,9 @@ export default defineConfigWithTheme<Theme>({
   outDir: '..//dist',
   lang: 'zh-CN',
   base: '/vitepress-theme-sakurairo/',
+  head:[
+    ['link', { rel: 'icon', href: '/vitepress-theme-sakurairo/favicon.ico' }]
+  ],
   themeConfig: {
     // logo: '/logo.svg',
     nav: {

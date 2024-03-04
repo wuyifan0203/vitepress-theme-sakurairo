@@ -2,6 +2,12 @@
 
 基于 WorldPress 的 <a href="https://github.com/mirai-mamori/Sakurairo">Sakurairo主题</a> 样式的Vitepress版本。
 
+## 预览
+
+[在线yulan](https://wuyifan0203.github.io/vitepress-theme-sakurairo/)
+
+![preview](./docs/public/preview.png)
+
 ## 特性
 
 - 主题还原度很高。（应该吧）
