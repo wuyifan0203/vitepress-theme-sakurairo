@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-04 01:24:43
+ * @LastEditTime: 2024-03-05 00:17:50
  * @FilePath: /vuepress-interview/src/layout/index.vue
 -->
 <template>
@@ -18,7 +18,6 @@ import { useData } from "vitepress";
 import { onMounted, provide } from 'vue';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
-import '../styles/waline.css';
 
 import Header from '../components/Header.vue';
 import Layout from './Layout.vue';

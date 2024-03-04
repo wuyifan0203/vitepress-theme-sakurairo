@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-04 14:31:06
- * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-03-05 01:09:53
+ * @FilePath: /vuepress-interview/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
@@ -42,6 +42,7 @@
                 <Pagination class="footer-pagination" :page="pageData"></Pagination>
             </main>
         </div>
+        <CommentBoard class="comment-board"></CommentBoard>
     </div>
 </template>
 
@@ -51,6 +52,7 @@ import { ComputedRef, computed, inject } from 'vue';
 import { DefaultPageFormatter } from '../types';
 import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
+import CommentBoard from '../components/CommentBoard.vue';
 
 
 const data = inject('data');
@@ -167,7 +169,7 @@ const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
         }
     }
 
-    .article-content {
+    .article-content, .comment-board {
         max-width: 800px;
         padding: 0 10px;
         margin-left: auto;
