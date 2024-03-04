@@ -4,7 +4,7 @@
 
 ## 预览
 
-[在线yulan](https://wuyifan0203.github.io/vitepress-theme-sakurairo/)
+[在线预览](https://wuyifan0203.github.io/vitepress-theme-sakurairo/)
 
 ![preview](https://github.com/wuyifan0203/vitepress-theme-sakurairo/blob/master/docs/public/preview.png?raw=true)
 
