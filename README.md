@@ -6,7 +6,7 @@
 
 [在线yulan](https://wuyifan0203.github.io/vitepress-theme-sakurairo/)
 
-![preview](./docs/public/preview.png)
+![preview](https://github.com/wuyifan0203/vitepress-theme-sakurairo/blob/master/docs/public/preview.png?raw=true)
 
 ## 特性
 
