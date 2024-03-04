@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-28 00:52:48
+ * @LastEditTime: 2024-03-04 14:37:11
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
 -->
 <template>
@@ -19,7 +19,7 @@
             </h1>
             <ArticleList :list="pages"></ArticleList>
         </div>
-        <div class="pagination">
+        <div class="content-pagination">
             <a href="" v-if="true">更早文章</a>
             <span v-else>
                 很高兴你翻到这里，但是真的没有了...
@@ -82,7 +82,7 @@ console.log(pages);
         }
     }
 
-    .pagination {
+    .content-pagination {
         width: 100%;
         padding: 20px 0;
         text-align: center;

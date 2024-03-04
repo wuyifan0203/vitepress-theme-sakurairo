@@ -142,18 +142,6 @@ export default defineConfigWithTheme<Theme>({
       title: '文章 展示',
       icon: 'fa-bookmark',
       layout: 'interlaced', // 'left','right','interlaced'
-      // items: [
-      //   {
-      //     cover: 'https://www.loliapi.com/acg/',
-      //     dateline: 10000000,// 时间戳
-      //     pageViews: 99,
-      //     title: '文章1',
-      //     synopsis: '文章1描述',
-      //     comment: 0,
-      //     type: '原创',
-      //     link: '/',
-      //   }
-      // ]
     },
     footer: {
       copyright: '2024-present wuyifan',

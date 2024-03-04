@@ -1,19 +1,19 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-04 01:24:51
- * @FilePath: /vuepress-interview/src/layout/Article.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-04 14:31:06
+ * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
     <div class="article-wrapper">
         <div class="article-head">
             <div class="article-cover" :style="{
-                backgroundImage: `url(${page.cover})`
+                backgroundImage: `url(${pageData.cover})`
             }"></div>
             <header>
-                <h1 class="entry-title">{{ page.title }}</h1>
+                <h1 class="entry-title">{{ pageData.title }}</h1>
                 <span class="topic-line"></span>
                 <p class="entry-census">
                     <span>
@@ -27,7 +27,7 @@
                         </a>
                     </span>
                     <span class="bull">·</span>
-                    {{ page.publish }}
+                    {{ pageData.publish }}
                     <span class="bull">·</span>
                     {{ 0 }} 次阅读
                 </p>
@@ -38,33 +38,31 @@
                 <article class="article-body">
                     <Content />
                 </article>
-                <ArticleFooter :page="page"></ArticleFooter>
-                <Pagination class="footer-pagination"></Pagination>
+                <ArticleFooter :page="pageData"></ArticleFooter>
+                <Pagination class="footer-pagination" :page="pageData"></Pagination>
             </main>
-
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { Content, useData, } from 'vitepress';
-import { computed, inject } from 'vue';
-import { Theme } from '../types';
+import { ComputedRef, computed, inject } from 'vue';
+import { DefaultPageFormatter } from '../types';
 import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
 
 
 const data = inject('data');
 
-const theme = useData().theme.value as Theme;
-const pageData = useData().page.value;
+const { theme, page } = useData();
 
 // 以url为key获取文章信息
-const page = computed(() => {
-    let filePath = pageData.filePath;
-    filePath = filePath.replace(/\.md$/, '.html');
+const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
+    let filePath = page.value.filePath;
+    filePath = filePath.replace(/\.md$/, '');
     filePath = '/' + filePath;
-    return (data as any).find((page: any) => page.url === filePath)
+    return (data as any).find((page: any) => page.key === filePath)
 })
 
 </script>

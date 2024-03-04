@@ -5,6 +5,8 @@ layout: page
 publish: 2024-02-25 11:29:00
 update: 2024-02-27 15:22:00
 tags: ['test', 'vitepress']
+prev: '/posts/film'
+next: '/posts/glsl/glsl'
 ---
 
 # title test

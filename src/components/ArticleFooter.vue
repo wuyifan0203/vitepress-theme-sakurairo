@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-04 00:40:09
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-04 01:21:29
- * @FilePath: /vuepress-interview/src/components/ArticleFooter.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-04 14:32:09
+ * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleFooter.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
@@ -41,29 +41,31 @@
             </div>
             <div class="modified-time">
                 <i class="fa-solid fa-calendar-day"></i>
-                最后更新于 {{ props.page.update }}
+                最后更新于 {{ page.update }}
             </div>
             <div class="post-tags">
                 <i class="fa-solid fa-tag"></i>
-                <a href="" v-for="item in props.page.tags" :key="item">{{ item }}</a>
+                <a href="" v-for="item in page.tags" :key="item">{{ item }}</a>
             </div>
         </section>
     </div>
 </template>
     
 <script setup lang='ts'>
-import { PropType } from 'vue'
+import { PropType, computed } from 'vue'
 import { useData } from 'vitepress';
-import { PageFormatter, Theme } from '../types';
-import { it } from 'node:test';
+import { DefaultPageFormatter, Theme } from '../types';
 
 const props = defineProps({
     page: {
         required: true,
-        type: Object as PropType<PageFormatter>,
+        type: Object as PropType<DefaultPageFormatter>,
         default: () => { }
     }
 })
+
+const page = computed(()=>props.page)
+
 const theme = useData().theme.value as Theme;
 </script>
     

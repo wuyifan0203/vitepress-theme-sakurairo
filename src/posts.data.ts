@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-23 17:24:09
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-28 00:54:44
+ * @LastEditTime: 2024-03-04 13:47:47
  * @FilePath: /vitepress-theme-sakurairo/src/posts.data.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -87,22 +87,35 @@ export default ((pattern: string | string[]): {
                         } else {
                             frontmatter.update = formatTimestamp(frontmatter.update);
                         }
+
+                        frontmatter['prev'] = !frontmatter.prev ? false : frontmatter.prev;
+                        frontmatter['next'] = !frontmatter.next ? false : frontmatter.next;
+                        frontmatter['cover'] = !frontmatter.cover ? '' : frontmatter.cover;
                     }
 
                     const url = generateURL(config, file);
+                    const key = (() => {
+                        return '/' + normalizePath(path.relative(config.srcDir, file))
+                        .replace(/(^|\/)index\.md$/, '$1')
+                        .replace(/\.md$/, '');
+                    })()
                     const html = md.render(sourceFile);
 
                     const posts = {
                         html,
                         url,
                         ...frontmatter,
-                        content
+                        content,
+                        key
                     }
 
                     raw.push(posts);
                     cache.set(file, { data: posts, timestamp: mtimeMs })
                 }
             }
+
+            console.log(raw);
+
             return raw;
         }
     }

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Film List
+cover: '/vitepress-theme-sakurairo/bg.jpeg'
 ---
 
 

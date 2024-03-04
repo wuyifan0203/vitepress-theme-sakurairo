@@ -1,30 +1,33 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-03 11:31:21
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-04 00:29:11
- * @FilePath: /vuepress-interview/src/components/Pagination.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-04 14:34:46
+ * @FilePath: /vitepress-theme-sakurairo/src/components/Pagination.vue
 -->
 <template>
     <section class="pagination">
-        <div class="half previous">
-            <a href="">
-                <div class="background">
+        <div class="half previous" v-if="page.prev || prevPage">
+            <a :href="withBase(prevPage.url)">
+                <div class="background" :style="{
+                    backgroundImage: `url(${prevPage.cover})`
+                }">
                 </div>
-                <div class="label"> 上一篇文章</div>
+                <div class="label">上一篇文章</div>
                 <div class="info">
-                    <h3>我是白哦题</h3>
+                    <h3>{{ prevPage.title }}</h3>
                 </div>
             </a>
         </div>
-        <div class="half next">
-            <a href="">
-                <div class="background">
+        <div class="half next" v-if="page.next || nextPage">
+            <a :href="withBase(nextPage.url)">
+                <div class="background" :style="{
+                    backgroundImage: `url(${nextPage.cover})`
+                }">
                 </div>
-                <div class="label"> 下一篇文章</div>
+                <div class="label">下一篇文章</div>
                 <div class="info">
-                    <h3>我是白哦题</h3>
+                    <h3>{{ nextPage.title }}</h3>
                 </div>
             </a>
         </div>
@@ -32,6 +35,29 @@
 </template>
     
 <script setup lang='ts'>
+import { PropType, computed, inject } from 'vue';
+import { withBase } from 'vitepress'
+import { DefaultPageFormatter } from '../types';
+
+const data = inject('data') as any[]
+
+const props = defineProps({
+    page: {
+        required: true,
+        type: Object as PropType<DefaultPageFormatter>,
+        default: () => { }
+    }
+})
+
+const page = computed(()=>props.page)
+
+const prevPage = computed(() => {
+    return data.find(current => current.key === page.value.prev)
+});
+
+const nextPage = computed(() => {
+    return data.find(current => current.key === page.value.next)
+});
 
 </script>
     
