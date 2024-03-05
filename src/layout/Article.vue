@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-05 13:08:41
+ * @LastEditTime: 2024-03-05 16:08:05
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -34,10 +34,11 @@
             </header>
         </div>
         <div class="article-content clearfix">
-            <main>
+            <main ref="articleRef">
                 <article class="article-body">
                     <Content />
                 </article>
+                <ArticleCatalog class="article-catalog" ref="catalogRef"></ArticleCatalog>
                 <ArticleFooter :page="pageData"></ArticleFooter>
                 <Pagination class="footer-pagination" :page="pageData"></Pagination>
             </main>
@@ -48,16 +49,35 @@
 
 <script setup lang="ts">
 import { Content, useData, } from 'vitepress';
-import { ComputedRef, computed, inject } from 'vue';
+import { ComputedRef, computed, inject, onMounted, ref } from 'vue';
 import { DefaultPageFormatter, Theme } from '../types';
 import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
+import ArticleCatalog from '../components/ArticleCatalog.vue';
+import { useBeforeRouterChange } from '../composables/useRouter';
 
 
 const data = inject('data');
+const articleRef = ref<HTMLElement>();
+const catalogRef = ref();
+
+onMounted(() => {
+    updateTocHeight();
+})
+
+const updateTocHeight = () => {
+    if (articleRef.value && catalogRef.value) {
+        let height = articleRef.value.clientHeight;
+        catalogRef.value.updateHeight(height);
+    }else{
+        console.warn('set tocbot height fail!');
+    }
+}
 
 const { theme, page } = useData();
+
+// useBeforeRouterChange(updateTocHeight)
 
 // 以url为key获取文章信息
 const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
@@ -174,7 +194,8 @@ const useComment = computed(() => {
         }
     }
 
-    .article-content, .comment-board {
+    .article-content,
+    .comment-board {
         max-width: 800px;
         padding: 0 10px;
         margin-left: auto;
@@ -182,10 +203,24 @@ const useComment = computed(() => {
 
         main {
             padding: 7.5% 0 0;
+
+            .article-catalog {
+                z-index: 98;
+                width: 200px;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0);
+                transform: translateX(0);
+                right: calc((100% - 950px - 250px) / 2);
+                position: absolute !important;
+                top: 480px;
+                position: absolute;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
         }
     }
 
-    .comment-board{
+    .comment-board {
         margin-top: 20px;
     }
 

@@ -20,13 +20,14 @@
     "sakura",
     "sakurairo",
     "shiki",
+    "tocbot",
     "vitepress",
     "waline",
     "wechat",
     "weibo",
     "yiyan",
     "zhihu"
-],
+  ],
   // 无关文件折叠
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
