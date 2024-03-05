@@ -2,12 +2,12 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-28 00:31:51
+ * @LastEditTime: 2024-03-05 13:09:11
  * @FilePath: /vitepress-theme-sakurairo/src/components/SiteBranding.vue
 -->
 <template>
     <a :href="withBase('/')" class="site-branding">
-        <div class="logolink" v-if="theme.global.logo">
+        <div class="logo-link" v-if="theme.global.logo">
             <img :src="theme.global.logo" alt="">
         </div>
         <ruby v-else>
@@ -67,7 +67,7 @@ const theme: Ref<Theme> = useData().theme;
         }
     }
 
-    .logolink {
+    .logo-link {
         display: inline-block;
 
         img {

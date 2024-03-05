@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-05 01:09:53
- * @FilePath: /vuepress-interview/src/layout/Article.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-05 13:08:41
+ * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
@@ -42,14 +42,14 @@
                 <Pagination class="footer-pagination" :page="pageData"></Pagination>
             </main>
         </div>
-        <CommentBoard class="comment-board"></CommentBoard>
+        <CommentBoard class="comment-board" :page="pageData" v-if="useComment"></CommentBoard>
     </div>
 </template>
 
 <script setup lang="ts">
 import { Content, useData, } from 'vitepress';
 import { ComputedRef, computed, inject } from 'vue';
-import { DefaultPageFormatter } from '../types';
+import { DefaultPageFormatter, Theme } from '../types';
 import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
@@ -65,6 +65,11 @@ const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
     filePath = filePath.replace(/\.md$/, '');
     filePath = '/' + filePath;
     return (data as any).find((page: any) => page.key === filePath)
+});
+
+const useComment = computed(() => {
+    const scopeTheme = theme.value as Theme;
+    return scopeTheme.global.comments.enable && pageData.value.comment;
 })
 
 </script>
@@ -178,6 +183,10 @@ const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
         main {
             padding: 7.5% 0 0;
         }
+    }
+
+    .comment-board{
+        margin-top: 20px;
     }
 
 }

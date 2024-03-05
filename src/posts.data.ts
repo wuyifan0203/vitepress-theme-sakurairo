@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-23 17:24:09
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-04 13:47:47
+ * @LastEditTime: 2024-03-05 13:05:59
  * @FilePath: /vitepress-theme-sakurairo/src/posts.data.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -87,10 +87,11 @@ export default ((pattern: string | string[]): {
                         } else {
                             frontmatter.update = formatTimestamp(frontmatter.update);
                         }
-
-                        frontmatter['prev'] = !frontmatter.prev ? false : frontmatter.prev;
-                        frontmatter['next'] = !frontmatter.next ? false : frontmatter.next;
-                        frontmatter['cover'] = !frontmatter.cover ? '' : frontmatter.cover;
+                        
+                        frontmatter['prev'] = frontmatter.prev ?? false;
+                        frontmatter['next'] = frontmatter.next ?? false;
+                        frontmatter['cover'] = frontmatter?.cover ?? '';
+                        frontmatter['comment'] = frontmatter?.comment ?? true;
                     }
 
                     const url = generateURL(config, file);

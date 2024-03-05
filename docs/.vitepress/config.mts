@@ -66,7 +66,11 @@ export default defineConfigWithTheme<Theme>({
             return '/vitepress-theme-sakurairo/avatar.jpg'
           }
         },
-      ]
+      ],
+      comments: {
+        enable: true,
+        serverURL:'https://vercel-git-main-wuyifan0203s-projects.vercel.app/'
+      }
     },
     cover: {
       background: {

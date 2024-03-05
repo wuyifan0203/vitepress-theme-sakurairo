@@ -20,7 +20,11 @@ export interface Theme {
         description: string,
         reward?:Array<{
             src: ()=>string
-        }>
+        }>,
+        comments:{
+            enable:boolean,
+            serverURL:string,
+        }
     },
     nav: {
         style: 'sakura' | 'sakurairo',
