@@ -2,38 +2,40 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-01 09:36:28
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-01 10:03:17
+ * @LastEditTime: 2024-03-06 11:30:03
  * @FilePath: /vitepress-theme-sakurairo/src/plugin/yiyan.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 import { useRouter } from 'vitepress';
+const apis = [
+    "https://v1.hitokoto.cn/",
+    "https://api.nmxc.ltd/yiyan/",
+    "https://api.maho.cc/yiyan/"
+];
+
+let dom: null | HTMLElement = null;
 
 function useYiYan() {
-    let dom: null | HTMLElement = null;
+    dom = dom || document.querySelector('#yiyan');
 
+    const router = useRouter();
+    const cacheAfterRouteChange = router.onAfterRouteChanged;
 
-    return (() => {
-        dom = dom || document.querySelector('#yiyan');
+    if (dom) {
+        updateYiYan(dom);
+    } else {
+        console.log('cannot find #yiyan domElement when init!');
+    }
 
-        const router = useRouter();
-        const cacheAfterRouteChange = router.onAfterRouteChanged;
-
-        if(dom){
+    router.onAfterRouteChanged = async (to) => {
+        if (dom) {
             updateYiYan(dom);
-        }else{
-            console.log('cannot find #yiyan domElement when init!');
+        } else {
+            console.log('cannot find #yiyan domElement');
         }
 
-        router.onAfterRouteChanged = async (to) => {
-            if (dom) {
-                updateYiYan(dom);
-            } else {
-                console.log('cannot find #yiyan domElement');
-            }
-
-            cacheAfterRouteChange && cacheAfterRouteChange(to);
-        }
-    })()
+        cacheAfterRouteChange && cacheAfterRouteChange(to);
+    }
 }
 
 async function request(api: string) {
@@ -49,25 +51,18 @@ async function request(api: string) {
     }
 }
 
-function updateYiYan(dom: HTMLElement) {
-    const apis = [
-        "https://v1.hitokoto.cn/",
-        "https://api.nmxc.ltd/yiyan/",
-        "https://api.maho.cc/yiyan/"
-    ]
-    return (async (dom) => {
-        for (const apiPath of apis) {
-            try {
-                const txt = await request(apiPath);
-                dom.innerText = txt;
-                break;
-            }
-            catch (e) {
-                console.warn(`一言API: 尝试联系"${apiPath}"时出错。 `, e);
-                continue;
-            }
+async function updateYiYan(dom: HTMLElement) {
+    for (const apiPath of apis) {
+        try {
+            const txt = await request(apiPath);
+            dom.innerText = txt;
+            break;
         }
-    })(dom)
+        catch (e) {
+            console.warn(`一言API: 尝试联系"${apiPath}"时出错。 `, e);
+            continue;
+        }
+    }
 }
 
 export { useYiYan }

@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-05 16:08:05
+ * @LastEditTime: 2024-03-06 18:07:04
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -63,10 +63,12 @@ const articleRef = ref<HTMLElement>();
 const catalogRef = ref();
 
 onMounted(() => {
-    updateTocHeight();
+    useBeforeRouterChange(updateTocHeight);
 })
 
 const updateTocHeight = () => {
+    console.log('updateTocHeight');
+    
     if (articleRef.value && catalogRef.value) {
         let height = articleRef.value.clientHeight;
         catalogRef.value.updateHeight(height);
@@ -76,8 +78,6 @@ const updateTocHeight = () => {
 }
 
 const { theme, page } = useData();
-
-// useBeforeRouterChange(updateTocHeight)
 
 // 以url为key获取文章信息
 const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
