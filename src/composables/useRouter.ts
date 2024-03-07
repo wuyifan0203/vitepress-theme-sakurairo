@@ -1,33 +1,51 @@
 /*
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-05 15:49:00
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-06 18:05:13
- * @FilePath: /vitepress-theme-sakurairo/src/composables/useRouter.ts
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-03-08 00:35:50
+ * @FilePath: /vuepress-interview/src/composables/useRouter.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 import { useRouter } from 'vitepress';
 
-const callbackMap: { [key: string]: Function } = {};
-let useBeforeRouterChange = (callback: Function) => {
-    if (Object.keys(callbackMap).length === 0) {
+const beforeCallbackMap: { [key: string]: Function } = {};
+const useBeforeRouterChange = (callback: Function) => {
+    if (Object.keys(beforeCallbackMap).length === 0) {
         const router = useRouter();
         const cacheBeforeChange = router.onBeforeRouteChange;
         router.onBeforeRouteChange = async (to: string) => {
-            for (const key in callbackMap) {
-                await callbackMap[key](to);
+            for (const key in beforeCallbackMap) {
+                await beforeCallbackMap[key](to);
             }
             cacheBeforeChange && cacheBeforeChange(to);
         }
     }
     // 不用数组因为没法去重
-    callbackMap[callback.toString()] = callback;
+    beforeCallbackMap[callback.toString()] = callback;
 
-    console.log(callbackMap,'callbackMap');
-    
+    console.log(beforeCallbackMap, 'callbackMap');
+
 }
 
-export { useBeforeRouterChange }
+const afterCallbackMap: { [key: string]: Function } = {};
+const useAfterRouterChange = (callback: Function) => {
+    if (Object.keys(afterCallbackMap).length === 0) {
+        const router = useRouter();
+        const cacheAfterChange = router.onAfterRouteChanged;
+        router.onAfterRouteChanged = async (to: string) => {
+            for (const key in afterCallbackMap) {
+                await afterCallbackMap[key](to);
+            }
+            cacheAfterChange && cacheAfterChange(to);
+        }
+    }
+    // 不用数组因为没法去重
+    afterCallbackMap[callback.toString()] = callback;
+}
+
+
+
+export { useBeforeRouterChange, useAfterRouterChange }
 
 // 另一种写法，
 
