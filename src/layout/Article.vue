@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-06 18:07:04
+ * @LastEditTime: 2024-03-07 18:00:57
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -33,8 +33,8 @@
                 </p>
             </header>
         </div>
-        <div class="article-content clearfix">
-            <main ref="articleRef">
+        <div class="article-content clearfix" ref="articleRef">
+            <main>
                 <article class="article-body">
                     <Content />
                 </article>
@@ -61,6 +61,9 @@ import { useBeforeRouterChange } from '../composables/useRouter';
 const data = inject('data');
 const articleRef = ref<HTMLElement>();
 const catalogRef = ref();
+const { theme, page } = useData();
+
+const layout = computed(() => page.value.frontmatter.layout)
 
 onMounted(() => {
     useBeforeRouterChange(updateTocHeight);
@@ -68,16 +71,19 @@ onMounted(() => {
 
 const updateTocHeight = () => {
     console.log('updateTocHeight');
-    
-    if (articleRef.value && catalogRef.value) {
-        let height = articleRef.value.clientHeight;
-        catalogRef.value.updateHeight(height);
-    }else{
-        console.warn('set tocbot height fail!');
+    if (layout.value === 'page') {
+        if (articleRef.value && catalogRef.value) {
+            let height = articleRef.value.clientHeight;
+            catalogRef.value.updateHeight(height);
+            console.log(height);
+            
+            catalogRef.value.refresh();
+        } else {
+            console.warn('set tocbot height fail!');
+        }
     }
 }
 
-const { theme, page } = useData();
 
 // 以url为key获取文章信息
 const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
