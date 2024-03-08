@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-05 00:17:50
- * @FilePath: /vuepress-interview/src/layout/index.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-08 16:23:24
+ * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
     <Header></Header>
@@ -12,7 +12,7 @@
     <BackTop></BackTop>
     <Skin></Skin>
 </template>
-    
+
 <script setup lang='ts'>
 import { useData } from "vitepress";
 import { onMounted, provide } from 'vue';
@@ -27,20 +27,22 @@ import Skin from '../components//Skin.vue';
 import { installThemePlugin } from '../plugin';
 
 import { data } from '../posts.data';
+import { Theme } from "../types";
+import { fetchApi } from '../api';
+const theme = useData().theme.value as Theme;
+fetchApi.getInstance(theme.global.comments.serverURL);
 
 
 provide('data', data);
 
 
-const { theme } = useData();
-
 onMounted(() => {
     installThemePlugin()
-    document.body.style.backgroundImage = `url(${theme.value.global.background.src()})`;
+    document.body.style.backgroundImage = `url(${theme.global.background?.src()})`;
 })
 
 </script>
-    
+
 <style lang="scss">
 @import '../styles/theme.scss';
 @import '../styles/variable.scss';
