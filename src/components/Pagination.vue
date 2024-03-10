@@ -1,33 +1,33 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-03 11:31:21
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-04 14:34:46
- * @FilePath: /vitepress-theme-sakurairo/src/components/Pagination.vue
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-03-10 19:11:50
+ * @FilePath: /vuepress-interview/src/components/Pagination.vue
 -->
 <template>
     <section class="pagination">
         <div class="half previous" v-if="page.prev || prevPage">
-            <a :href="withBase(prevPage.url)">
+            <a :href="withBase(prevPage!.url)">
                 <div class="background" :style="{
-                    backgroundImage: `url(${prevPage.cover})`
+                    backgroundImage: `url(${prevPage!.cover})`
                 }">
                 </div>
                 <div class="label">上一篇文章</div>
                 <div class="info">
-                    <h3>{{ prevPage.title }}</h3>
+                    <h3>{{ prevPage!.title }}</h3>
                 </div>
             </a>
         </div>
         <div class="half next" v-if="page.next || nextPage">
-            <a :href="withBase(nextPage.url)">
+            <a :href="withBase(nextPage!.url)">
                 <div class="background" :style="{
-                    backgroundImage: `url(${nextPage.cover})`
+                    backgroundImage: `url(${nextPage!.cover})`
                 }">
                 </div>
                 <div class="label">下一篇文章</div>
                 <div class="info">
-                    <h3>{{ nextPage.title }}</h3>
+                    <h3>{{ nextPage!.title }}</h3>
                 </div>
             </a>
         </div>
@@ -35,11 +35,13 @@
 </template>
     
 <script setup lang='ts'>
-import { PropType, computed, inject } from 'vue';
+import { PropType, computed } from 'vue';
 import { withBase } from 'vitepress'
 import { DefaultPageFormatter } from '../types';
+import { useStore } from '../utils';
 
-const data = inject('data') as any[]
+const globalStore = useStore('global')
+const data = globalStore.getData() as DefaultPageFormatter[];
 
 const props = defineProps({
     page: {
@@ -52,7 +54,7 @@ const props = defineProps({
 const page = computed(()=>props.page)
 
 const prevPage = computed(() => {
-    return data.find(current => current.key === page.value.prev)
+    return data.find((current) => current.key === page.value.prev)
 });
 
 const nextPage = computed(() => {

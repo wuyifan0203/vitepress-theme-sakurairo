@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-08 00:59:12
+ * @LastEditTime: 2024-03-10 19:04:44
  * @FilePath: /vuepress-interview/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -56,9 +56,12 @@ import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
 import ArticleCatalog from '../components/ArticleCatalog.vue';
 import { useAfterRouterChange } from '../composables/useRouter';
+import { useStore } from '../utils';
 
+const globalStore = useStore('global')
+const data = globalStore.getData();
+console.log(data);
 
-const data = inject('data');
 const articleRef = ref<HTMLElement>();
 const catalogRef = ref();
 const { theme, page } = useData();
