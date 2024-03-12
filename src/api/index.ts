@@ -1,8 +1,8 @@
 /*
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-08 14:11:43
- * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-08 16:24:11
+ * @LastEditors: wuyifan 1208097313@qq.com
+ * @LastEditTime: 2024-03-13 01:16:07
  * @FilePath: /vitepress-theme-sakurairo/src/api/index.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -40,9 +40,24 @@ const fetchApi = (function () {
             });
         }
 
+        async function getImage(url:string){
+            console.log(url);
+            
+            return await get(url).then((res)=>{
+                console.log(res);
+                
+                return res.blob()
+            }).then((blob)=>{
+                console.log(blob);
+                
+                return URL.createObjectURL(blob)
+            })
+        }
+
         return {
             getPageViews,
-            getCommentsCount
+            getCommentsCount,
+            getImage
         }
 
     }

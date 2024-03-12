@@ -70,7 +70,8 @@ export default defineConfigWithTheme<Theme>({
       comments: {
         enable: true,
         serverURL:'https://vercel-git-main-wuyifan0203s-projects.vercel.app/'
-      }
+      },
+      onLoadImage:'/vitepress-theme-sakurairo/outLoad.svg',
     },
     cover: {
       background: {

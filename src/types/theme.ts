@@ -24,7 +24,8 @@ export interface Theme {
         comments:{
             enable:boolean,
             serverURL:string,
-        }
+        },
+        onLoadImage:string
     },
     nav: {
         style: 'sakura' | 'sakurairo',

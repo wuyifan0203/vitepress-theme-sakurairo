@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-10 19:04:44
- * @FilePath: /vuepress-interview/src/layout/Article.vue
+ * @LastEditTime: 2024-03-13 01:18:10
+ * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
@@ -45,6 +45,7 @@
         </div>
         <CommentBoard class="comment-board" :page="pageData" v-if="useComment"></CommentBoard>
     </div>
+    <!-- <Image :url="'https://www.loliapi.com/acg'"></Image> -->
 </template>
 
 <script setup lang="ts">
@@ -55,6 +56,7 @@ import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
 import ArticleCatalog from '../components/ArticleCatalog.vue';
+import Image from '../components/Image.vue';
 import { useAfterRouterChange } from '../composables/useRouter';
 import { useStore } from '../utils';
 
