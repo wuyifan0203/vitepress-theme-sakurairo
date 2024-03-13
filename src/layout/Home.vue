@@ -12,6 +12,13 @@
 </template>
 
 <script setup lang="ts">
+import { useData } from 'vitepress';
 import Cover from '../components/Cover.vue';
 import MainBody from '../components/MainBody.vue';
+import { Theme } from '../types';
+import { useStore } from '../utils';
+const theme = useData().theme.value as Theme;
+
+const globalStore = useStore('global');
+globalStore.getTotalPageViews(theme.global.comments.serverURL)
 </script>

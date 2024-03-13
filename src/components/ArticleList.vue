@@ -1,7 +1,7 @@
 <template>
     <div class="article-list">
         <ul class="clearfix">
-            <li v-for="(item, index) in props.list" :key="index" class="article-block">
+            <li v-for="(item, index) in list" :key="index" class="article-block">
                 <article>
                     <div class="article-cover" :class="`article-list-${theme.articleBoard.layout}`">
                         <a :href="withBase(item.url)">
@@ -31,7 +31,7 @@
                                 <span class="meta-comment">
                                     <i class="fa-regular fa-comment"></i>
                                     <a href="">
-                                        {{ item.comment === 0 ? '无~' : `${item.comment} 条评论` }}
+                                        {{ item.commentsCount === 0 ? '无~' : `${item.commentsCount} 条评论` }}
                                     </a>
                                 </span>
                                 <span>
@@ -59,7 +59,7 @@ import { useData, withBase } from 'vitepress';
 const theme = useData().theme.value as Theme;
 
 
-const props = defineProps({
+const { list } = defineProps({
     list: {
         type: Array as PropType<Article[]>,
         default: () => []

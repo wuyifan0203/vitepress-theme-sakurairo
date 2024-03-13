@@ -1,9 +1,9 @@
 /*
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-27 17:45:48
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-10 23:47:09
- * @FilePath: /vuepress-interview/src/types/frontmatter.ts
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-13 16:27:24
+ * @FilePath: /vitepress-theme-sakurairo/src/types/frontmatter.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 export type HomeFrontmatter = {
@@ -35,6 +35,8 @@ export type DefaultPageFormatter = {
     cover: string
     url:string,
     comment:boolean,
+    pageViews:number,
+    commentsCount:number,
     key:string
 }
 

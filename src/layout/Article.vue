@@ -1,8 +1,8 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-13 01:18:10
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-13 16:53:29
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -29,7 +29,7 @@
                     <span class="bull">·</span>
                     {{ pageData.publish }}
                     <span class="bull">·</span>
-                    {{ 0 }} 次阅读
+                    {{ pageData.pageViews }} 次阅读
                 </p>
             </header>
         </div>
@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import { Content, useData, } from 'vitepress';
-import { ComputedRef, computed, inject, onMounted, ref } from 'vue';
+import { ComputedRef, computed, onMounted, ref } from 'vue';
 import { DefaultPageFormatter, Theme } from '../types';
 import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
@@ -61,8 +61,7 @@ import { useAfterRouterChange } from '../composables/useRouter';
 import { useStore } from '../utils';
 
 const globalStore = useStore('global')
-const data = globalStore.getData();
-console.log(data);
+const data = computed(() => globalStore.getData());
 
 const articleRef = ref<HTMLElement>();
 const catalogRef = ref();
@@ -92,7 +91,7 @@ const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
     let filePath = page.value.filePath;
     filePath = filePath.replace(/\.md$/, '');
     filePath = '/' + filePath;
-    return (data as any).find((page: any) => page.key === filePath)
+    return data.value.find((page: DefaultPageFormatter) => page.key === filePath)
 });
 
 const useComment = computed(() => {

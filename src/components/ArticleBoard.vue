@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-04 15:05:09
+ * @LastEditTime: 2024-03-13 16:42:10
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
 -->
 <template>
@@ -12,8 +12,8 @@
                 textAlign: theme.global.board?.titleAlign
             }">
                 <i class="far" :class="iconFont" :style="{
-                    visibility: showIcon
-                }"></i>
+                visibility: showIcon
+            }"></i>
                 <br>
                 {{ theme.articleBoard.title }}
             </h1>
@@ -27,24 +27,33 @@
         </div>
     </div>
 </template>
-    
+
 <script setup lang='ts'>
 import { useData } from "vitepress";
-import { Ref } from "vue";
+import { Ref, computed } from "vue";
 import { Theme } from "../types/theme";
 import ArticleList from "./ArticleList.vue";
-import { data } from "../posts.data";
+import { useStore } from "../utils";
+import { DefaultPageFormatter } from "../types";
+
+const globalStore = useStore('global');
+
+const data = computed(() => globalStore.getData())
+
 const theme: Ref<Theme> = useData().theme;
 
 const showIcon = (theme.value.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
 const iconFont: string = theme.value.articleBoard?.icon ?? 'fa-laptop';
 
-const pages = data.filter(d => d.layout === 'page').sort((a, b) => {
-    return +new Date(b.publish) - +new Date(a.publish)
+const pages = computed(() => {
+    return data.value.filter((d: DefaultPageFormatter) => d.layout === 'page').sort((a: DefaultPageFormatter, b: DefaultPageFormatter) => {
+        return +new Date(b.publish) - +new Date(a.publish)
+    })
 })
 
+
 </script>
-    
+
 <style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";

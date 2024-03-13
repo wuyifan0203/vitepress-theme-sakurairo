@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-10 19:03:07
- * @FilePath: /vuepress-interview/src/layout/index.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-13 16:28:21
+ * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
     <Header></Header>
@@ -28,25 +28,15 @@ import { installThemePlugin } from '../plugin';
 
 import { data } from '../posts.data';
 import { Theme } from "../types";
-import { fetchApi } from '../api';
 import { useStore } from "../utils";
 import { mountStore } from "../store";
 const theme = useData().theme.value as Theme;
-fetchApi.getInstance(theme.global.comments.serverURL);
 
 mountStore();
 
 const global = useStore('global');
-console.log(global);
-
-// provide('data', data);
-
-global.addCount();
-
+provide('global', global);
 global.setData(data);
-
-console.log(global.state);
-
 
 
 onMounted(() => {
