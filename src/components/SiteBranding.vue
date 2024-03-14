@@ -2,13 +2,13 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-05 13:09:11
+ * @LastEditTime: 2024-03-14 18:05:35
  * @FilePath: /vitepress-theme-sakurairo/src/components/SiteBranding.vue
 -->
 <template>
     <a :href="withBase('/')" class="site-branding">
         <div class="logo-link" v-if="theme.global.logo">
-            <img :src="theme.global.logo" alt="">
+            <img v-lazy="theme.global.logo" alt="">
         </div>
         <ruby v-else>
             <span class="pre">奈雪</span>
@@ -20,7 +20,7 @@
         </ruby>
     </a>
 </template>
-    
+
 <script setup lang='ts'>
 import { useData, withBase } from 'vitepress';
 import type { Theme } from '../types/theme'
@@ -29,7 +29,7 @@ const theme: Ref<Theme> = useData().theme;
 
 
 </script>
-    
+
 <style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";

@@ -5,7 +5,8 @@
                 <article>
                     <div class="article-cover" :class="`article-list-${theme.articleBoard.layout}`">
                         <a :href="withBase(item.url)">
-                            <img :src="item.cover" alt="">
+                            <!-- <img :src="item.cover" alt=""> -->
+                            <img v-lazy="item.cover" alt="">
                         </a>
                     </div>
                     <div class="article-content-wrap" :class="`article-content-wrap-${theme.articleBoard.layout}`">

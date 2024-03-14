@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-13 16:53:29
+ * @LastEditTime: 2024-03-14 18:06:50
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -18,7 +18,7 @@
                 <p class="entry-census">
                     <span>
                         <a href="">
-                            <img :src="theme.global.avatar" alt="">
+                            <img v-lazy="theme.global.avatar" alt="">
                         </a>
                     </span>
                     <span>
@@ -45,7 +45,6 @@
         </div>
         <CommentBoard class="comment-board" :page="pageData" v-if="useComment"></CommentBoard>
     </div>
-    <!-- <Image :url="'https://www.loliapi.com/acg'"></Image> -->
 </template>
 
 <script setup lang="ts">
@@ -56,7 +55,6 @@ import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
 import ArticleCatalog from '../components/ArticleCatalog.vue';
-import Image from '../components/Image.vue';
 import { useAfterRouterChange } from '../composables/useRouter';
 import { useStore } from '../utils';
 

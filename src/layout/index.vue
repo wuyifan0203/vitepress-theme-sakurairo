@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-13 16:28:21
+ * @LastEditTime: 2024-03-14 17:36:44
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -15,7 +15,7 @@
 
 <script setup lang='ts'>
 import { useData } from "vitepress";
-import { onMounted, provide } from 'vue';
+import { onMounted, provide, getCurrentInstance } from 'vue';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
 
@@ -23,16 +23,23 @@ import Header from '../components/Header.vue';
 import Layout from './Layout.vue';
 import Footer from '../components//Footer.vue';
 import BackTop from '../components//BackTop.vue';
-import Skin from '../components//Skin.vue'; 
+import Skin from '../components//Skin.vue';
 import { installThemePlugin } from '../plugin';
 
 import { data } from '../posts.data';
 import { Theme } from "../types";
 import { useStore } from "../utils";
 import { mountStore } from "../store";
+import lazyLoad from '../utils/lazyLoad'
 const theme = useData().theme.value as Theme;
 
 mountStore();
+
+const instance = getCurrentInstance();
+if (instance) {
+    const app = instance.appContext.app;
+    app.use(lazyLoad, { loading: theme.global.onLoadImage })
+}
 
 const global = useStore('global');
 provide('global', global);

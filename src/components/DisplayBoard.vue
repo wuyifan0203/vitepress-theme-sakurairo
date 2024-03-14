@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 12:59:29
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-19 13:33:18
- * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/layout/main/components/DisplayBoard.vue
+ * @LastEditTime: 2024-03-14 18:03:38
+ * @FilePath: /vitepress-theme-sakurairo/src/components/DisplayBoard.vue
 -->
 <template>
     <div class="display">
@@ -17,7 +17,7 @@
             {{ theme.displayBoard?.title }}
         </h1>
         <a v-for="(item, index) in theme.displayBoard?.items" :key="index" class="display-item" :href="item.link">
-            <img :src="item.background.src()" alt="">
+            <img v-lazy="item.background.src()" alt="">
             <div class="display-info">
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
