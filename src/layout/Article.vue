@@ -99,63 +99,53 @@ const useComment = computed(() => {
 
 </script>
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
-@import "../styles/common.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
+@import url("../styles/common.scss");
 
 .article-wrapper {
-    -webkit-animation: blur .8s;
     animation: blur .8s;
     animation-duration: .8s;
-    background-color: rgba(255, 255, 255, .8);
-    -webkit-transition: all .8s ease !important;
-    -moz-transition: all .8s ease !important;
-    -o-transition: all .8s ease !important;
+    background-color: rgb(255 255 255 / 80%);
     transition: all .8s ease !important;
 
     .article-head {
-        animation: blur .8s;
         position: relative;
         top: 0;
         left: 0;
+        overflow: hidden;
         width: 100%;
         border-radius: 0 0 20px 20px;
-        overflow: hidden;
         transition: all .8s ease !important;
+        animation: blur .8s;
 
         .article-cover {
             width: 100%;
             height: 400px;
+            background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center center;
             background-origin: border-box;
         }
 
         &>header {
             position: absolute;
-            left: 0;
-            right: 0;
-            color: #fff;
+            inset: auto 0 20px;
             z-index: 1;
-            max-width: 800px;
             padding: 0 10px;
-            margin-left: auto;
             margin-right: auto;
+            margin-left: auto;
+            max-width: 800px;
             text-align: left;
-            top: auto;
-            bottom: 20px;
+            color: #fff;
 
             .entry-title {
-                font-size: 32px;
-                margin: 0;
-                font-size: 32px;
-                width: 100%;
-                font-weight: $--global-font-weight;
                 padding: 0;
+                margin: 0;
+                width: 100%;
+                font-size: 32px;
                 border: 0;
-                -moz-animation: fadeInUp 2s;
-                -webkit-animation: fadeInUp 2s;
+                font-weight: $--global-font-weight;
                 animation: fadeInUp 2s;
             }
 
@@ -172,23 +162,23 @@ const useComment = computed(() => {
             }
 
             .entry-census {
-                color: #fff;
-                font-size: 14px;
                 padding: 18px 0 0;
+                margin: 0;
+                font-size: 14px;
+                color: #fff;
                 line-height: 39px;
                 font-weight: $--global-font-weight;
-                margin: 0;
                 animation: fadeInDown 2s;
 
                 a {
                     animation: fadeInDown 2s;
 
                     img {
+                        float: left;
+                        margin-right: 12px;
                         width: 35px;
                         height: 35px;
                         border-radius: 100%;
-                        float: left;
-                        margin-right: 12px;
                     }
                 }
 
@@ -201,26 +191,25 @@ const useComment = computed(() => {
 
     .article-content,
     .comment-board {
-        max-width: 800px;
         padding: 0 10px;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
+        max-width: 800px;
 
         main {
             padding: 7.5% 0 0;
 
             .article-catalog {
-                z-index: 98;
-                width: 200px;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0);
-                transform: translateX(0);
-                right: calc((100% - 950px - 250px) / 2);
                 position: absolute !important;
                 top: 480px;
-                position: absolute;
+                right: calc((100% - 950px - 250px) / 2);
+                z-index: 98;
                 padding-top: 10px;
                 padding-bottom: 10px;
+                width: 200px;
+                height: 100%;
+                background-color: rgb(255 255 255 / 0%);
+                transform: translateX(0);
             }
         }
     }
@@ -232,8 +221,6 @@ const useComment = computed(() => {
 }
 
 .article-body {
-
-
     &>a {
         text-decoration: none;
 
@@ -244,14 +231,14 @@ const useComment = computed(() => {
 
     img,
     video {
-        height: auto;
-        max-width: 100%;
         width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 
     ol li,
     ul li {
-        padding: 15px 0 0 0;
+        padding: 15px 0 0;
         text-align: left;
     }
 
@@ -265,47 +252,47 @@ const useComment = computed(() => {
         padding-bottom: 10px;
     }
 
-    h3:after,
-    h4:after,
-    h5:after {
-        left: 0;
+    h3::after,
+    h4::after,
+    h5::after {
         position: absolute;
+        left: 0;
     }
 
-    h2:after {
+    h2::after {
         content: "\00B6";
         position: absolute;
         padding-left: 6px;
         font-size: 1.03em;
     }
 
-    h3:after {
+    h3::after {
         content: "#";
     }
 
     h3::before {
         display: block;
-        content: " ";
-        height: 80px;
         margin-top: -80px;
+        height: 80px;
         visibility: hidden;
+        content: " ";
     }
 
-    h4:after {
+    h4::after {
         content: ">";
     }
 
-    h5:after {
+    h5::after {
         content: "~";
     }
 
 
     ul,
     ol {
-        border: 1px solid #FFFFFF;
         padding: 15px 10px 30px 50px;
-        color: #616161;
         margin-left: 0;
+        color: #616161;
+        border: 1px solid #FFF;
         border-radius: 10px;
     }
 
@@ -323,65 +310,65 @@ const useComment = computed(() => {
     }
 
     hr {
+        display: block;
         margin-top: 40px;
         margin-bottom: 40px;
-        display: block;
-        border: 0;
         text-align: center;
         background: 0 0;
+        border: 0;
     }
 
-    hr:before {
-        content: '...';
-        display: inline-block;
-        margin-left: .6em;
-        color: rgba(0, 0, 0, .8);
+    hr::before {
         position: relative;
         top: -30px;
+        display: inline-block;
+        margin-left: .6em;
         font-size: 28px;
+        color: rgb(0 0 0 / 80%);
+        content: '...';
         letter-spacing: .6em;
     }
 
     blockquote {
-        margin: 0;
-        padding: 30px 60px;
         position: relative;
+        padding: 30px 60px;
+        margin: 0;
     }
 
-    blockquote:before {
-        content: "\f10d" !important;
-        font-size: 3rem;
+    blockquote::before {
         position: absolute;
         top: -25px;
         left: 12px;
-        color: orange;
+        font-size: 3rem;
         font-family: FontAwesome;
+        color: orange;
+        content: "\f10d" !important;
     }
 
-    blockquote:after {
-        content: '\f10e' !important;
-        font-size: 3rem;
+    blockquote::after {
         position: absolute;
-        bottom: -25px;
         right: -5px;
-        color: orange;
+        bottom: -25px;
+        font-size: 3rem;
         font-family: FontAwesome;
+        color: orange;
+        content: '\f10e' !important;
     }
 
 
     // code block;
     div[class*="language-"] {
         position: relative;
-        line-height: var(--code-line-height);
+        display: flex;
+        overflow: hidden;
+        padding-top: 32px;
         font-size: var(--code-font-size);
         font-family: var(--code-font-family);
-        display: flex;
-        flex-direction: row-reverse;
-        border-radius: 8px;
-        border: 1px solid var(--color-border);
-        padding-top: 32px;
-        overflow: hidden;
         background: var(--shiki-background);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        line-height: var(--code-line-height);
+        flex-direction: row-reverse;
 
         button.copy {
             position: absolute;
@@ -391,13 +378,13 @@ const useComment = computed(() => {
             align-items: center;
             width: 40px;
             height: 40px;
-            background-color: white;
-            background-image: var(--vp-icon-copy);
-            background-repeat: no-repeat;
             background-position: 50%;
+            background-repeat: no-repeat;
+            background-color: white;
+            border: 1px solid var(--color-border);
             border-radius: 4px;
             opacity: 0;
-            border: 1px solid var(--color-border);
+            background-image: var(--vp-icon-copy);
         }
 
         &:hover button.copy {
@@ -412,38 +399,38 @@ const useComment = computed(() => {
         }
 
         pre {
-            margin: 0;
-            padding-left: 16px;
-            flex-grow: 1;
             overflow: auto;
+            padding-left: 16px;
+            margin: 0;
+            flex-grow: 1;
         }
 
         code {
-            background-color: transparent;
             padding: 0;
+            background-color: transparent;
         }
 
-        &:before {
-            content: "";
+        &::before {
             position: absolute;
-            left: 0;
-            right: 0;
             top: 0;
+            right: 0;
+            left: 0;
             height: 32px;
             background: #f6f8fa;
+            content: "";
             border-bottom: 1px solid var(--color-border);
         }
 
-        &:after {
-            content: "";
+        &::after {
             position: absolute;
             top: 10px;
             left: 12px;
             width: 12px;
             height: 12px;
-            border-radius: 50%;
             background: #fc625d;
+            border-radius: 50%;
             box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+            content: "";
         }
     }
 }

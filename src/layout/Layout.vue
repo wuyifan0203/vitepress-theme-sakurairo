@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 02:13:51
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-15 11:26:53
+ * @LastEditTime: 2024-03-15 13:35:40
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Layout.vue
 -->
 <template>
@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang='ts'>
-import { useData, useRoute } from 'vitepress';
+import { useData } from 'vitepress';
 import NotFound from './NotFound.vue';
 import Home from './Home.vue';
 import ArticlePage from './Article.vue';
@@ -25,9 +25,7 @@ console.log("page", page.value);
 console.log("theme", theme.value);
 console.log("site", site.value);
 
-const route = useRoute();
 
-const path = computed(() => route.path);
 const layout = computed(() => page.value.frontmatter.layout);
 
 

@@ -1,0 +1,7 @@
+node_modules
+dist/
+build/
+.vscode
+.github
+.husky
+docs/.vitepress/cache

@@ -7,10 +7,10 @@
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
-    <div class="anim-icon" id="404" style="height: calc(100vh - 260px); background: rgba(239, 239, 239, 0.959);">
+    <div class="anim-icon" id="404" style="height: calc(100vh - 260px); background: rgb(239 239 239 / 95.9%);">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
             width="1000" height="1000" preserveAspectRatio="xMidYMid meet"
-            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+            style="width: 100%; height: 100%; transform: translate3d(0, 0, 0); content-visibility: visible;">
             <defs>
                 <clipPath id="__lottie_element_2">
                     <rect width="1000" height="1000" x="0" y="0"></rect>

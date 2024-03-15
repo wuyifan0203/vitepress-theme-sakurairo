@@ -37,27 +37,27 @@ const { theme } = useData()
 </script>
     
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 #footer {
     padding: max(2%, 45px);
-    background: rgba(255, 255, 255, .8);
-    margin-left: auto;
     margin-right: auto;
-    animation: blur .8s;
+    margin-left: auto;
+    background: rgb(255 255 255 / 80%);
     transition: all .8s ease !important;
+    animation: blur .8s;
 
     .site-info {
-        text-align: center;
         font-size: 13px;
+        text-align: center;
         color: #B9B9B9;
         font-weight:$--global-font-weight;
 
         .sakura-icon {
+            margin: auto;
             width: max-content;
             height: max-content;
-            margin: auto;
 
             .sakura-svg {
                 width: 30px;

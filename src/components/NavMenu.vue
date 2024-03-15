@@ -39,28 +39,25 @@ const nav = theme.value.nav;
 </script>
     
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 nav {
     display: block;
 
     &>ul {
         display: inline-block;
-        margin: 0;
         padding: 0;
+        margin: 0;
         max-width: 76vw;
         list-style: none;
-
-        -moz-animation: fadeInLeft 1s;
-        -webkit-animation: fadeInLeft 1s;
         animation: fadeInLeft 1s;
 
         li {
             position: relative;
+            float: left;
             margin-left: 28px;
             font-size: 16px;
-            float: left;
 
             a {
                 display: inline-block;
@@ -68,16 +65,16 @@ nav {
                 color: $--theme-skin;
 
                 &::after {
-                    content: "";
-                    display: block;
                     position: absolute;
                     bottom: -5px;
+                    display: block;
+                    width: 100%;
+                    max-width: 0;
                     height: 4px;
                     background-color: $--theme-skin-active;
-                    width: 100%;
                     border-radius: 30px;
-                    max-width: 0;
                     transition: max-width 0.3s cubic-bezier(.4, 0, .2, 1);
+                    content: "";
                 }
 
                 &:hover {
@@ -90,34 +87,33 @@ nav {
             }
 
             .sub-menu {
-                display: none;
-                opacity: 1;
                 position: absolute;
-                background: #fff;
-                padding: 10px;
                 top: 46px;
                 right: -13px;
-                text-align: center;
                 z-index: 9999;
+                display: none;
+                padding: 10px;
+                text-align: center;
+                background: #fff;
                 border-radius: 5px;
-                box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
-                -webkit-animation: fadeInUp .3s .1s ease both;
+                opacity: 1;
+                box-shadow: 0 1px 40px -8px rgb(0 0 0 / 50%);
                 animation: fadeInUp .3s .1s ease both;
 
                 &::before {
-                    content: "";
                     position: absolute;
                     top: -20px;
                     left: 50%;
                     margin-left: -10px;
-                    border-width: 10px;
                     border-style: solid;
+                    border-width: 10px;
                     border-color: transparent transparent #fff;
+                    content: "";
                 }
 
                 li {
-                    width: 100%;
                     margin: 0;
+                    width: 100%;
                     white-space: nowrap;
                     list-style: none;
                 }
@@ -126,7 +122,6 @@ nav {
             &:hover {
                 .sub-menu {
                     display: inline-block;
-                    -webkit-transition: all .4s;
                     transition: all .4s;
                 }
 

@@ -71,15 +71,15 @@ const theme = useData().theme.value as Theme;
     
 <style lang="scss" scoped>
 .article-footer {
+    position: relative;
+    left: 50%;
+    float: left;
     padding: 30px 0;
+    margin-top: 50px;
+    margin-left: -49%;
     width: 98%;
     height: auto;
-    left: 50%;
-    margin-left: -49%;
-    position: relative;
-    float: left;
     border: none;
-    margin-top: 50px;
 
     .footer-licenses,
     .footer-reward,
@@ -88,18 +88,17 @@ const theme = useData().theme.value as Theme;
     .description,
     .modified-time,
     .post-tags {
+        display: block;
         float: left;
         margin: 5px;
-        box-shadow: 0 1px 30px -4px #e8e8e8;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.5);
-        -webkit-transition: all .8s;
-        transition: all .8s;
-        border: 1px solid #FFFFFF;
-        cursor: pointer;
         text-align: center;
+        background: rgb(255 255 255 / 50%);
+        border: 1px solid #FFF;
+        border-radius: 10px;
+        box-shadow: 0 1px 30px -4px #e8e8e8;
+        transition: all .8s;
+        cursor: pointer;
         font-weight: var(--global-font-weight);
-        display: block;
     }
 
     .footer-licenses:hover,
@@ -108,52 +107,51 @@ const theme = useData().theme.value as Theme;
     .author-meta:hover,
     .description:hover,
     .post-tags:hover {
+        background: rgb(255 255 255 / 80%);
         box-shadow: 0 1px 20px 10px #e8e8e8;
-        background: rgba(255, 255, 255, 0.8);
-        -webkit-transition: all .8s;
         transition: all .8s;
     }
 
 
     .footer-licenses,
     .footer-reward {
-        color: #7D7D7D;
+        position: inherit;
         padding: 6px 12.5px;
         font-size: 24px;
-        position: inherit;
+        color: #7D7D7D;
         text-transform: uppercase;
 
         .reward-main {
             position: absolute;
             left: -1%;
-            margin: 0;
+            z-index: 2;
+            display: none;
             padding: 15px 0 0;
+            margin: 0;
             width: 400px;
             background: 0 0;
-            display: none;
-            z-index: 2;
             animation: main .4s;
 
             .reward-row {
-                margin: 0 auto;
-                padding: 20px 15px 10px;
-                background: rgba(255, 255, 255, 0.8);
                 display: block;
+                padding: 20px 15px 10px;
+                margin: 0 auto;
+                margin-left: 3%;
+                background: rgb(255 255 255 / 80%);
+                border: 1px solid #FFF;
                 border-radius: 10px;
                 cursor: auto;
-                margin-left: 3%;
-                border: 1px solid #FFFFFF;
 
                 li {
-                    list-style-type: none;
-                    padding: 0 12px;
                     display: inline-block;
+                    padding: 0 12px;
+                    list-style-type: none;
 
                     img {
+                        position: relative;
                         width: 150px;
                         max-width: 150px;
                         border-radius: 3px;
-                        position: relative;
                     }
                 }
             }
@@ -181,10 +179,9 @@ const theme = useData().theme.value as Theme;
                 float: left;
 
                 img {
+                    float: left;
                     max-width: 100%;
                     border-radius: 100%;
-                    float: left;
-                    -webkit-transition: all .8s;
                     transition: all .8s;
                 }
             }

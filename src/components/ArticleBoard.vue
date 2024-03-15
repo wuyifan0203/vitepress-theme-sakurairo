@@ -55,55 +55,52 @@ const pages = computed(() => {
 </script>
 
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 .article-area {
     margin-top: 50px;
 
     .content-article {
         h1 {
-
-            color: $--theme-skin;
-            font-size: 20px;
-            font-weight: $--global-font-weight;
+            padding-right: 3px;
             padding-bottom: 10px;
             padding-left: 3px;
-            padding-right: 3px;
             margin-bottom: 30px;
-            text-underline-offset: 10px;
+            font-size: 20px;
             text-decoration: underline wavy $--theme-skin-active;
+            color: $--theme-skin;
             transition: all .8s ease !important;
-            -moz-animation: fadeInDown 2s;
-            -webkit-animation: fadeInDown 2s;
+            font-weight: $--global-font-weight;
+            text-underline-offset: 10px;
             animation: fadeInDown 2s;
 
             &::before {
                 display: block;
-                content: " ";
-                height: 80px;
                 margin-top: -80px;
+                height: 80px;
                 visibility: hidden;
+                content: " ";
             }
         }
     }
 
     .content-pagination {
-        width: 100%;
-        padding: 20px 0;
-        text-align: center;
-        margin: 40px 0 80px;
         display: inline-block;
+        padding: 20px 0;
+        margin: 40px 0 80px;
+        width: 100%;
+        text-align: center;
 
         a {
             padding: 13px 35px;
+            font-size: 13px;
+            color: $--theme-skin;
             background: rgb(255 255 255/50%);
-            box-shadow: 0 1px 30px -4px #e8e8e8;
             border: 1.5px solid #fff;
             border-radius: 50px;
-            color: $--theme-skin;
+            box-shadow: 0 1px 30px -4px #e8e8e8;
             transition: all .8s ease;
-            font-size: 13px;
 
             &:hover {
                 color: var(--post_list_matching_color, #505050);
@@ -113,8 +110,8 @@ const pages = computed(() => {
         }
 
         span {
-            color: $--theme-skin;
             font-size: 15px;
+            color: $--theme-skin;
             font-weight: $--global-font-weight;
         }
     }

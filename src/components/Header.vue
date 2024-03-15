@@ -48,20 +48,19 @@ useEventListener('scroll', scrollHandle);
 </script>
     
 <style lang="scss" scoped>
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 header {
     position: fixed;
     z-index: 1;
-
     height: 75px;
     transition: all 1s ease;
     word-break: keep-all;
 
     .header-branding {
-        margin-left: 30px;
         margin-top: 10px;
+        margin-left: 30px;
     }
 
     .header-nav {
@@ -71,53 +70,51 @@ header {
 
     .header-search {
         float: right;
-        margin: 20px 30px 0 30px;
-
+        padding: 9px;
+        margin: 20px 30px 0;
+        font-size: 18px;
+        border: 2px solid transparent;
+        border-radius: 10px;
         transition: all .3s ease-in-out;
         font-weight: var(--global-font-weight);
         animation: searchbox 1s;
-        border: 2px solid transparent;
-        font-size: 18px;
-        border-radius: 10px;
-        padding: 9px 9px;
 
         &:hover {
             color: $--theme-skin-active;
-            -webkit-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out;
             border: 2px solid $--theme-skin-active;
+            transition: all .3s ease-in-out;
         }
 
 
     }
 
     &:hover {
-        background-color: rgba($color: #ffffff, $alpha: 0.7);
+        background-color: rgba($color: #fff, $alpha: 70%);
     }
 }
 
 .sakurairo {
-    left: 2.5%;
     top: 2.5%;
+    left: 2.5%;
     width: 95%;
     border-radius: 20px;
 }
 
 .sakura {
+    top: 0;
+    left: 0;
     width: 100%;
-    left: 0px;
-    top: 0px;
 }
 
 .showNav {
-    background: rgba(255, 255, 255, .7);
-    border-bottom: 1.5px solid #fff;
-    transition: all .8s ease;
-    width: 100%;
-    left: 0;
     top: 0;
-    border-radius: 0;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    left: 0;
     z-index: 2;
+    width: 100%;
+    background: rgb(255 255 255 / 70%);
+    border-radius: 0;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    transition: all .8s ease;
+    border-bottom: 1.5px solid #fff;
 }
 </style>

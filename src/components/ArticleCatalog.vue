@@ -50,10 +50,9 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
-@import 'tocbot/src/scss/tocbot.scss';
+@import url('tocbot/src/scss/tocbot.scss');
 
 #toc-container {
-    position: -webkit-sticky;
     position: sticky;
     top: 100px;
 

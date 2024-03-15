@@ -25,21 +25,20 @@ const { theme } = useData();
 </script>
     
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 .main-wrapper {
-    background-color: rgba(255, 255, 255, 0.7);
-    animation: blur .8s;
+    background-color: rgb(255 255 255 / 70%);
     animation-duration: .8s;
-    -webkit-animation: blur .8s;
+    animation: blur .8s;
     transition: all .8s ease !important;
 
     .main-content {
-        max-width: 860px;
         padding: 0 20px;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
+        max-width: 860px;
         background-color: transparent !important;
         animation: main 1s;
         box-sizing: border-box;

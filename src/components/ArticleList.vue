@@ -68,44 +68,42 @@ const { list } = defineProps({
 })
 </script>
 <style lang="scss">
-@import "../styles/animate.scss";
-@import "../styles/variable.scss";
-@import "../styles/common.scss";
+@import url("../styles/animate.scss");
+@import url("../styles/variable.scss");
+@import url("../styles/common.scss");
 
 .article-list {
-
     ul li {
-        margin: 0;
         padding: 0;
+        margin: 0;
         list-style: none;
     }
 
     .article-block {
-        -webkit-animation: post-list-show .5s;
-        animation: post-list-show .5s;
-        opacity: 1;
-        background-color: rgba(255, 255, 255, .90);
-        transition: all 0.8s ease;
-        box-shadow: 0 1px 30px -4px $--article-block-shadow;
+        position: relative;
         float: left;
+        margin: 20px 0;
         width: 100%;
         height: 300px;
-        position: relative;
-        margin: 20px 0 20px;
-        border-radius: 10px;
         text-align: left;
+        background-color: rgb(255 255 255 / 90%);
+        border-radius: 10px;
+        opacity: 1;
+        box-shadow: 0 1px 30px -4px $--article-block-shadow;
+        transition: all 0.8s ease;
+        animation: post-list-show .5s;
 
         .article-cover {
             float: right;
             width: 55%;
 
             a {
-                height: 300px;
                 position: relative;
                 display: block;
+                overflow: hidden;
+                height: 300px;
                 background-repeat: no-repeat;
                 background-size: cover;
-                overflow: hidden;
                 border-radius: 0 10px 10px 0;
 
                 img {
@@ -127,23 +125,21 @@ const { list } = defineProps({
             float: right;
             padding-right: 30px;
             padding-left: 0;
+            margin: 20px 10px 0;
             width: 40%;
-            margin: 20px 10px 0 10px;
 
 
 
             .article-list-content {
                 i {
                     margin-right: 5px;
-                    color: $--theme-skin-active;
                     font-size: 14px;
+                    color: $--theme-skin-active;
                     font-weight: $--global-font-weight;
                 }
 
                 a {
                     font-weight: $--global-font-weight;
-                    -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-                    -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
                     transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
 
                     &:hover {
@@ -152,32 +148,32 @@ const { list } = defineProps({
                 }
 
                 .article-dateline {
-                    background-color: #f5f5f5;
-                    font-size: 12px;
+                    padding: 4px 10px;
                     width: max-content;
-                    padding: 4px 10px 4px 10px;
-                    border-radius: 6px;
-                    color: $--theme-skin-active;
+                    font-size: 12px;
                     white-space: nowrap;
-                    font-weight: $--global-font-weight;
+                    color: $--theme-skin-active;
+                    background-color: #f5f5f5;
+                    border-radius: 6px;
                     transition: all 0.8s ease !important;
+                    font-weight: $--global-font-weight;
                 }
 
                 .article-title {
                     h3 {
+                        display: -webkit-box;
+                        overflow: hidden;
                         font-size: 18px;
                         text-overflow: ellipsis;
-                        display: -webkit-box;
                         -webkit-box-orient: vertical;
                         -webkit-line-clamp: 2;
-                        overflow: hidden;
                         word-wrap: break-word;
                     }
                 }
 
                 .article-meta {
-                    font-size: 12px;
                     overflow: hidden;
+                    font-size: 12px;
                     text-overflow: ellipsis;
                     white-space: nowrap;
 
@@ -192,18 +188,12 @@ const { list } = defineProps({
 
                         .meta-author-avatar {
                             img {
-                                max-height: 18px;
                                 margin: 0 5px -4px;
-
-                                -webkit-border-radius: 100%;
-                                -moz-border-radius: 100%;
+                                max-height: 18px;
                                 border-radius: 100%;
-
-                                -webkit-box-shadow: inset 0 -1px 0 #333333;
-                                box-shadow: inset 0 -1px 0 #333333;
-
-                                -webkit-transition: -webkit-transform 0.4s ease-out;
-                                -moz-transition: -moz-transform 0.4s ease-out;
+                                box-shadow: inset 0 -1px 0 #333;
+                                transition: -webkit-transform 0.4s ease-out;
+                                transition: -moz-transform 0.4s ease-out;
                                 transition: transform 0.4s ease-out;
 
                             }
@@ -211,25 +201,25 @@ const { list } = defineProps({
                     }
 
                     .meta-comment {
-                        margin-left: 8px;
                         margin-right: 10px;
+                        margin-left: 8px;
                     }
                 }
 
                 .article-synopsis {
                     position: relative;
-                    width: 100%;
                     right: 0;
+                    z-index: 50;
                     margin: 0;
                     margin-top: 10px;
-                    z-index: 50;
-                    color: rgba(0, 0, 0, .66);
-                    transition: all 0.8s ease;
+                    width: 100%;
                     font-size: 15px;
+                    color: rgb(0 0 0 / 66%);
+                    transition: all 0.8s ease;
 
                     p {
-                        margin: 0;
                         overflow: hidden;
+                        margin: 0;
                         text-overflow: ellipsis;
                     }
                 }
@@ -256,18 +246,18 @@ const { list } = defineProps({
 
         .article-content-wrap-left {
             float: left;
-            padding-left: 30px;
             padding-right: 0;
-            text-align: right;
+            padding-left: 30px;
             margin: 20px 10px 10px 0;
+            text-align: right;
         }
 
         :nth-child(2n) .article-content-wrap-interlaced {
             float: left;
-            padding-left: 30px;
             padding-right: 0;
-            text-align: right;
+            padding-left: 30px;
             margin: 20px 10px 10px 0;
+            text-align: right;
         }
 
     }

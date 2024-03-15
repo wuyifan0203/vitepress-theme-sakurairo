@@ -158,70 +158,66 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 section {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 
     figure {
-        margin: 0;
+        z-index: -1;
         padding: 0;
+        margin: 0;
         width: 100%;
         background-position: top center;
         background-repeat: no-repeat;
-        background-attachment: scroll;
         background-size: cover;
-        z-index: -1;
+        background-attachment: scroll;
 
         .cover-focus-info {
             position: relative;
-            max-width: 800px;
-            padding: 0 10px;
             top: 49.3%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
+            padding: 0 10px;
+            max-width: 800px;
             text-align: center;
-            -webkit-transition: .4s ease all;
-            -moz-transition: .4s ease all;
-            -o-transition: .4s ease all;
             transition: 4s ease all;
+            transform: translate(-50%, -50%);
 
             h1 {
                 position: relative;
-                mix-blend-mode: lighten;
+                clear: both;
+                margin: auto;
                 font-size: 90px;
                 color: white;
-                margin: auto;
-                text-transform: none;
-                clear: both;
                 transition: all 0.8s ease;
+                mix-blend-mode: lighten;
+                text-transform: none;
 
                 &::before {
-                    content: attr(data-text);
                     position: absolute;
                     top: 0;
-                    width: 100%;
-                    background: rgba(0, 0, 0, 0);
-                    clip: rect(0, 0, 0, 0);
                     left: -1px;
-                    text-shadow: 1px 0 #ff3f1a;
                     margin-top: initial;
-                    visibility: visible;
+                    width: 100%;
                     height: initial;
+                    background: rgb(0 0 0 / 0%);
+                    visibility: visible;
+                    text-shadow: 1px 0 #ff3f1a;
+                    content: attr(data-text);
+                    clip: rect(0, 0, 0, 0);
                 }
 
                 &::after {
-                    content: attr(data-text);
                     position: absolute;
                     top: 0;
-                    width: 100%;
-                    background: rgba(0, 0, 0, 0);
-                    clip: rect(0, 0, 0, 0);
                     left: 1px;
+                    width: 100%;
+                    background: rgb(0 0 0 / 0%);
                     text-shadow: -1px 0 #00a7e0;
+                    content: attr(data-text);
+                    clip: rect(0, 0, 0, 0);
                 }
 
                 &:hover::before {
@@ -239,29 +235,18 @@ section {
 
             .cover-avatar {
                 img {
-                    border-radius: 100px;
+                    padding: 5px;
                     width: 130px;
                     height: 130px;
-                    padding: 5px;
+                    border-radius: 100px;
                     opacity: 1;
-                    -webkit-transform: rotate(0);
-                    -moz-transform: rotate(0);
-                    -o-transform: rotate(0);
-                    -ms-transform: rotate(0);
-
+                    transition: all ease 1s;
                     transition: all .8s ease;
-                    -webkit-transition: all ease 1s;
-                    -moz-transition: all ease 1s;
-                    -o-transition: all ease 1s;
-
-                    -moz-animation: fadeInDown 1.8s;
-                    -webkit-animation: fadeInDown 1.8s;
+                    transform: rotate(0);
                     animation: fadeInDown 1.8s;
 
                     &:hover {
                         transform: rotate(360deg);
-                        -webkit-transform: rotate(360deg);
-                        -moz-transform: rotate(360deg);
                     }
                 }
 
@@ -272,65 +257,58 @@ section {
                 display: grid;
 
                 .cover-container-info {
-                    -webkit-animation: fadeInDown 1.8s;
-                    animation: fadeInDown 1.8s;
-                    border-radius: 15px;
-                    grid-row: 1;
-                    grid-column: 1;
-                    width: 65%;
+                    padding: 15px;
                     margin: auto;
+                    margin-top: 22px;
+                    width: 65%;
                     font-size: 16px;
+                    white-space: nowrap;
                     color: $--theme-skin;
                     background: $--cover-info-background;
-                    padding: 15px;
-                    margin-top: 22px;
+                    border-radius: 15px;
+                    transition: all .8s ease;
+                    animation: fadeInDown 1.8s;
+                    grid-row: 1;
+                    grid-column: 1;
                     letter-spacing: 0;
                     line-height: 30px;
-                    border-radius: 15px;
                     box-sizing: initial;
-                    white-space: nowrap;
-                    font-size: 16px;
                     font-weight: 300;
                     backdrop-filter: blur(10px);
-                    transition: all .8s ease;
                 }
 
                 p {
-                    -moz-animation: fadeInDown 1.8s;
-                    -webkit-animation: fadeInDown 1.8s;
-                    animation: fadeInDown 1.8s;
-                    margin: 0;
                     overflow: hidden;
+                    margin: 0;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     transition: all 0.8s ease;
+                    animation: fadeInDown 1.8s;
                 }
 
             }
 
             .cover-social-links {
-                height: 32px;
-                margin-top: 30px;
-                margin-left: 10px;
-                list-style: none;
                 display: inline-block;
                 padding: 0;
+                margin-top: 30px;
+                margin-left: 10px;
+                height: 32px;
+                list-style: none;
 
                 li {
                     float: left;
                     margin-right: 10px;
 
                     img {
-                        height: 40px;
-                        width: 40px;
                         padding: 9px;
+                        width: 40px;
+                        height: 40px;
                         background: $--cover-info-background;
+                        border-radius: 10px;
                         transition: all 0.8s ease;
                         backdrop-filter: blur(10px);
-                        -moz-animation: fadeInDown 2s;
-                        -webkit-animation: fadeInDown 2s;
                         animation: fadeInDown 2s;
-                        border-radius: 10px;
                     }
                 }
             }
@@ -352,16 +330,16 @@ section {
     }
 
     .cover-wave1 {
-        height: 65px;
         left: -236px;
         z-index: 4;
+        height: 65px;
         animation-duration: 200s;
     }
 
     .cover-wave2 {
-        height: 80px;
         left: 0;
         z-index: 3;
+        height: 80px;
         animation-duration: 120s;
     }
 

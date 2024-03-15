@@ -65,40 +65,38 @@ const nextPage = computed(() => {
     
 <style lang="scss">
 .pagination {
-    overflow: hidden;
-    margin: 10px 0 0 0;
-    background: #000;
-    width: 97%;
-    left: 50%;
-    margin-left: -48.5%;
     position: relative;
+    left: 50%;
+    overflow: hidden;
+    margin: 10px 0 0;
+    margin-left: -48.5%;
+    width: 97%;
+    background: #000;
     border-radius: 15px;
 
     .half {
-        width: 50%;
         float: left;
+        width: 50%;
     }
 
     .background {
         position: absolute;
-        z-index: 50;
         top: 0;
         left: 0;
+        z-index: 50;
         width: 100%;
         height: 100%;
-        opacity: .4;
         background-size: cover;
-        -webkit-transition: opacity .15s ease-out;
-        -moz-transition: opacity .15s ease-out;
+        opacity: .4;
         transition: opacity .15s ease-out;
     }
 
     .label {
-        font-size: 13px;
-        display: block;
-        text-transform: uppercase;
         position: absolute;
-        color: rgba(255, 255, 255, .7);
+        display: block;
+        font-size: 13px;
+        color: rgb(255 255 255 / 70%);
+        text-transform: uppercase;
         font-weight: var(--global-font-weight);
     }
 
@@ -112,22 +110,22 @@ const nextPage = computed(() => {
         display: block;
         float: left;
         overflow: hidden;
-        height: 150px;
         padding: 55px 40px;
-        text-align: left;
         width: 100%;
+        height: 150px;
+        text-align: left;
     }
 
     h3 {
+        display: block;
+        overflow: hidden;
+        margin: 20px 0;
         font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #fff;
         font-weight: var(--global-font-weight, 400);
         line-height: 30px;
-        margin: 20px 0;
-        color: #fff;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        display: block;
     }
 
     .previous {
@@ -142,8 +140,8 @@ const nextPage = computed(() => {
         .label {
             top: 40px;
             left: 40px;
-            display: block;
             z-index: 100;
+            display: block;
         }
     }
 
@@ -154,9 +152,9 @@ const nextPage = computed(() => {
         }
 
         .info {
-            text-align: right;
             right: 40px;
             bottom: 40px;
+            text-align: right;
         }
     }
 }

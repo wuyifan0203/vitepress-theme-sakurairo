@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-14 17:36:44
+ * @LastEditTime: 2024-03-15 17:45:15
  * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
 -->
 <template>
@@ -12,6 +12,7 @@
     <BackTop></BackTop>
     <Skin></Skin>
 </template>
+
 
 <script setup lang='ts'>
 import { useData } from "vitepress";
@@ -54,20 +55,18 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import '../styles/theme.scss';
-@import '../styles/variable.scss';
+@import url('../styles/theme.scss');
+@import url('../styles/variable.scss');
 
 * {
     box-sizing: border-box;
 }
 
 a {
-    background-color: transparent;
     text-decoration: none;
     color: $--theme-skin;
+    background-color: transparent;
     outline: 0;
-    -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-    -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
     transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
     word-break: break-word;
 
@@ -81,25 +80,24 @@ html {
 }
 
 body {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    text-shadow: 0 0 1px rgba(0, 0, 0, .1);
-    color: $--theme-skin;
-    line-height: 1.5;
-    background: #0000;
-    background-attachment: fixed;
-    background-position: center;
+    margin: 0;
     font-size: 15px;
+    font-family: Moe-Mashiro;
+    color: $--theme-skin;
+    background: #0000;
+    background-position: center;
+    text-shadow: 0 0 1px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    line-height: 1.5;
+    background-attachment: fixed;
 
     @font-face {
-        font-family: 'Moe-Mashiro';
+        font-family: Moe-Mashiro;
         src: url('../assets/fonts/Moe-Mashiro.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
-
-    font-family: 'Moe-Mashiro';
 
 
     ol,
@@ -112,12 +110,12 @@ body {
         text-align: center;
     }
 
-    h1:before {
+    h1::before {
         display: block;
-        content: " ";
-        height: 80px;
         margin-top: -80px;
+        height: 80px;
         visibility: hidden;
+        content: " ";
     }
 
     h2,

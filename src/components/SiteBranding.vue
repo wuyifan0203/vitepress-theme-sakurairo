@@ -31,27 +31,27 @@ const theme: Ref<Theme> = useData().theme;
 </script>
 
 <style lang="scss">
-@import "../styles/variable.scss";
-@import "../styles/animate.scss";
+@import url("../styles/variable.scss");
+@import url("../styles/animate.scss");
 
 .site-branding {
     display: inline-block;
-    color: #464646;
     font-size: 25px;
+    color: #464646;
+    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
     line-height: 56px;
     font-weight: 800;
-    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
 
     ruby {
-        ruby-position: under;
         -webkit-ruby-position: after;
+        ruby-position: under;
 
         .pre {
-            border-radius: 9px;
-            padding-bottom: 2px;
             padding-top: 5px;
+            padding-bottom: 2px;
+            background-color: rgb(255 255 255 / 50%);
+            border-radius: 9px;
             line-height: 25px;
-            background-color: rgba(255, 255, 255, 0.5);
             text-size-adjust: 100%;
         }
 
@@ -61,8 +61,8 @@ const theme: Ref<Theme> = useData().theme;
         }
 
         rt {
-            opacity: 0;
             font-size: 10px;
+            opacity: 0;
             transform: translateY(-13px);
         }
     }
@@ -81,12 +81,11 @@ const theme: Ref<Theme> = useData().theme;
     color: $--theme-skin-active;
 
     .pre {
-        background-color: $--theme-skin-active;
         color: white;
+        background-color: $--theme-skin-active;
     }
 
     .center {
-        -webkit-animation: spin 1.5s linear infinite;
         animation: spin 1.5s linear infinite;
     }
 

@@ -15,12 +15,14 @@
     "jianshu",
     "juejin",
     "kuaishou",
+    "Mashiro",
     "monokai",
     "neteasecloud",
     "nprogress",
     "sakura",
     "sakurairo",
     "shiki",
+    "stylelint",
     "tocbot",
     "vitepress",
     "waline",
@@ -38,16 +40,12 @@
     "*.env": "$(capture).env.*",
     "CHANGELOG.md": "CHANGELOG*",
     "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,README*,.npmrc,.browserslistrc",
-    ".eslintrc.js": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.js,.prettierrc.js,.stylelintrc.js"
+    ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.cjs,.prettierrc.cjs,.stylelintrc.cjs"
   },
   // 文件头部注释禁止添加
   "fileheader.configObj": {
     "prohibitAutoAdd": ["json", "md"],
-    "folderBlacklist": [
-        "node_modules",
-        "dist",
-        "build"
-      ]
+    "folderBlacklist": ["node_modules", "dist", "build"]
   },
   // 文件头部注释
   "fileheader.customMade": {
@@ -57,5 +55,12 @@
     "LastEditTime": "Do not edit", // 文件最后编辑时间
     "FilePath": "Do not edit", // 文件在项目中的相对路径 自动更新
     "custom_string_obkoro1_copyright": "Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved."
-  }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  "stylelint.validate": ["css", "less", "vue", "html"]
 }

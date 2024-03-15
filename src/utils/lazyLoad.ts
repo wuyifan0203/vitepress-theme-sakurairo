@@ -2,12 +2,12 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-14 15:59:38
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-14 18:01:56
+ * @LastEditTime: 2024-03-15 13:39:48
  * @FilePath: /vitepress-theme-sakurairo/src/utils/lazyLoad.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 
-import type { App } from "vue"
+import type { App, Ref } from "vue"
 import { ImageLoader, State } from "./ImageLoader";
 
 function lazy(options: { loading: string, error?: string }) {
@@ -49,7 +49,7 @@ function lazy(options: { loading: string, error?: string }) {
         }
     }
 
-    function add(el: HTMLImageElement, binding: any) {
+    function add(el: HTMLImageElement, binding: Ref<string>) {
         // console.log(el, binding, 'add');
 
         const src = binding.value;
@@ -73,7 +73,7 @@ function lazy(options: { loading: string, error?: string }) {
         manager && removeManager(manager)
     }
 
-    function update(el: HTMLImageElement, binding: any) {
+    function update(el: HTMLImageElement, binding: Ref<string>) {
         // console.log(el, binding, 'update');
         const src = binding.value;
         const manager = managerQueue.find((manager) => {

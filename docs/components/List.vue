@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-04 01:49:21
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-04 02:18:10
- * @FilePath: /vuepress-interview/docs/components/List.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-03-15 13:41:44
+ * @FilePath: /vitepress-theme-sakurairo/docs/components/List.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
@@ -11,7 +11,7 @@
         <h2>{{ props.title }}</h2>
         <div>
             <ul>
-                <li v-for="item in props.items">
+                <li v-for="(item, index) in props.items" :key="index">
                     <img :src="item.src" alt="">
                     {{ item.label }}
                 </li>
@@ -19,11 +19,11 @@
         </div>
     </div>
 </template>
-    
+
 <script setup lang='ts'>
 import { PropType } from 'vue';
 
-interface Item{
+interface Item {
     label: string,
     src: string
 }
@@ -33,25 +33,26 @@ const props = defineProps({
         type: String,
         default: ''
     },
-    items:{
+    items: {
         type: Array as PropType<Item[]>,
-        default: ()=>[]
+        default: () => []
     }
 })
 </script>
-    
+
 <style lang="scss" scoped>
-    li{
-        max-width: 150px;
-        overflow: hidden;
-        list-style: none;
-        text-align: center !important;
-        display: inline-block;
-        margin: 10px 15px;
-        img{
-            width: 100%;
-            height: 200px;
-            border-radius: 10px;
-        }
+li {
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px 15px;
+    max-width: 150px;
+    text-align: center !important;
+    list-style: none;
+
+    img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
     }
+}
 </style>

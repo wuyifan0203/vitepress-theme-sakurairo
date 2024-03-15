@@ -33,23 +33,23 @@ useEventListener('scroll', scrollHandle);
 </script>
     
 <style lang="scss">
-@import "../styles/variable.scss";
+@import url("../styles/variable.scss");
 
 #back-to-top {
     position: fixed;
-    bottom: 65px;
     right: 10px;
-    font-size: 16px;
+    bottom: 65px;
     z-index: 99;
+    padding: 6px 16px;
+    font-size: 16px;
+    color: #7D7D7D;
+    background: rgb(255 255 255 / 65%);
+    border: 1px solid #FFF;
+    border-radius: $--style_menu_radius;
     outline: 0;
     box-shadow: 0 1px 30px -4px #e8e8e8;
-    background: rgba(255, 255, 255, 0.65);
-    color: #7D7D7D;
-    padding: 6px 16px;
-    border-radius: $--style_menu_radius;
     transition: all 0.8s ease;
     transform: scale(0);
-    border: 1px solid #FFFFFF;
 
 }
 </style>

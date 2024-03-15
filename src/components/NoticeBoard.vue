@@ -30,29 +30,29 @@ const noticeBoardStyle = reactive({
 </script>
     
 <style lang="scss">
-@import "../styles/animate.scss";
+@import url("../styles/animate.scss");
 
 .notice-board {
-    background-repeat: round;
-    border: none;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-    animation: main .6s;
-    padding: 20px;
     position: relative;
     display: inline-block;
+    overflow: hidden;
+    padding: 20px;
     width: 100%;
     height: 67px;
-    border-radius: 15px;
-    white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    background-repeat: round;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 30%);
     transition: all .8s ease;
+    animation: main .6s;
     box-sizing: border-box;
 
     .notice-board-title {
         float: left;
         margin: 2px 10px;
-        font-family: dela gothic one;
+        font-family: "dela gothic one";
     }
 
     .notice-board-content {
