@@ -2,13 +2,14 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 02:13:51
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-13 16:47:33
+ * @LastEditTime: 2024-03-15 11:26:53
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Layout.vue
 -->
 <template>
     <NotFound v-if="page?.isNotFound" />
-    <Home v-else-if="path === site.base" />
+    <Home v-else-if="layout === 'home'" />
     <ArticlePage v-else-if="layout === 'page'"></ArticlePage>
+    <Tags v-else-if="layout === 'tags'"></Tags>
 </template>
 
 <script setup lang='ts'>
@@ -16,6 +17,7 @@ import { useData, useRoute } from 'vitepress';
 import NotFound from './NotFound.vue';
 import Home from './Home.vue';
 import ArticlePage from './Article.vue';
+import Tags from './Tags.vue';
 import { computed } from 'vue';
 
 const { page, theme, site } = useData();
