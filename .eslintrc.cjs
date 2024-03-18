@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-15 13:21:39
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-15 13:38:21
+ * @LastEditTime: 2024-03-18 09:45:52
  * @FilePath: /vitepress-theme-sakurairo/.eslintrc.cjs
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -31,5 +31,7 @@ module.exports = {
     ],
     "rules": {
         "vue/multi-word-component-names":"off",
+        "@typescript-eslint/no-explicit-any":"off",
+        "@typescript-eslint/ban-types":"off"
     }
 }

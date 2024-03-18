@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-14 18:06:50
+ * @LastEditTime: 2024-03-18 09:35:59
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -340,6 +340,7 @@ const useComment = computed(() => {
         top: -25px;
         left: 12px;
         font-size: 3rem;
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
         font-family: FontAwesome;
         color: orange;
         content: "\f10d" !important;
@@ -350,6 +351,7 @@ const useComment = computed(() => {
         right: -5px;
         bottom: -25px;
         font-size: 3rem;
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
         font-family: FontAwesome;
         color: orange;
         content: '\f10e' !important;

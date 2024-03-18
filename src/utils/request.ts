@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-13 10:51:30
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-13 16:27:00
+ * @LastEditTime: 2024-03-18 09:49:30
  * @FilePath: /vitepress-theme-sakurairo/src/utils/request.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -78,7 +78,7 @@ class Axios {
 function buildQueryString(params: { [key: string]: any }) {
     const queryParams = [];
     for (const key in params) {
-        if (params.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(params, key)) {
             const value = encodeURIComponent(Array.isArray(params[key]) ? params[key].join(',') : params[key]);
             queryParams.push(`${key}=${value}`);
         }

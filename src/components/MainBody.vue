@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 02:07:12
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-21 17:33:54
+ * @LastEditTime: 2024-03-18 09:26:53
  * @FilePath: /vitepress-theme-sakurairo/src/components/MainBody.vue
 -->
 <template>
@@ -30,8 +30,8 @@ const { theme } = useData();
 
 .main-wrapper {
     background-color: rgb(255 255 255 / 70%);
-    animation-duration: .8s;
     animation: blur .8s;
+    animation-duration: .8s;
     transition: all .8s ease !important;
 
     .main-content {

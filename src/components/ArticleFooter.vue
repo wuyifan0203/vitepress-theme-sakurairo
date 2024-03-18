@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-04 00:40:09
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-04 14:32:09
+ * @LastEditTime: 2024-03-18 09:42:12
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleFooter.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -17,7 +17,7 @@
             <i class="fa-solid fa-piggy-bank fa-sm"></i>
             <div class="reward-main">
                 <ul class="reward-row">
-                    <li v-for="item in theme.global.reward">
+                    <li v-for="(item, index) in theme.global.reward" :key="index">
                         <img :src="item.src()" alt="">
                     </li>
                 </ul>

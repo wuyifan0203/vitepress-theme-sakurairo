@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 02:11:35
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-19 13:33:22
- * @FilePath: /vitepress-theme-sakurairo/.vitepress/theme/layout/main/components/NoticeBoard.vue
+ * @LastEditTime: 2024-03-18 09:26:14
+ * @FilePath: /vitepress-theme-sakurairo/src/components/NoticeBoard.vue
 -->
 <template>
     <section class="notice-board" :style="noticeBoardStyle">
@@ -52,7 +52,6 @@ const noticeBoardStyle = reactive({
     .notice-board-title {
         float: left;
         margin: 2px 10px;
-        font-family: "dela gothic one";
     }
 
     .notice-board-content {

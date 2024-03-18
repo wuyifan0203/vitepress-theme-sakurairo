@@ -83,6 +83,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 15px;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: Moe-Mashiro;
     color: $--theme-skin;
     background: #0000;

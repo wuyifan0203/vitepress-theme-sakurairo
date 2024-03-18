@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-13 16:42:10
+ * @LastEditTime: 2024-03-18 09:34:20
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
 -->
 <template>
@@ -96,14 +96,14 @@ const pages = computed(() => {
             padding: 13px 35px;
             font-size: 13px;
             color: $--theme-skin;
-            background: rgb(255 255 255/50%);
+            background: rgb(255 255 255 50%);
             border: 1.5px solid #fff;
             border-radius: 50px;
             box-shadow: 0 1px 30px -4px #e8e8e8;
             transition: all .8s ease;
 
             &:hover {
-                color: var(--post_list_matching_color, #505050);
+                color: #505050;
                 box-shadow: 0 1px 20px 10px #e8e8e8;
                 transition: all 0.8s ease !important;
             }

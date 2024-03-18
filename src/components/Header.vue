@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:30:35
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-26 17:19:44
+ * @LastEditTime: 2024-03-18 09:35:32
  * @FilePath: /vitepress-theme-sakurairo/src/components/Header.vue
 -->
 <template>
@@ -32,9 +32,9 @@ const navClass = computed(() => {
 
 const scrollHandle = () => {
     if (document.documentElement.scrollTop > 0) {
-        headerRef.value!.classList.add('showNav')
+        headerRef.value!.classList.add('show-nav')
     } else {
-        headerRef.value!.classList.remove('showNav');
+        headerRef.value!.classList.remove('show-nav');
         nProgress.done();
     }
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -106,7 +106,7 @@ header {
     width: 100%;
 }
 
-.showNav {
+.show-nav {
     top: 0;
     left: 0;
     z-index: 2;

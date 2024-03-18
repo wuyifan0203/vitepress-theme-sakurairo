@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-08 14:11:43
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-13 16:24:11
+ * @LastEditTime: 2024-03-18 09:44:19
  * @FilePath: /vitepress-theme-sakurairo/src/api/index.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -15,7 +15,7 @@ const getCommentsCount = async (serverUrl: string, paths: string[]) => {
         type: 'count',
         url: paths,
         lang: 'zh-CN'
-    }).then((res:any)=>{
+    }).then((res: any) => {
         res = JSON.parse(res);
         if (typeof res === 'object' && res.errno) {
             throw new TypeError(`Get pageViews count failed with ${res.errno}: ${res.errmsg}`);

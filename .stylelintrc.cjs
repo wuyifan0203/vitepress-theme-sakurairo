@@ -122,7 +122,8 @@ module.exports = {
         'text-shadow',
         'resize',
         'transition'
-      ]
+      ],
+      'font-family-no-missing-generic-family-keyword':null
     }
   }
   
