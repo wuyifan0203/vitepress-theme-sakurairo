@@ -1,0 +1,14 @@
+###
+ # @Author: wuyifan0203 1208097313@qq.com
+ # @Date: 2024-03-18 13:20:29
+ # @LastEditors: wuyifan0203 1208097313@qq.com
+ # @LastEditTime: 2024-03-18 14:18:08
+ # @FilePath: /vitepress-theme-sakurairo/.husky/_/pre-commit
+ # Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
+### 
+#!/usr/bin/env sh
+. "${0%/*}/h"
+
+pnpm exec lint-staged
+
+echo '🎉  通过测试'
