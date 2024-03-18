@@ -1,0 +1,4 @@
+{
+  "src/**/*.{js,ts,tsx,vue}": "pnpm run eslint:fix",
+  "src/**/*.{vue,css,scss}": "pnpm run stylelint:fix"
+}

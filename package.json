@@ -13,6 +13,7 @@
     "vitepress-theme-sakurairo"
   ],
   "scripts": {
+    "commit": "npx git-cz",
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "build:docs": "vitepress build docs --base /vitepress-theme-sakurairo/",
@@ -23,7 +24,8 @@
     "stylelint:fix": "stylelint \"./**/*.{css,scss,sass,vue,html}\" --fix",
     "lint": "npm run eslint & npm run stylelint",
     "lint:fix": "npm run eslint:fix & npm run stylelint:fix",
-    "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix"
+    "lint:style": "stylelint \"./**/*.{css,less,vue,html}\" --fix",
+    "prepare": "husky"
   },
   "type": "module",
   "main": ".src/index.ts",
@@ -42,21 +44,25 @@
     "vue": "^3.4.19"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.2.0",
+    "@commitlint/config-conventional": "^19.1.0",
     "@types/node": "^20.11.19",
     "@types/nprogress": "^0.2.3",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@waline/client": "^3.1.3",
+    "cz-git": "^1.9.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8.4.35",
     "postcss-html": "^1.6.0",
     "postcss-scss": "^4.0.9",
     "sass": "^1.70.0",
     "stylelint": "^16.2.1",
-    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-property-sort-order-smacss": "^10.0.0",
     "stylelint-config-recommended-scss": "^14.0.0",
     "stylelint-config-standard": "^36.0.0",
@@ -74,5 +80,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wuyifan0203/vitepress-theme-sakurairo.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
