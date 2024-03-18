@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-18 13:16:16
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-18 14:03:56
+ * @LastEditTime: 2024-03-18 14:08:33
  * @FilePath: /vitepress-theme-sakurairo/.commitlintrc.cjs
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
@@ -26,9 +26,10 @@ module.exports = {
         },
         types: [
             { value: 'feat', name: 'feat:     新增功能 | A new feature', emoji: ':sparkles:' },
-            { value: 'fix', name: 'fix:      修复缺陷 | A bug fix',emoji: ':bug:' },
-            { value: 'docs', name: 'docs:     文档更新 | Documentation only changes' , emoji: ':memo:'},
-            { value: 'style', name: 'style:    代码格式 | Changes that do not affect the meaning of the code' ,emoji: ':lipstick:'},
+            { value: 'fix', name: 'fix:      修复缺陷 | A bug fix', emoji: ':bug:' },
+            { value: 'wip', name: 'wip:      工作进行中 | Work in progress', emoji: ':construction:' },
+            { value: 'docs', name: 'docs:     文档更新 | Documentation only changes', emoji: ':memo:' },
+            { value: 'style', name: 'style:    代码格式 | Changes that do not affect the meaning of the code', emoji: ':lipstick:' },
             { value: 'refactor', name: 'refactor: 代码重构 | A code change that neither fixes a bug nor adds a feature', emoji: ':recycle:' },
             { value: 'perf', name: 'perf:     性能提升 | A code change that improves performance', emoji: ':zap:' },
             { value: 'test', name: 'test:     测试相关 | Adding missing tests or correcting existing tests', emoji: ':white_check_mark:' },
