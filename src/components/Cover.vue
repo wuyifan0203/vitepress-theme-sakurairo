@@ -158,8 +158,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import url("../styles/variable.scss");
-@import url("../styles/animate.scss");
+@import "../styles/variable.scss";
+@import "../styles/animate.scss";
 
 section {
     position: relative;

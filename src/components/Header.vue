@@ -48,8 +48,8 @@ useEventListener('scroll', scrollHandle);
 </script>
     
 <style lang="scss" scoped>
-@import url("../styles/variable.scss");
-@import url("../styles/animate.scss");
+@import "../styles/variable.scss";
+@import "../styles/animate.scss";
 
 header {
     position: fixed;

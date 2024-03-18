@@ -3,16 +3,11 @@ module.exports = {
       'stylelint-config-standard',
       'stylelint-config-standard-vue',
       'stylelint-config-recommended-scss',
-      'stylelint-config-standard', 
       'stylelint-config-property-sort-order-smacss'
     ],
     plugins: ['stylelint-order'],
     // 不同格式的文件指定自定义语法
     overrides: [
-      {
-        files: ['**/*.(less|css|vue|html)'],
-        customSyntax: 'postcss-scss'
-      },
       {
         files: ['**/*.(html|vue)'],
         customSyntax: 'postcss-html'
@@ -123,7 +118,8 @@ module.exports = {
         'resize',
         'transition'
       ],
-      'font-family-no-missing-generic-family-keyword':null
+      'import-notation':'string',
+      'scss/at-import-partial-extension':"always"
     }
   }
   

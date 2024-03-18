@@ -37,8 +37,8 @@ const { theme } = useData()
 </script>
     
 <style lang="scss">
-@import url("../styles/variable.scss");
-@import url("../styles/animate.scss");
+@import "../styles/variable.scss";
+@import "../styles/animate.scss";
 
 #footer {
     padding: max(2%, 45px);

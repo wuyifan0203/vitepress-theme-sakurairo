@@ -55,8 +55,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import url('../styles/theme.scss');
-@import url('../styles/variable.scss');
+@import '../styles/theme.scss';
+@import '../styles/variable.scss';
 
 * {
     box-sizing: border-box;

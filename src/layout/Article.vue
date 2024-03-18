@@ -99,9 +99,9 @@ const useComment = computed(() => {
 
 </script>
 <style lang="scss">
-@import url("../styles/variable.scss");
-@import url("../styles/animate.scss");
-@import url("../styles/common.scss");
+@import "../styles/variable.scss";
+@import "../styles/animate.scss";
+@import "../styles/common.scss";
 
 .article-wrapper {
     animation: blur .8s;

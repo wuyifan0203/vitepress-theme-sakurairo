@@ -30,7 +30,7 @@ const noticeBoardStyle = reactive({
 </script>
     
 <style lang="scss">
-@import url("../styles/animate.scss");
+@import "../styles/animate.scss";
 
 .notice-board {
     position: relative;

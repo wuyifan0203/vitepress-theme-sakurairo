@@ -33,7 +33,7 @@ useEventListener('scroll', scrollHandle);
 </script>
     
 <style lang="scss">
-@import url("../styles/variable.scss");
+@import "../styles/variable.scss";
 
 #back-to-top {
     position: fixed;
