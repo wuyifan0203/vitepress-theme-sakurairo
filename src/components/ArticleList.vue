@@ -1,11 +1,10 @@
 <template>
     <div class="article-list">
         <ul class="clearfix">
-            <li v-for="(item, index) in list" :key="index" class="article-block">
+            <li v-for="(item, index) in showList" :key="index" class="article-block">
                 <article>
                     <div class="article-cover" :class="`article-list-${theme.articleBoard.layout}`">
                         <a :href="withBase(item.url)">
-                            <!-- <img :src="item.cover" alt=""> -->
                             <img v-lazy="item.cover" alt="">
                         </a>
                     </div>
@@ -45,25 +44,44 @@
                             </div>
                         </div>
                     </div>
-
                 </article>
             </li>
         </ul>
     </div>
+    <div class="content-pagination">
+        <a href="javascript:void(0);" @click="getPages" v-if="showList.length < list.length">更早文章</a>
+        <span v-else>
+            很高兴你翻到这里，但是真的没有了...
+        </span>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { PropType, computed, ref } from 'vue';
 import { Article, Theme } from '../types';
 import { useData, withBase } from 'vitepress';
 
 const theme = useData().theme.value as Theme;
 
+const times = ref(1)
 
-const { list } = defineProps({
+const getPages = (e: MouseEvent) => {
+    e.preventDefault();
+    times.value++;
+}
+
+const showList = computed(() => {
+    return list.slice(0, pageSize * times.value);
+})
+
+const { list, pageSize } = defineProps({
     list: {
         type: Array as PropType<Article[]>,
         default: () => []
+    },
+    pageSize: {
+        type: Number,
+        default: 5
     }
 })
 </script>
@@ -260,6 +278,39 @@ const { list } = defineProps({
             text-align: right;
         }
 
+    }
+
+
+}
+
+.content-pagination {
+    display: inline-block;
+    padding: 20px 0;
+    margin: 40px 0 80px;
+    width: 100%;
+    text-align: center;
+
+    a {
+        padding: 13px 35px;
+        font-size: 13px;
+        color: $--theme-skin;
+        background: rgba(255 255 255 / 50%);
+        border: 1.5px solid #fff;
+        border-radius: 50px;
+        box-shadow: 0 1px 30px -4px #e8e8e8;
+        transition: all .8s ease;
+
+        &:hover {
+            color: #505050;
+            box-shadow: 0 1px 20px 10px #e8e8e8;
+            transition: all 0.8s ease !important;
+        }
+    }
+
+    span {
+        font-size: 15px;
+        color: $--theme-skin;
+        font-weight: $--global-font-weight;
     }
 }
 </style>

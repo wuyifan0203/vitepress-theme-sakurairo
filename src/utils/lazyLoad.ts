@@ -2,12 +2,12 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-14 15:59:38
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-15 13:39:48
+ * @LastEditTime: 2024-03-21 17:51:53
  * @FilePath: /vitepress-theme-sakurairo/src/utils/lazyLoad.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 
-import type { App, Ref } from "vue"
+import type { App, DirectiveBinding } from "vue"
 import { ImageLoader, State } from "./ImageLoader";
 
 function lazy(options: { loading: string, error?: string }) {
@@ -21,7 +21,6 @@ function lazy(options: { loading: string, error?: string }) {
                 const manager = managerQueue.find((manager) => {
                     return manager.el === entry.target
                 })
-                // console.log(manager, 'manager');
 
                 if (manager) {
                     if (manager.state === State.LOADED) {
@@ -49,8 +48,7 @@ function lazy(options: { loading: string, error?: string }) {
         }
     }
 
-    function add(el: HTMLImageElement, binding: Ref<string>) {
-        // console.log(el, binding, 'add');
+    function add(el: HTMLImageElement, binding: DirectiveBinding) {
 
         const src = binding.value;
         const manager = new ImageLoader({
@@ -73,7 +71,7 @@ function lazy(options: { loading: string, error?: string }) {
         manager && removeManager(manager)
     }
 
-    function update(el: HTMLImageElement, binding: Ref<string>) {
+    function update(el: HTMLImageElement, binding: DirectiveBinding) {
         // console.log(el, binding, 'update');
         const src = binding.value;
         const manager = managerQueue.find((manager) => {
@@ -82,11 +80,12 @@ function lazy(options: { loading: string, error?: string }) {
         manager && manager.update(src)
     }
 
+    // window.cache = cache;
     return {
         managerQueue,
         remove,
         add,
-        update
+        update,
     }
 
 
