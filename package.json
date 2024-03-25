@@ -34,13 +34,13 @@
     "src"
   ],
   "peerDependencies": {
-    "vitepress": "^1.0.0-rc.44"
+    "vitepress": "^1.0.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "nprogress": "^0.2.0",
     "typed.js": "^2.1.0",
-    "vitepress": "1.0.0-rc.44",
+    "vitepress": "1.0.1",
     "vue": "^3.4.19"
   },
   "devDependencies": {
