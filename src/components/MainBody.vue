@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 02:07:12
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-18 09:26:53
+ * @LastEditTime: 2024-04-16 16:15:14
  * @FilePath: /vitepress-theme-sakurairo/src/components/MainBody.vue
 -->
 <template>
@@ -21,7 +21,7 @@ import NoticeBoard from "./NoticeBoard.vue";
 import DisplayBoard from './DisplayBoard.vue';
 import ArticleBoard from './ArticleBoard.vue';
 
-const { theme } = useData();
+const theme = useData().theme.value;
 </script>
     
 <style lang="scss">

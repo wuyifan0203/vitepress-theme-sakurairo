@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-19 00:37:31
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-01 01:39:16
+ * @LastEditTime: 2024-04-16 16:14:44
  * @FilePath: /vitepress-theme-sakurairo/src/components/Footer.vue
 -->
 <template>
@@ -32,7 +32,8 @@
 import sakura from '../assets/icon/sakura.vue';
 
 import { useData } from 'vitepress'
-const { theme } = useData()
+import { Theme } from '../types';
+const theme = useData().theme.value as Theme
 
 </script>
     

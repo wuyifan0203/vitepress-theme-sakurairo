@@ -1,9 +1,9 @@
 <!--
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-04 01:40:00
- * @FilePath: /vuepress-interview/src/components/NavMenu.vue
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2024-04-16 16:15:40
+ * @FilePath: /vitepress-theme-sakurairo/src/components/NavMenu.vue
 -->
 <template>
     <nav>
@@ -33,9 +33,8 @@
 <script setup lang='ts'>
 import { useData, withBase } from 'vitepress'
 import { NavItems, Theme } from "../types/theme";
-import { Ref } from 'vue';
-const theme: Ref<Theme> = useData().theme;
-const nav = theme.value.nav;
+const theme = useData().theme.value as Theme;
+const nav = theme.nav;
 </script>
     
 <style lang="scss">

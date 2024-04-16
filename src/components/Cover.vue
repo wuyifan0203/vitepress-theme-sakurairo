@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-02-21 01:58:07
+ * @LastEditTime: 2024-04-16 16:13:28
  * @FilePath: /vitepress-theme-sakurairo/src/components/Cover.vue
 -->
 <template>
@@ -57,7 +57,7 @@
     
 <script setup lang='ts'>
 import { useData } from 'vitepress';
-import { Ref, ref } from 'vue'
+import { ref } from 'vue'
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
 import HeadDown from '../assets/icon/head_down.vue';
@@ -97,7 +97,7 @@ import { neteastcloud } from '../assets/icon/neteasecloud';
 import { wave1 } from '../assets/image/wave1';
 import { wave2 } from '../assets/image/wave2';
 
-const theme: Ref<Theme> = useData().theme;
+const theme = useData().theme.value as Theme;
 
 const iconMap = {
     next,
@@ -145,9 +145,9 @@ const spaceHandle = () => {
 }
 
 onMounted(() => {
-    if (theme.value.cover.typed) {
+    if (theme.cover.typed) {
         new Typed('.element', {
-            strings: theme.value.cover.typed.strings || ["First sentence.", "Second sentence."],
+            strings: theme.cover.typed.strings || ["First sentence.", "Second sentence."],
             typeSpeed: 140,
             backSpeed: 50,
             loop: false,

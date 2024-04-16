@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-14 18:05:35
+ * @LastEditTime: 2024-04-16 16:16:34
  * @FilePath: /vitepress-theme-sakurairo/src/components/SiteBranding.vue
 -->
 <template>
@@ -24,8 +24,7 @@
 <script setup lang='ts'>
 import { useData, withBase } from 'vitepress';
 import type { Theme } from '../types/theme'
-import { Ref } from 'vue';
-const theme: Ref<Theme> = useData().theme;
+const theme = useData().theme.value as Theme;
 
 
 </script>

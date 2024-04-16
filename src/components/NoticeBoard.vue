@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 02:11:35
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-18 09:26:14
+ * @LastEditTime: 2024-04-16 16:16:03
  * @FilePath: /vitepress-theme-sakurairo/src/components/NoticeBoard.vue
 -->
 <template>
@@ -14,17 +14,17 @@
     
 <script setup lang='ts'>
 import { useData } from "vitepress";
-import { Ref, reactive } from "vue";
+import { reactive } from "vue";
 import { Theme } from "../types/theme";
 
-const theme: Ref<Theme> = useData().theme;
+const theme = useData().theme.value as Theme;
 
 
 const noticeBoardStyle = reactive({
-    backgroundImage: `url(${theme.value.noticeBoard.background.src()})`,
-    backgroundColor: theme.value.noticeBoard.background.color,
-    textAlign: theme.value.noticeBoard.text.align,
-    color: theme.value.noticeBoard.text.color,
+    backgroundImage: `url(${theme.noticeBoard.background.src()})`,
+    backgroundColor: theme.noticeBoard.background.color,
+    textAlign: theme.noticeBoard.text.align,
+    color: theme.noticeBoard.text.color,
 })
 
 </script>

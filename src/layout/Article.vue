@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-18 09:35:59
+ * @LastEditTime: 2024-04-16 16:11:24
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -63,7 +63,8 @@ const data = computed(() => globalStore.getData());
 
 const articleRef = ref<HTMLElement>();
 const catalogRef = ref();
-const { theme, page } = useData();
+const { page } = useData();
+const theme = useData().theme.value as Theme;
 
 const layout = computed(() => page.value.frontmatter.layout)
 
@@ -93,7 +94,7 @@ const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
 });
 
 const useComment = computed(() => {
-    const scopeTheme = theme.value as Theme;
+    const scopeTheme = theme;
     return scopeTheme.global.comments.enable && pageData.value.comment;
 })
 

@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-18 13:05:54
+ * @LastEditTime: 2024-04-16 16:11:45
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
 -->
 <template>
@@ -24,8 +24,8 @@
 
 <script setup lang='ts'>
 import { useData } from "vitepress";
-import { Ref, computed } from "vue";
-import { Theme } from "../types/theme";
+import { computed } from "vue";
+import { Theme } from "../types";
 import ArticleList from "./ArticleList.vue";
 import { useStore } from "../utils";
 import { DefaultPageFormatter } from "../types";
@@ -34,10 +34,10 @@ const globalStore = useStore('global');
 
 const data = computed(() => globalStore.getData())
 
-const theme: Ref<Theme> = useData().theme;
+const theme = useData().theme.value as Theme;
 
-const showIcon = (theme.value.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
-const iconFont: string = theme.value.articleBoard?.icon ?? 'fa-laptop';
+const showIcon = (theme.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
+const iconFont: string = theme.articleBoard?.icon ?? 'fa-laptop';
 
 const pages = computed(() => {
     return data.value.filter((d: DefaultPageFormatter) => d.layout === 'page').sort((a: DefaultPageFormatter, b: DefaultPageFormatter) => {

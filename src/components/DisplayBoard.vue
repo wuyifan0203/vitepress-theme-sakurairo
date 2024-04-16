@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 12:59:29
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-14 18:03:38
+ * @LastEditTime: 2024-04-16 16:14:07
  * @FilePath: /vitepress-theme-sakurairo/src/components/DisplayBoard.vue
 -->
 <template>
@@ -28,13 +28,12 @@
     
 <script setup lang='ts'>
 import { useData } from 'vitepress';
-import { Ref } from 'vue';
 import { Theme } from "../types/theme";
 
-const theme: Ref<Theme> = useData().theme;
+const theme= useData().theme.value as Theme;
 
-const showIcon = (theme.value.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
-const iconFont: string = theme.value.displayBoard?.icon ?? 'fa-laptop';
+const showIcon = (theme.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
+const iconFont: string = theme.displayBoard?.icon ?? 'fa-laptop';
 
 </script>
     

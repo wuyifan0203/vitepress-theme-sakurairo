@@ -2,11 +2,11 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 02:13:51
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-15 13:35:40
+ * @LastEditTime: 2024-04-16 16:09:08
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Layout.vue
 -->
 <template>
-    <NotFound v-if="page?.isNotFound" />
+    <NotFound v-if="(page as any).isNotFound" />
     <Home v-else-if="layout === 'home'" />
     <ArticlePage v-else-if="layout === 'page'"></ArticlePage>
     <Tags v-else-if="layout === 'tags'"></Tags>
