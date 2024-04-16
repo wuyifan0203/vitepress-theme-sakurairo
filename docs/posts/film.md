@@ -32,6 +32,14 @@ const items= [
     {
         label:'百万美元宝贝',
         src:'https://t14.baidu.com/it/u=239392399,1309118698&amp;fm=58&amp;app=83&amp;f=JPEG?w=270&amp;h=386'
+    },
+    {
+        label:'Once',
+        src:'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2173720203.webp'
+    },
+    {
+        label:'毕业生',
+        src:'https://t8.baidu.com/it/u=2248768889,3134677409&fm=217&app=126&size=f242,150&n=0&f=JPEG&fmt=auto?s=A8E842941A654A8C952CED750300D061&sec=1713373200&t=375de6a58090bd98d6570d3193287a90'
     }
 ]
 
