@@ -2,7 +2,7 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-04 01:49:21
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-15 13:41:44
+ * @LastEditTime: 2024-05-17 15:39:43
  * @FilePath: /vitepress-theme-sakurairo/docs/components/List.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -12,7 +12,7 @@
         <div>
             <ul>
                 <li v-for="(item, index) in props.items" :key="index">
-                    <img :src="item.src" alt="">
+                    <img :src="item.src" alt="" class="img-fluid">
                     {{ item.label }}
                 </li>
             </ul>
@@ -49,7 +49,7 @@ li {
     text-align: center !important;
     list-style: none;
 
-    img {
+    .img-fluid {
         width: 100%;
         height: 200px;
         border-radius: 10px;
