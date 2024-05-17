@@ -2,13 +2,13 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 12:59:29
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:14:07
+ * @LastEditTime: 2024-05-17 16:54:59
  * @FilePath: /vitepress-theme-sakurairo/src/components/DisplayBoard.vue
 -->
 <template>
     <div class="display">
         <h1 :style="{
-            textAlign:theme.global.board?.titleAlign
+            textAlign: theme.global.board?.titleAlign
         }">
             <i class="fa" :class="iconFont" :style="{
                 visibility: showIcon
@@ -16,7 +16,8 @@
             <br>
             {{ theme.displayBoard?.title }}
         </h1>
-        <a v-for="(item, index) in theme.displayBoard?.items" :key="index" class="display-item" :href="item.link">
+        <a v-for="(item, index) in theme.displayBoard?.items" :key="index" class="display-item"
+            :href="withBase(item.link)">
             <img v-lazy="item.background.src()" alt="">
             <div class="display-info">
                 <h3>{{ item.title }}</h3>
@@ -25,18 +26,18 @@
         </a>
     </div>
 </template>
-    
+
 <script setup lang='ts'>
-import { useData } from 'vitepress';
+import { useData, withBase } from 'vitepress';
 import { Theme } from "../types/theme";
 
-const theme= useData().theme.value as Theme;
+const theme = useData().theme.value as Theme;
 
 const showIcon = (theme.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
 const iconFont: string = theme.displayBoard?.icon ?? 'fa-laptop';
 
 </script>
-    
+
 <style lang="scss">
 @import "../styles/variable.scss";
 @import "../styles/animate.scss";

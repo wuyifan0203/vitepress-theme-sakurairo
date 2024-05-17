@@ -138,8 +138,8 @@ export default defineConfigWithTheme<Theme>({
         },
         {
           title: '展示3',
-          description: '展示一描述',
-          link: '/',
+          description: '展示一描述,将跳转到film',
+          link: '/posts/film',
           background: {
             src: () => 'https://www.loliapi.com/acg/',
           }

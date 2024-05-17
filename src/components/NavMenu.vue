@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:59:00
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:15:40
+ * @LastEditTime: 2024-05-17 16:48:07
  * @FilePath: /vitepress-theme-sakurairo/src/components/NavMenu.vue
 -->
 <template>
@@ -77,8 +77,6 @@ nav {
                 }
 
                 &:hover {
-                    color: $--theme-skin-active;
-
                     &::after {
                         max-width: 100%;
                     }
@@ -119,6 +117,8 @@ nav {
             }
 
             &:hover {
+                color: $--theme-skin-active;
+
                 .sub-menu {
                     display: inline-block;
                     transition: all .4s;
