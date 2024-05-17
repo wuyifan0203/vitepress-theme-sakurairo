@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:11:24
+ * @LastEditTime: 2024-05-17 16:25:40
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -17,7 +17,7 @@
                 <span class="topic-line"></span>
                 <p class="entry-census">
                     <span>
-                        <a href="">
+                        <a href="" @click="() => alertMessage('欢迎贡献代码')">
                             <img v-lazy="theme.global.avatar" alt="">
                         </a>
                     </span>
@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { Content, useData, } from 'vitepress';
+import { Content, useData, withBase, } from 'vitepress';
 import { ComputedRef, computed, onMounted, ref } from 'vue';
 import { DefaultPageFormatter, Theme } from '../types';
 import Pagination from '../components/Pagination.vue';
@@ -56,7 +56,8 @@ import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
 import ArticleCatalog from '../components/ArticleCatalog.vue';
 import { useAfterRouterChange } from '../composables/useRouter';
-import { useStore } from '../utils';
+import { useStore, alertMessage } from '../utils';
+import { getPageViews } from '../api';
 
 const globalStore = useStore('global')
 const data = computed(() => globalStore.getData());
@@ -70,7 +71,21 @@ const layout = computed(() => page.value.frontmatter.layout)
 
 onMounted(() => {
     useAfterRouterChange(updateTocHeight);
+    useAfterRouterChange(updatePageViews);
 })
+
+const updatePageViews = async () => {
+    if (layout.value === 'page' && pageData.value?.url) {
+        try {
+            const res = await getPageViews(theme.global.comments.serverURL, [withBase(pageData.value.url)]);
+            console.log('updatePageViews', res);
+            // FIXME: 这里需要处理一下，因为返回的数据格式有时候是数组，有时候不是
+            pageData.value.pageViews = Array.isArray(res) ? res[0]['time'] : res['time'];
+        } catch (error) {
+            console.error('get page views fail', error);
+        }
+    }
+}
 
 const updateTocHeight = () => {
     if (layout.value === 'page') {
