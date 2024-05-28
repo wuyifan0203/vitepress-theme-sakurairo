@@ -57,9 +57,9 @@
 </template>
 
 <script setup lang="ts">
+import { useData, withBase } from 'vitepress';
 import { PropType, computed, ref } from 'vue';
 import { Article, Theme } from '../types';
-import { useData, withBase } from 'vitepress';
 
 const theme = useData().theme.value as Theme;
 

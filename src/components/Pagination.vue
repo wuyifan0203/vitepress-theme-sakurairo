@@ -3,7 +3,7 @@
  * @Date: 2024-03-03 11:31:21
  * @LastEditors: wuyifan 1208097313@qq.com
  * @LastEditTime: 2024-03-10 19:11:50
- * @FilePath: /vuepress-interview/src/components/Pagination.vue
+ * @FilePath: /vitepress-theme-sakurairo/src/components/Pagination.vue
 -->
 <template>
     <section class="pagination">

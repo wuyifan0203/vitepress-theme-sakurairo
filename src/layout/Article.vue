@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-05-17 17:04:43
+ * @LastEditTime: 2024-05-28 11:06:53
  * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
@@ -457,6 +457,41 @@ const useComment = computed(() => {
             box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
             content: "";
         }
+    }
+
+    table {
+        display: block;
+        border-collapse: collapse;
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+
+
+    th {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgb(60 60 67 / 78%);
+        background-color: rgb(232 232 232 / 50%);
+    }
+
+    tr {
+        background-color: rgb(255 255 255 / 50%);
+        transition: background-color .5s;
+        border-top: 1px solid#e2e2e3;
+
+        &:nth-child(2n) {
+            background-color: rgb(232 232 232 / 50%);
+        }
+    }
+
+    th,
+    td {
+        padding: 8px 16px;
+        border: 1px solid #e2e2e3;
+    }
+
+    td {
+        font-size: 14px;
     }
 }
 </style>

@@ -2,9 +2,8 @@
  * @Author: wuyifan 1208097313@qq.com
  * @Date: 2024-03-04 00:40:09
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-18 09:42:12
+ * @LastEditTime: 2024-05-28 10:01:50
  * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleFooter.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <div class="article-footer ">

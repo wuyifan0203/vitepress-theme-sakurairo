@@ -3,7 +3,7 @@
  * @Date: 2024-03-01 15:07:53
  * @LastEditors: wuyifan 1208097313@qq.com
  * @LastEditTime: 2024-03-08 01:36:49
- * @FilePath: /vuepress-interview/src/components/CommentBoard.vue
+ * @FilePath: /vitepress-theme-sakurairo/src/components/CommentBoard.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 
