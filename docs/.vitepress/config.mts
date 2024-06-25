@@ -18,7 +18,7 @@ export default defineConfigWithTheme<Theme>({
         { text: '主页', link: '/', icon: 'fa-home' },
         {
           text: '分类', link: '/posts', icon: 'fa-leaf', items: [
-            { text: 'webGL', link: '/webgl', icon: '' },
+            { text: 'webGL', link: '/webgl/webgl', icon: '' },
             { text: 'date', link: '/date' },
             { text: 'glsl', link: '/glsl' },
             { text: 'film', link: '/film',icon:'fa-film'}

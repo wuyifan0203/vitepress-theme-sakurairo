@@ -2,7 +2,7 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-19 00:37:31
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:14:44
+ * @LastEditTime: 2024-06-25 15:41:34
  * @FilePath: /vitepress-theme-sakurairo/src/components/Footer.vue
 -->
 <template>
@@ -21,8 +21,8 @@
                 <p id="yiyan"></p>
             </div>
             <div class="theme-info">
-                Theme <a href="">vitepress-theme-sakurairo</a> by
-                <a href="https://github.com/wuyifan0203/vitepress-theme-sakurairo.git" target="_blank"> VF </a>
+                Theme <a href="https://github.com/wuyifan0203/vitepress-theme-sakurairo.git" target="_blank">vitepress-theme-sakurairo</a> by
+                <a href="https://github.com/wuyifan0203" target="_blank"> VF </a>
             </div>
         </div>
     </footer>

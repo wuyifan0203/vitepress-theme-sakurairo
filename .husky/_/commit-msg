@@ -1,12 +1,2 @@
-###
- # @Author: wuyifan0203 1208097313@qq.com
- # @Date: 2024-03-18 13:20:29
- # @LastEditors: wuyifan0203 1208097313@qq.com
- # @LastEditTime: 2024-03-18 13:26:31
- # @FilePath: /vitepress-theme-sakurairo/.husky/_/commit-msg
- # Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
-### 
 #!/usr/bin/env sh
 . "${0%/*}/h"
-
-npx --no -- commitlint --edit "$1"
