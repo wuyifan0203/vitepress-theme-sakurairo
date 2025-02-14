@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 02:11:35
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:16:03
- * @FilePath: /vitepress-theme-sakurairo/src/components/NoticeBoard.vue
+ * @LastEditTime: 2025-02-14 16:28:43
+ * @FilePath: \vitepress-theme-sakurairo\src\components\NoticeBoard.vue
 -->
 <template>
     <section class="notice-board" :style="noticeBoardStyle">
@@ -41,7 +41,10 @@ const noticeBoardStyle = reactive({
     height: 67px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    background-position: center center;
     background-repeat: round;
+    background-repeat: no-repeat;
+    background-size: cover;
     border: none;
     border-radius: 15px;
     box-shadow: 1px 1px 3px rgb(0 0 0 / 30%);

@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-11 15:57:05
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:16:34
- * @FilePath: /vitepress-theme-sakurairo/src/components/SiteBranding.vue
+ * @LastEditTime: 2025-02-14 16:21:43
+ * @FilePath: \vitepress-theme-sakurairo\src\components\SiteBranding.vue
 -->
 <template>
     <a :href="withBase('/')" class="site-branding">
@@ -57,9 +57,11 @@ const theme = useData().theme.value as Theme;
         .center {
             display: inline-block;
             margin-left: 5px;
+            line-height: 25px;
         }
 
         rt {
+            margin-top: 5px;
             font-size: 10px;
             opacity: 0;
             transform: translateY(-13px);
