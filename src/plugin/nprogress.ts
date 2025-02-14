@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /*
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-26 15:58:44
@@ -18,14 +19,14 @@ export function useNProgress() {
 
     nprogress.configure({ showSpinner: false });
     const cacheOnBeforeRouteChange = router.onBeforeRouteChange;
-    const cacheAfterRouteChange = router.onAfterRouteChanged
+    const cacheAfterRouteChange = router.onAfterRouteChange 
 
     router.onBeforeRouteChange = (to) => {
         nprogress.start();
         cacheOnBeforeRouteChange && cacheOnBeforeRouteChange(to);
     }
 
-    router.onAfterRouteChanged = (to) => {
+    router.onAfterRouteChange  = (to) => {
         nprogress.done();
         cacheAfterRouteChange && cacheAfterRouteChange(to);
     }

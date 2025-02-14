@@ -11,9 +11,21 @@ importers:
       '@fortawesome/fontawesome-free':
         specifier: ^6.7.2
         version: 6.7.2
+      fast-glob:
+        specifier: ^3.3.3
+        version: 3.3.3
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
+      markdown-it-mathjax3:
+        specifier: ^4.3.2
+        version: 4.3.2
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
+      tocbot:
+        specifier: ^4.35.0
+        version: 4.35.0
       typed.js:
         specifier: ^2.1.0
         version: 2.1.0
@@ -54,21 +66,12 @@ importers:
       eslint-plugin-vue:
         specifier: ^9.23.0
         version: 9.27.0(eslint@8.57.0)
-      fast-glob:
-        specifier: ^3.3.3
-        version: 3.3.3
-      gray-matter:
-        specifier: ^4.0.3
-        version: 4.0.3
       husky:
         specifier: ^9.1.4
         version: 9.1.4
       lint-staged:
         specifier: ^15.2.9
         version: 15.2.9
-      markdown-it-mathjax3:
-        specifier: ^4.3.2
-        version: 4.3.2
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -105,9 +108,6 @@ importers:
       stylelint-scss:
         specifier: ^6.3.0
         version: 6.3.0(stylelint@16.6.0(typescript@5.4.2))
-      tocbot:
-        specifier: ^4.35.0
-        version: 4.35.0
       vite:
         specifier: ^6.1.0
         version: 6.1.0(@types/node@22.3.0)(jiti@1.21.0)(sass@1.77.2)(yaml@2.5.0)
