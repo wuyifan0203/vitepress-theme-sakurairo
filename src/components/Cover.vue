@@ -2,22 +2,22 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:35:42
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:13:28
- * @FilePath: /vitepress-theme-sakurairo/src/components/Cover.vue
+ * @LastEditTime: 2025-02-17 13:28:20
+ * @FilePath: \vitepress-theme-sakurairo\src\components\Cover.vue
 -->
 <template>
     <section ref="coverRef">
         <figure class="cover-image" :style="{
-            backgroundImage: `url(${theme.cover.background?.src()})`,
+            backgroundImage: `url(${site.background?.src()})`,
             height: '100vh',
         }">
             <div class="cover-focus-info">
-                <h1 :data-text="theme.cover.title" v-if="theme.cover.title !== ''">
-                    {{ theme.cover.title }}
+                <h1 :data-text="theme.hero.title" v-if="theme.hero.title !== ''">
+                    {{ theme.hero.title }}
                 </h1>
                 <div class="cover-avatar" v-else>
                     <a href="./">
-                        <img :src="theme.global.avatar" alt="">
+                        <img :src="site.avatar" alt="">
                     </a>
                 </div>
                 <div class="cover-container">
@@ -25,14 +25,14 @@
                         <i class="fa fa-quote-left"></i>
                         <span class="element"></span>
                         <i class="fa fa-quote-right"></i>
-                        <p>{{ theme.cover.description }}</p>
+                        <p>{{ theme.hero.description }}</p>
                     </div>
                 </div>
-                <ul class="cover-social-links" v-if="theme.cover.socialLinks.length">
+                <ul class="cover-social-links" v-if="theme.hero.socialLinks.length">
                     <li>
                         <img :src="matchIcon('pre')" alt="">
                     </li>
-                    <li v-for="({ icon, link }, index) in theme.cover.socialLinks" :key="index">
+                    <li v-for="({ icon, link }, index) in theme.hero.socialLinks" :key="index">
                         <a :href="link">
                             <img :src="matchIcon(icon)" alt="">
                         </a>
@@ -56,12 +56,10 @@
 </template>
     
 <script setup lang='ts'>
-import { useData } from 'vitepress';
 import { ref } from 'vue'
 import { onMounted } from 'vue';
 import Typed from 'typed.js';
 import HeadDown from '../assets/icon/head_down.vue';
-import { Theme } from "../types/theme";
 //icon
 // TODO 这一个零时做法将内置主题图片导入会找不到路径
 import { bilibili } from '../assets/icon/bilibili';
@@ -96,8 +94,11 @@ import { zhihu } from '../assets/icon/zhihu';
 import { neteastcloud } from '../assets/icon/neteasecloud';
 import { wave1 } from '../assets/image/wave1';
 import { wave2 } from '../assets/image/wave2';
+import { useSiteConfig, useThemeConfig } from '../composables/useConfig';
 
-const theme = useData().theme.value as Theme;
+const theme = useThemeConfig();
+
+const site = useSiteConfig();
 
 const iconMap = {
     next,
@@ -145,9 +146,9 @@ const spaceHandle = () => {
 }
 
 onMounted(() => {
-    if (theme.cover.typed) {
+    if (theme.hero.typed) {
         new Typed('.element', {
-            strings: theme.cover.typed.strings || ["First sentence.", "Second sentence."],
+            strings: theme.hero.typed.strings || ["First sentence.", "Second sentence."],
             typeSpeed: 140,
             backSpeed: 50,
             loop: false,

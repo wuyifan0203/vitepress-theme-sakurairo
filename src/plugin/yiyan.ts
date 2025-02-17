@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-01 09:36:28
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-06 11:30:03
- * @FilePath: /vitepress-theme-sakurairo/src/plugin/yiyan.ts
+ * @LastEditTime: 2025-02-17 11:40:43
+ * @FilePath: \vitepress-theme-sakurairo\src\plugin\yiyan.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 import { useRouter } from 'vitepress';
@@ -19,7 +19,7 @@ function useYiYan() {
     dom = dom || document.querySelector('#yiyan');
 
     const router = useRouter();
-    const cacheAfterRouteChange = router.onAfterRouteChanged;
+    const cacheAfterRouteChange = router.onAfterRouteChange;
 
     if (dom) {
         updateYiYan(dom);
@@ -27,13 +27,14 @@ function useYiYan() {
         console.log('cannot find #yiyan domElement when init!');
     }
 
-    router.onAfterRouteChanged = async (to) => {
+    router.onAfterRouteChange  = async (to) => {
         if (dom) {
             updateYiYan(dom);
         } else {
             console.log('cannot find #yiyan domElement');
         }
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         cacheAfterRouteChange && cacheAfterRouteChange(to);
     }
 }

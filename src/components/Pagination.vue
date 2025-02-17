@@ -38,10 +38,9 @@
 import { PropType, computed } from 'vue';
 import { withBase } from 'vitepress'
 import { DefaultPageFormatter } from '../types';
-import { useStore } from '../utils';
+import { store } from '../store';
 
-const globalStore = useStore('global')
-const data = globalStore.getData() as DefaultPageFormatter[];
+const data = computed(() => store.posts);
 
 const props = defineProps({
     page: {
@@ -54,11 +53,11 @@ const props = defineProps({
 const page = computed(()=>props.page)
 
 const prevPage = computed(() => {
-    return data.find((current) => current.key === page.value.prev)
+    return data.value.find((current) => current.key === page.value.prev)
 });
 
 const nextPage = computed(() => {
-    return data.find(current => current.key === page.value.next)
+    return data.value.find(current => current.key === page.value.next)
 });
 
 </script>

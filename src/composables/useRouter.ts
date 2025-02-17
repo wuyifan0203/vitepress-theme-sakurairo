@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /*
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-03-05 15:49:00
- * @LastEditors: wuyifan 1208097313@qq.com
- * @LastEditTime: 2024-03-08 00:35:50
- * @FilePath: /vuepress-interview/src/composables/useRouter.ts
+ * @LastEditors: wuyifan0203 1208097313@qq.com
+ * @LastEditTime: 2025-02-17 13:15:02
+ * @FilePath: \vitepress-theme-sakurairo\src\composables\useRouter.ts
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 import { useRouter } from 'vitepress';
@@ -31,8 +33,8 @@ const afterCallbackMap: { [key: string]: Function } = {};
 const useAfterRouterChange = (callback: Function) => {
     if (Object.keys(afterCallbackMap).length === 0) {
         const router = useRouter();
-        const cacheAfterChange = router.onAfterRouteChanged;
-        router.onAfterRouteChanged = async (to: string) => {
+        const cacheAfterChange = router.onAfterRouteChange ;
+        router.onAfterRouteChange  = async (to: string) => {
             for (const key in afterCallbackMap) {
                 await afterCallbackMap[key](to);
             }

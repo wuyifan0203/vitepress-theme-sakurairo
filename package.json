@@ -44,14 +44,15 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "markdown-it-mathjax3": "^4.3.2",
     "nprogress": "^0.2.0",
+    "pinia": "^3.0.1",
     "tocbot": "^4.35.0",
     "typed.js": "^2.1.0",
     "vitepress": "1.6.3",
-    "vue": "^3.5.13",
-    "fast-glob": "^3.3.3",
-    "gray-matter": "^4.0.3",
-    "markdown-it-mathjax3": "^4.3.2"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",

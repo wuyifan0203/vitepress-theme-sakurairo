@@ -2,14 +2,14 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-16 19:47:23
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-04-16 16:11:45
- * @FilePath: /vitepress-theme-sakurairo/src/components/ArticleBoard.vue
+ * @LastEditTime: 2025-02-17 13:29:16
+ * @FilePath: \vitepress-theme-sakurairo\src\components\ArticleBoard.vue
 -->
 <template>
     <div class="article-area">
         <div class="content-article">
             <h1 :style="{
-                textAlign: theme.global.board?.titleAlign
+                textAlign: site.board?.titleAlign
             }">
                 <i class="far" :class="iconFont" :style="{
                 visibility: showIcon
@@ -23,20 +23,20 @@
 </template>
 
 <script setup lang='ts'>
-import { useData } from "vitepress";
 import { computed } from "vue";
-import { Theme } from "../types";
 import ArticleList from "./ArticleList.vue";
-import { useStore } from "../utils";
+import { store } from "../store";
 import { DefaultPageFormatter } from "../types";
+import { useSiteConfig, useThemeConfig } from "../composables/useConfig";
 
-const globalStore = useStore('global');
 
-const data = computed(() => globalStore.getData())
+const data = computed(() => store.posts);
 
-const theme = useData().theme.value as Theme;
+const site = useSiteConfig();
 
-const showIcon = (theme.global?.board?.showIcon ?? true) ? 'visible' : 'hidden';
+const theme = useThemeConfig();
+
+const showIcon = (site.board?.showIcon ?? true) ? 'visible' : 'hidden';
 const iconFont: string = theme.articleBoard?.icon ?? 'fa-laptop';
 
 const pages = computed(() => {

@@ -23,6 +23,9 @@ importers:
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
+      pinia:
+        specifier: ^3.0.1
+        version: 3.0.1(typescript@5.4.2)(vue@3.5.13(typescript@5.4.2))
       tocbot:
         specifier: ^4.35.0
         version: 4.35.0
@@ -2077,6 +2080,15 @@ packages:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
     hasBin: true
+
+  pinia@3.0.1:
+    resolution: {integrity: sha512-WXglsDzztOTH6IfcJ99ltYZin2mY8XZCXujkYWVIJlBjqsP6ST7zw+Aarh63E1cDVYeyUcPCxPHzJpEOmzB6Wg==}
+    peerDependencies:
+      typescript: '>=4.4.4'
+      vue: ^2.7.0 || ^3.5.11
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   postcss-html@1.8.0:
     resolution: {integrity: sha512-5mMeb1TgLWoRKxZ0Xh9RZDfwUUIqRrcxO2uXO+Ezl1N5lqpCiSU5Gk6+1kZediBfBHFtPCdopr2UZ2SgUsKcgQ==}
@@ -4641,6 +4653,13 @@ snapshots:
   picomatch@2.3.1: {}
 
   pidtree@0.6.0: {}
+
+  pinia@3.0.1(typescript@5.4.2)(vue@3.5.13(typescript@5.4.2)):
+    dependencies:
+      '@vue/devtools-api': 7.7.2
+      vue: 3.5.13(typescript@5.4.2)
+    optionalDependencies:
+      typescript: 5.4.2
 
   postcss-html@1.8.0:
     dependencies:

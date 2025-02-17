@@ -7,9 +7,16 @@
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
  */
 
+import { createPinia } from "pinia";
+import { type EnhanceAppContext } from "vitepress";
 
 function alertMessage(msg: string) {
-    window.alert(msg);
+  window.alert(msg);
 }
 
-export { alertMessage }
+function initTheme(ctx: EnhanceAppContext) {
+  const pinia = createPinia();
+  ctx.app.use(pinia);
+}
+
+export { alertMessage, initTheme };

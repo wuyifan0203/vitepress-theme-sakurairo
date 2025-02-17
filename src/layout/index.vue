@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-10 20:22:24
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-03-15 17:45:15
- * @FilePath: /vitepress-theme-sakurairo/src/layout/index.vue
+ * @LastEditTime: 2025-02-17 14:01:12
+ * @FilePath: \vitepress-theme-sakurairo\src\layout\index.vue
 -->
 <template>
     <Header></Header>
@@ -15,8 +15,7 @@
 
 
 <script setup lang='ts'>
-import { useData } from "vitepress";
-import { onMounted, provide, getCurrentInstance } from 'vue';
+import { onMounted, getCurrentInstance } from 'vue';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/css/regular.min.css';
 
@@ -27,29 +26,20 @@ import BackTop from '../components//BackTop.vue';
 import Skin from '../components//Skin.vue';
 import { installThemePlugin } from '../plugin';
 
-import { data } from '../posts.data';
-import { Theme } from "../types";
-import { useStore } from "../utils";
-import { mountStore } from "../store";
 import lazyLoad from '../utils/lazyLoad'
-const theme = useData().theme.value as Theme;
+import { useSiteConfig } from "../composables/useConfig";
+const site = useSiteConfig();
 
-mountStore();
 
 const instance = getCurrentInstance();
 if (instance) {
     const app = instance.appContext.app;
-    app.use(lazyLoad, { loading: theme.global.onLoadImage })
+    app.use(lazyLoad, { loading: site.onLoadImage })
 }
-
-const global = useStore('global');
-provide('global', global);
-global.setData(data);
-
 
 onMounted(() => {
     installThemePlugin()
-    document.body.style.backgroundImage = `url(${theme.global.background?.src()})`;
+    document.body.style.backgroundImage = `url(${site.background?.src()})`;
 })
 
 </script>

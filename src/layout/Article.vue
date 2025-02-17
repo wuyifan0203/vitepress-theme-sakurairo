@@ -2,8 +2,8 @@
  * @Author: wuyifan0203 1208097313@qq.com
  * @Date: 2024-02-21 15:06:46
  * @LastEditors: wuyifan0203 1208097313@qq.com
- * @LastEditTime: 2024-05-28 11:06:53
- * @FilePath: /vitepress-theme-sakurairo/src/layout/Article.vue
+ * @LastEditTime: 2025-02-17 14:00:19
+ * @FilePath: \vitepress-theme-sakurairo\src\layout\Article.vue
  * Copyright (c) 2024 by wuyifan0203 email: 1208097313@qq.com, All Rights Reserved.
 -->
 <template>
@@ -18,12 +18,12 @@
                 <p class="entry-census">
                     <span>
                         <a href="" @click="() => alertMessage('欢迎贡献代码')">
-                            <img v-lazy="theme.global.avatar" alt="">
+                            <img v-lazy="site.avatar" alt="">
                         </a>
                     </span>
                     <span>
                         <a href="">
-                            {{ theme.global.author }}
+                            {{ site.author }}
                         </a>
                     </span>
                     <span class="bull">·</span>
@@ -50,22 +50,23 @@
 <script setup lang="ts">
 import { Content, useData, withBase, } from 'vitepress';
 import { ComputedRef, computed, onMounted, ref } from 'vue';
-import { DefaultPageFormatter, Theme } from '../types';
+import { DefaultPageFormatter } from '../types';
 import Pagination from '../components/Pagination.vue';
 import ArticleFooter from '../components/ArticleFooter.vue';
 import CommentBoard from '../components/CommentBoard.vue';
 import ArticleCatalog from '../components/ArticleCatalog.vue';
 import { useAfterRouterChange } from '../composables/useRouter';
-import { useStore, alertMessage } from '../utils';
+import { alertMessage } from '../utils';
+import {store} from '../store'
 import { getPageViews } from '../api';
+import { useSiteConfig } from '../composables/useConfig';
 
-const globalStore = useStore('global')
-const data = computed(() => globalStore.getData());
+const data = computed(() => store.posts);
 
 const articleRef = ref<HTMLElement>();
 const catalogRef = ref();
 const { page } = useData();
-const theme = useData().theme.value as Theme;
+const site = useSiteConfig();
 
 const layout = computed(() => page.value.frontmatter.layout)
 
@@ -77,7 +78,7 @@ onMounted(() => {
 const updatePageViews = async () => {
     if (layout.value === 'page' && pageData.value?.url) {
         try {
-            const res = await getPageViews(theme.global.comments.serverURL, [withBase(pageData.value.url)]);
+            const res = await getPageViews(site.waline.serverURL, [withBase(pageData.value.url)]);
             console.log('updatePageViews', res);
             // FIXME: 这里需要处理一下，因为返回的数据格式有时候是数组，有时候不是
             pageData.value.pageViews = Array.isArray(res) ? res[0]['time'] : res['time'];
@@ -109,8 +110,7 @@ const pageData: ComputedRef<DefaultPageFormatter> = computed(() => {
 });
 
 const useComment = computed(() => {
-    const scopeTheme = theme;
-    return scopeTheme.global.comments.enable && pageData.value.comment;
+    return site.waline.enable && pageData.value.comment;
 })
 
 </script>
